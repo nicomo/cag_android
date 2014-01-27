@@ -31,4 +31,5 @@ android {
 }
 
 dependencies {
+    compile files('/Users/kivutar/AndroidStudioProjects/Rouen/lib/justifiedtextviewlibrary.jar')
 }

@@ -5,8 +5,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-import android.widget.TextView;
 import android.widget.ScrollView;
+import ir.noghteh.JustifiedTextView;
+import android.util.TypedValue;
 
 public class MainActivity extends Activity {
 
@@ -31,12 +32,8 @@ public class MainActivity extends Activity {
         for (String s : episode1Array) {
 
             TableRow tr = new TableRow(this);
-            TableRow.LayoutParams trlp = new TableRow.LayoutParams(
-                    TableRow.LayoutParams.FILL_PARENT);
-            trlp.setMargins(100, 0, 0, 0);
-            tr.setLayoutParams(trlp);
 
-            TextView tv = new TextView(this);
+            JustifiedTextView tv = new JustifiedTextView(this);
             tv.setText(s);
             tv.setTextColor(Color.parseColor("#151313"));
             TableRow.LayoutParams tvlp = new TableRow.LayoutParams(
@@ -45,6 +42,7 @@ public class MainActivity extends Activity {
                     1f);
             tvlp.setMargins((int)(100 * d), (int)(10 * d), (int)(200 * d), (int)(10 * d));
             tv.setLayoutParams(tvlp);
+            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
             tr.addView(tv);
 
             table.addView(tr);
