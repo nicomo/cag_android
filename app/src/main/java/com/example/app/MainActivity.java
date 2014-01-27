@@ -8,6 +8,7 @@ import android.widget.TableRow;
 import android.widget.ScrollView;
 import ir.noghteh.JustifiedTextView;
 import android.util.TypedValue;
+import android.graphics.Paint.Align;
 
 public class MainActivity extends Activity {
 
@@ -43,6 +44,8 @@ public class MainActivity extends Activity {
             tvlp.setMargins((int)(100 * d), (int)(10 * d), (int)(200 * d), (int)(10 * d));
             tv.setLayoutParams(tvlp);
             tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+            tv.setAlignment(Align.LEFT);
+            //tv.setLineSpace(15);
             tr.addView(tv);
 
             table.addView(tr);
