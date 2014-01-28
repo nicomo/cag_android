@@ -6,7 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-import android.widget.ScrollView;
+
 import ir.noghteh.JustifiedTextView;
 import android.util.TypedValue;
 import android.graphics.Paint.Align;
@@ -21,15 +21,9 @@ public class MainActivity extends Activity {
 
         String[] episode1Array = getResources().getStringArray(R.array.episode1);
 
-        ScrollView scrv = new ScrollView(this);
+        setContentView(R.layout.episode);
 
-        TableLayout table = new TableLayout(this);
-        TableLayout.LayoutParams tlp = new TableLayout.LayoutParams(
-                TableLayout.LayoutParams.MATCH_PARENT,
-                TableLayout.LayoutParams.MATCH_PARENT);
-        table.setLayoutParams(tlp);
-        table.setBackgroundColor(Color.parseColor("#f5efe2"));
-        scrv.addView(table);
+        TableLayout table = (TableLayout)findViewById(R.id.tableLayout);
 
         for (String s : episode1Array) {
 
@@ -52,8 +46,6 @@ public class MainActivity extends Activity {
 
             table.addView(tr);
         }
-
-        setContentView(scrv);
     }
 
 }
