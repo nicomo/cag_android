@@ -2,6 +2,7 @@ package com.example.app;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -45,7 +46,8 @@ public class MainActivity extends Activity {
             tv.setLayoutParams(tvlp);
             tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
             tv.setAlignment(Align.LEFT);
-            //tv.setLineSpace(15);
+            tv.setLineSpace(15);
+            tv.setTypeFace(Typeface.createFromAsset(getAssets(), "fonts/georgia.ttf"));
             tr.addView(tv);
 
             table.addView(tr);
