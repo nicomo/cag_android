@@ -5,6 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="title1">1. Arsène Lupin a vingt ans</string>
+    <string name="subtitle1">Raoul d’Andrésy jeta sa bicyclette, après en avoir éteint la lanterne, derrière un talus rehaussé de broussailles.</string>
+
     <string-array
         name="episode1">
         <item>Raoul d’Andrésy jeta sa bicyclette, après en avoir éteint la lanterne, derrière un talus rehaussé de broussailles. À ce moment, trois heures sonnaient au clocher de Bénouville.</item>

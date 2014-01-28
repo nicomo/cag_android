@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
 import ir.noghteh.JustifiedTextView;
 import android.util.TypedValue;
 import android.graphics.Paint.Align;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -24,6 +26,19 @@ public class MainActivity extends Activity {
         setContentView(R.layout.episode);
 
         TableLayout table = (TableLayout)findViewById(R.id.tableLayout);
+
+        TextView title = (TextView)findViewById(R.id.title);
+        title.setText(getResources().getString(R.string.title1));
+        title.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/SuperClarendon_7.otf"));
+
+        TextView subtitle = (TextView)findViewById(R.id.subtitle);
+        subtitle.setText(getResources().getString(R.string.subtitle1));
+        subtitle.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/SuperClarendon_7.otf"));
+
+        Button next = (Button)findViewById(R.id.nextButton);
+        next.setText("Episode 2.\nDes heures s'écoulèrent");
+        next.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/SuperClarendon_7.otf"));
+        next.setLineSpacing(0, 1.3f);
 
         for (String s : episode1Array) {
 
