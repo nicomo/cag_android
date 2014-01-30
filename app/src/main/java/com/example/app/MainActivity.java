@@ -47,16 +47,18 @@ public class MainActivity extends Activity {
             JustifiedTextView tv = new JustifiedTextView(this);
             tv.setText(s);
             tv.setTextColor(Color.parseColor("#151313"));
-            TableRow.LayoutParams tvlp = new TableRow.LayoutParams(
-                    TableRow.LayoutParams.WRAP_CONTENT,
-                    TableRow.LayoutParams.WRAP_CONTENT,
-                    1f);
-            tvlp.setMargins((int)(100 * d), (int)(10 * d), (int)(200 * d), (int)(10 * d));
-            tv.setLayoutParams(tvlp);
+            tv.setBackground(getResources().getDrawable(R.drawable.paragraph));
+            tv.setPadding(0, 0, (int)(40 * d), 0);
             tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
             tv.setAlignment(Align.LEFT);
             tv.setLineSpace(15);
             tv.setTypeFace(Typeface.createFromAsset(getAssets(), "fonts/georgia.ttf"));
+            TableRow.LayoutParams tvlp = new TableRow.LayoutParams(
+                    TableRow.LayoutParams.WRAP_CONTENT,
+                    TableRow.LayoutParams.WRAP_CONTENT,
+                    1f);
+            tvlp.setMargins((int)(100 * d), 0, (int)(180 * d), 0);
+            tv.setLayoutParams(tvlp);
             tr.addView(tv);
 
             table.addView(tr);
