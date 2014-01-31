@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="left|top"
-    tools:context="com.example.app.MainActivity"
+    tools:context="fr.rouen.Cagliostro.MainActivity"
     tools:ignore="MergeRootFrame" >
 
     <LinearLayout

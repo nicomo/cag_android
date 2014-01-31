@@ -1,4 +1,4 @@
-package com.example.app;
+package fr.rouen.Cagliostro;
 
 import android.app.Activity;
 import android.graphics.Color;
