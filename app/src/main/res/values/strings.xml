@@ -2,14 +2,13 @@
 <resources>
 
     <string name="app_name">La Comtesse de Cagliostro</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="title1">1. Arsène Lupin a vingt ans</string>
-    <string name="subtitle1">Raoul d’Andrésy jeta sa bicyclette, après en avoir éteint la lanterne, derrière un talus rehaussé de broussailles.</string>
+    <string name="ep1_title">Arsène Lupin a vingt ans</string>
+    <string name="ep1_subtitle">Raoul d’Andrésy jeta sa bicyclette, après en avoir éteint la lanterne, derrière un talus rehaussé de broussailles.</string>
+    <string name="ep1_nexttitle">Des heures s\'écoulèrent</string>
 
     <string-array
-        name="episode1">
+        name="ep1_paragraphs">
         <item>Raoul d’Andrésy jeta sa bicyclette, après en avoir éteint la lanterne, derrière un talus rehaussé de broussailles. À ce moment, trois heures sonnaient au clocher de Bénouville.</item>
         <item>Dans l’ombre épaisse de la nuit, il suivit le chemin de campagne qui desservait le domaine de la Haie d’Étigues, et parvint ainsi aux murs de l’enceinte. Il attendit un peu. Des chevaux qui piaffent, des roues qui résonnent sur le pavé d’une cour, un bruit de grelots, les deux battants de la porte ouverts d’un coup… et un break passa. À peine Raoul eut-il le temps de percevoir des voix d’hommes et de distinguer le canon d’un fusil. Déjà la voiture gagnait la grand-route et filait vers Étretat.</item>
         <item>« Allons, se dit-il, la chasse aux guillemots est captivante, la roche où on les massacre est lointaine… je vais enfin savoir ce que signifient cette partie de chasse improvisée et toutes ces allées et venues. »</item>
