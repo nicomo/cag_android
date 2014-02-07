@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: justifiedtextviewlibrary">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/justifiedtextviewlibrary.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

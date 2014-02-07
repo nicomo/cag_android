@@ -1,73 +1,71 @@
 package fr.rouen.Cagliostro;
 
 import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.view.View;
-import ir.noghteh.JustifiedTextView;
-import android.util.TypedValue;
-import android.graphics.Paint.Align;
-import android.widget.TextView;
+import android.webkit.WebView;
 import android.content.Intent;
+import android.webkit.JavascriptInterface;
+import android.content.res.Configuration;
 
 public class MainActivity extends Activity {
+
+    int epid;
+    WebView wv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        float d = getResources().getDisplayMetrics().density;
+        Intent intent = getIntent();
+        epid = intent.getIntExtra("epid", 1);
 
-        String[] episode1Array = getResources().getStringArray(R.array.ep1_paragraphs);
-
-        setContentView(R.layout.episode);
-
-        TableLayout table = (TableLayout)findViewById(R.id.tableLayout);
-
-        TextView title = (TextView)findViewById(R.id.title);
-        title.setText("1. " + getResources().getString(R.string.ep1_title));
-        title.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/SuperClarendon_7.otf"));
-
-        TextView subtitle = (TextView)findViewById(R.id.subtitle);
-        subtitle.setText(getResources().getString(R.string.ep1_subtitle));
-        subtitle.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/SuperClarendon_7.otf"));
-
-        for (String s : episode1Array) {
-
-            TableRow tr = new TableRow(this);
-
-            JustifiedTextView tv = new JustifiedTextView(this);
-            tv.setText(s);
-            tv.setTextColor(Color.parseColor("#151313"));
-            tv.setBackground(getResources().getDrawable(R.drawable.paragraph));
-            tv.setPadding(0, 0, (int)(40 * d), 0);
-            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
-            tv.setAlignment(Align.LEFT);
-            tv.setLineSpace(15);
-            tv.setTypeFace(Typeface.createFromAsset(getAssets(), "fonts/georgia.ttf"));
-            TableRow.LayoutParams tvlp = new TableRow.LayoutParams(
-                    TableRow.LayoutParams.WRAP_CONTENT,
-                    TableRow.LayoutParams.WRAP_CONTENT,
-                    1f);
-            tvlp.setMargins((int)(100 * d), 0, (int)(180 * d), 0);
-            tv.setLayoutParams(tvlp);
-            tr.addView(tv);
-
-            table.addView(tr);
+        class JSI {
+            @JavascriptInterface
+            public void nextEpisode(){
+                nextEpisodeDo();
+            }
         }
 
-        Button next = (Button)findViewById(R.id.nextButton);
-        next.setText("Episode 2\n" + getResources().getString(R.string.ep1_nexttitle));
-        next.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/SuperClarendon_7.otf"));
-        next.setLineSpacing(0, 1.3f);
+        System.out.println("######" + R.raw.bg);
+
+        wv = new WebView(this);
+        wv.getSettings().setJavaScriptEnabled(true);
+        wv.getSettings().setAllowFileAccess(true);
+        wv.addJavascriptInterface(new JSI(), "AndroidFunction");
+
+        if (savedInstanceState != null) {
+            wv.restoreState(savedInstanceState);
+        } else {
+            wv.loadUrl("file:///android_asset/www/"+epid+".html");
+        }
+
+        //setContentView(wv.getLayout());
+
+        /*wv = new WebView(this);
+        wv.getSettings().setJavaScriptEnabled(true);
+        wv.addJavascriptInterface(new JSI(), "AndroidFunction");
+        wv.loadUrl("file:///android_asset/www/"+epid+".html");*/
+
+        setContentView(wv);
+
+        /*VideoView videoHolder = new VideoView(this);
+        Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
+                + R.raw.bg); //do not add any extension
+        videoHolder.setVideoURI(video);
+        setContentView(videoHolder);
+        videoHolder.start();
+
+        setContentView(videoHolder);*/
     }
 
-    public void nextEpisode(View view) {
+    public void nextEpisodeDo() {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("epid", epid+1);
         startActivity(intent);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 }

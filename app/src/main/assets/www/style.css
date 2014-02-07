@@ -1,0 +1,71 @@
+@font-face {
+   font-family: 'SuperClarendon';
+   src: url('file:///android_asset/fonts/SuperClarendon_7.otf');
+}
+
+@font-face {
+   font-family: 'Georgia';
+   src: url('file:///android_asset/fonts/georgia.ttf');
+}
+
+body {
+    background-color: #f5efe2;
+    margin: 0;
+}
+
+header {
+    background-color: #beb2b0;
+    padding: 22% 0 11% 11%;
+}
+
+header h1 {
+    color: #151313;
+    font-family: "SuperClarendon";
+    font-size: 3.5em;
+}
+
+header h2 {
+    color: #3d3d38;
+    font-family: "SuperClarendon";
+    font-size: 2em;
+    margin: 0;
+}
+
+section.paragraphs {
+    margin-top: 11%;
+    margin-left: 11%;
+    margin-bottom: 11%;
+    padding-right: 6%;
+    width: 61%;
+    border-right: solid 1px #beb2b0;
+}
+
+section.paragraphs p {
+    font-family: "Georgia" Serif;
+    font-size: 1.2em;
+    word-break: break-word; /* hyphenation */
+    -webkit-hyphens: auto; /* hyphenation */
+    -webkit-hyphenate-before: 2; /* hyphenation : minimum number of letters before break */
+    -webkit-hyphenate-after: 3; /* hyphenation : minimum number of letters after break */
+    hyphenate-lines: 3;  /* hyphenation : max numer of consecutive lines w/ hyphenation */
+    -webkit-font-feature-settings: "liga", "dlig"; /* ligature */
+    font-feature-settings: "liga", "dlig";
+    text-align: justify;
+}
+
+section.paragraphs img,
+section.paragraphs video {
+    width: 100%;
+}
+
+button {
+    background-color: #beb2b0;
+    color: #3d3d38;
+    font-family: "SuperClarendon";
+    font-size: 2em;
+    padding: 11%;
+    width: 100%;
+    text-align: left;
+    border: none;
+    margin: 0;
+}
