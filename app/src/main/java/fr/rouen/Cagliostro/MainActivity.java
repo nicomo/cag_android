@@ -1,11 +1,18 @@
 package fr.rouen.Cagliostro;
 
 import android.app.Activity;
+import android.content.res.Resources;
+import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebView;
 import android.content.Intent;
-import android.webkit.JavascriptInterface;
-import android.content.res.Configuration;
+import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.VideoView;
 
 public class MainActivity extends Activity {
 
@@ -19,53 +26,51 @@ public class MainActivity extends Activity {
         Intent intent = getIntent();
         epid = intent.getIntExtra("epid", 1);
 
-        class JSI {
-            @JavascriptInterface
-            public void nextEpisode(){
-                nextEpisodeDo();
-            }
-        }
+        Resources r = getResources();
+        Typeface clarendon = Typeface.createFromAsset(getAssets(), "fonts/SuperClarendon_7.otf");
+        String[] titles = r.getStringArray(R.array.titles);
 
-        System.out.println("######" + R.raw.bg);
+        setContentView(R.layout.episode);
 
-        wv = new WebView(this);
-        wv.getSettings().setJavaScriptEnabled(true);
-        wv.getSettings().setAllowFileAccess(true);
-        wv.addJavascriptInterface(new JSI(), "AndroidFunction");
+        TextView title = (TextView)findViewById(R.id.title);
+        title.setText(epid + ". " + titles[epid-1]);
+        title.setTypeface(clarendon);
 
+        TextView subtitle = (TextView)findViewById(R.id.subtitle);
+        //subtitle.setText(r.getString(R.string.ep1_subtitle));
+        subtitle.setTypeface(clarendon);
+
+        VideoView videoHolder = (VideoView)findViewById(R.id.videoView);
+        Uri video = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.bg);
+        videoHolder.setVideoURI(video);
+        videoHolder.start();
+
+        final ImageView placeholder = (ImageView)findViewById(R.id.imageView);
+
+        wv = (WebView)findViewById(R.id.webView);
         if (savedInstanceState != null) {
             wv.restoreState(savedInstanceState);
         } else {
             wv.loadUrl("file:///android_asset/www/"+epid+".html");
         }
+        wv.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                wv.setVisibility(View.VISIBLE);
+                placeholder.setVisibility(View.GONE);
+            }
+        });
 
-        //setContentView(wv.getLayout());
-
-        /*wv = new WebView(this);
-        wv.getSettings().setJavaScriptEnabled(true);
-        wv.addJavascriptInterface(new JSI(), "AndroidFunction");
-        wv.loadUrl("file:///android_asset/www/"+epid+".html");*/
-
-        setContentView(wv);
-
-        /*VideoView videoHolder = new VideoView(this);
-        Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-                + R.raw.bg); //do not add any extension
-        videoHolder.setVideoURI(video);
-        setContentView(videoHolder);
-        videoHolder.start();
-
-        setContentView(videoHolder);*/
+        Button next = (Button)findViewById(R.id.nextButton);
+        next.setText("Episode "+(epid+1)+"\n" + titles[epid]);
+        next.setTypeface(clarendon);
+        next.setLineSpacing(0, 1.3f);
     }
 
-    public void nextEpisodeDo() {
+    public void nextEpisode(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("epid", epid+1);
         startActivity(intent);
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
     }
 }

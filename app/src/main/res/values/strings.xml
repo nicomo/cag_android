@@ -2,6 +2,19 @@
 <resources>
 
     <string name="app_name">La Comtesse de Cagliostro</string>
-    <string name="loading_video">Loading video</string>
+
+    <string-array name="titles">
+        <item>Arsène Lupin a vingt ans</item>
+        <item>A l\'ombre de l\'Aiguille</item>
+        <item>Une conspiration</item>
+        <item>Joséphine Balsamo, née en 1788…</item>
+        <item>Les trois portraits</item>
+        <item>Un ange de mort</item>
+        <item>Un tribunal d\'inquisition</item>
+        <item>Passion fatale</item>
+        <item>La sentence</item>
+        <item>La barque qui coule</item>
+        <item>Une femme à la mer</item>
+    </string-array>
 
 </resources>

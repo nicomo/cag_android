@@ -11,36 +11,11 @@
 body {
     background-color: #f5efe2;
     margin: 0;
-}
-
-header {
-    background-color: #beb2b0;
-    padding: 22% 0 11% 11%;
-}
-
-header h1 {
-    color: #151313;
-    font-family: "SuperClarendon";
-    font-size: 3.5em;
-}
-
-header h2 {
-    color: #3d3d38;
-    font-family: "SuperClarendon";
-    font-size: 2em;
-    margin: 0;
-}
-
-section.paragraphs {
-    margin-top: 11%;
-    margin-left: 11%;
-    margin-bottom: 11%;
-    padding-right: 6%;
-    width: 61%;
+    padding-right: 10%;
     border-right: solid 1px #beb2b0;
 }
 
-section.paragraphs p {
+p {
     font-family: "Georgia" Serif;
     font-size: 1.2em;
     word-break: break-word; /* hyphenation */
@@ -53,19 +28,6 @@ section.paragraphs p {
     text-align: justify;
 }
 
-section.paragraphs img,
-section.paragraphs video {
+img {
     width: 100%;
-}
-
-button {
-    background-color: #beb2b0;
-    color: #3d3d38;
-    font-family: "SuperClarendon";
-    font-size: 2em;
-    padding: 11%;
-    width: 100%;
-    text-align: left;
-    border: none;
-    margin: 0;
 }

@@ -1,0 +1,76 @@
+<ScrollView
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="left|top"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    tools:context="fr.rouen.Cagliostro.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5efe2">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="0. Titre de l'épisode"
+            android:id="@+id/title"
+            android:background="#beb2b0"
+            android:focusableInTouchMode="false"
+            android:textColor="#151313"
+            android:textSize="50sp"
+            android:paddingLeft="100dp"
+            android:paddingTop="150dp" />
+        -
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Paru le"
+            android:id="@+id/subtitle"
+            android:background="#beb2b0"
+            android:textSize="30sp"
+            android:textColor="#3d3d38"
+            android:paddingLeft="100dp"
+            android:paddingBottom="50dp"
+            android:paddingTop="40dp" />
+
+        <VideoView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/videoView" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="700dp"
+            android:id="@+id/imageView" />
+
+        <WebView
+            android:background="#f5efe2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/webView"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="200dp"
+            android:layout_marginBottom="100dp"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nextButton"
+            android:background="@drawable/nextbutton"
+            android:textSize="30sp"
+            android:textColor="#3d3d38"
+            android:gravity="left"
+            android:paddingLeft="100dp"
+            android:paddingBottom="100dp"
+            android:paddingTop="100dp"
+            android:onClick="nextEpisode"/>
+    </LinearLayout>
+</ScrollView>
