@@ -42,11 +42,6 @@ public class MainActivity extends Activity {
         //subtitle.setText(r.getString(R.string.ep1_subtitle));
         subtitle.setTypeface(clarendon);
 
-        VideoView videoHolder = (VideoView)findViewById(R.id.videoView);
-        Uri video = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.bg);
-        videoHolder.setVideoURI(video);
-        videoHolder.start();
-
         final ImageView placeholder = (ImageView)findViewById(R.id.imageView);
 
         wv = (WebView)findViewById(R.id.webView);
