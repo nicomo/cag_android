@@ -72,5 +72,12 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("epid", epid+1);
         startActivity(intent);
+        overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
     }
 }
