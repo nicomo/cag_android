@@ -3,6 +3,7 @@ package fr.rouen.Cagliostro;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.content.Intent;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -61,6 +63,16 @@ public class MainActivity extends Activity {
                 placeholder.setVisibility(View.GONE);
             }
         });
+
+        VideoView vv=(VideoView)findViewById(R.id.videoView);
+        vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.bg));
+        vv.setOnPreparedListener (new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+            }
+        });
+        vv.start();
 
         Button next = (Button)findViewById(R.id.nextButton);
         next.setText("Episode "+(epid+1)+"\n" + titles[epid]);
