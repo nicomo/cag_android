@@ -3,6 +3,10 @@
 
     <string name="app_name">La Comtesse de Cagliostro</string>
 
+    <string name="settings_title">Réglages</string>
+    <string name="delayed_eps_pref_title">Episodes en différé</string>
+    <string name="delayed_eps_pref_summary">En désactivant cette option, vous aurez accès à tous les épisodes du roman sans delai.</string>
+
     <string-array name="titles">
         <item>Arsène Lupin a vingt ans</item>
         <item>A l\'ombre de l\'Aiguille</item>
