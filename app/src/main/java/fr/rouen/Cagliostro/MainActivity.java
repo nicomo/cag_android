@@ -71,14 +71,6 @@ public class MainActivity extends Activity {
         } else {
             wv.loadUrl("file:///android_asset/www/"+epid+".html");
         }
-        /*wv.setWebViewClient(new WebViewClient() {
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                wv.setVisibility(View.VISIBLE);
-                //placeholder.setVisibility(View.GONE);
-            }
-        });*/
 
         VideoView vv=(VideoView)findViewById(R.id.videoView);
         vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.bg));
@@ -136,7 +128,7 @@ public class MainActivity extends Activity {
         intent.putExtra("epid", epid+1);
         startActivity(intent);
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-        finish();
+        //finish();
     }
 
     @Override
