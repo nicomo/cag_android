@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,16 +33,17 @@ public class MainActivity extends Activity {
     WebView wv;
     Button next;
     String[] titles;
+    SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences initialPref = getSharedPreferences("firstLaunchDate", Context.MODE_PRIVATE);
-        long timestamp = initialPref.getLong("timestamp", 0);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        long timestamp = prefs.getLong("timestamp", 0);
         if (timestamp == 0) {
             Date now = new Date();
-            SharedPreferences.Editor editorPref = initialPref.edit();
+            SharedPreferences.Editor editorPref = prefs.edit();
             editorPref.putLong("timestamp", now.getTime());
             editorPref.commit();
         }
@@ -62,8 +64,6 @@ public class MainActivity extends Activity {
         TextView subtitle = (TextView)findViewById(R.id.subtitle);
         //subtitle.setText(r.getString(R.string.ep1_subtitle));
         subtitle.setTypeface(clarendon);
-
-        //final ImageView placeholder = (ImageView)findViewById(R.id.imageView);
 
         wv = (WebView)findViewById(R.id.webView);
         if (savedInstanceState != null) {
@@ -88,40 +88,44 @@ public class MainActivity extends Activity {
         next.setText("Episode "+(epid+1)+"\nA paraitre");
 
         Timer t = new Timer("refreshButton");
-        t.schedule(_refreshButton, 0, 1000);
+        t.schedule(_refreshButton, 0, 500);
     }
 
     private final TimerTask _refreshButton = new TimerTask() {
         @Override
         public void run() {
-            SharedPreferences initialPref = getSharedPreferences("firstLaunchDate", Context.MODE_PRIVATE);
-            long timestamp = initialPref.getLong("timestamp", 0);
+            long timestamp = prefs.getLong("timestamp", 0);
+            Boolean delayedEps = prefs.getBoolean("delayedEps", true);
 
             Date now = new Date();
-            long minElapsed = ( now.getTime() - timestamp ) / 60000;
-            System.out.println(minElapsed);
+            final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+            System.out.println(delayedEps);
 
-            if (minElapsed+1 >= epid) {
-                updateButton();
-                System.out.println("On change...");
+            if (epid+1 > minElapsed && delayedEps) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        next.setText(String.format("Episode %d\nA praitre dans %5.2f minutes", epid + 2, epid + 1 - minElapsed));
+                    }
+                });
+            }
+            else
+            {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        next.setText("Episode "+(epid+2)+"\n" + titles[epid+1]);
+                        next.setOnClickListener(new View.OnClickListener() {
+                            public void onClick(View v) {
+                                nextEpisode(v);
+                            }
+                        });
+                    }
+                });
                 this.cancel();
             }
         }
     };
-
-    public void updateButton() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                next.setText("Episode "+(epid+2)+"\n" + titles[epid+1]);
-                next.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                        nextEpisode(v);
-                    }
-                });
-            }
-        });
-    }
 
     public void nextEpisode(View view) {
         Intent intent = new Intent(this, MainActivity.class);
