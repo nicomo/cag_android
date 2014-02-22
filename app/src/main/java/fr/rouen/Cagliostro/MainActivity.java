@@ -125,7 +125,7 @@ public class MainActivity extends Activity {
 
     public void nextEpisode(View view) {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("epid", epid+2);
+        intent.putExtra("epid", epid+1);
         startActivity(intent);
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
         //finish();
