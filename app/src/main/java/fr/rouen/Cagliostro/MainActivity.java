@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
         }
 
         Intent intent = getIntent();
-        epid = intent.getIntExtra("epid", 1);
+        epid = intent.getIntExtra("epid", 0);
 
         Resources r = getResources();
         Typeface clarendon = Typeface.createFromAsset(getAssets(), "fonts/SuperClarendon_7.otf");
@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.episode);
 
         TextView title = (TextView)findViewById(R.id.title);
-        title.setText(epid + ". " + titles[epid-1]);
+        title.setText((epid+1) + ". " + titles[epid]);
         title.setTypeface(clarendon);
 
         TextView subtitle = (TextView)findViewById(R.id.subtitle);
@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
         if (savedInstanceState != null) {
             wv.restoreState(savedInstanceState);
         } else {
-            wv.loadUrl("file:///android_asset/www/"+epid+".html");
+            wv.loadUrl("file:///android_asset/www/"+(epid+1)+".html");
         }
 
         VideoView vv=(VideoView)findViewById(R.id.videoView);
@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
             long minElapsed = ( now.getTime() - timestamp ) / 60000;
             System.out.println(minElapsed);
 
-            if (minElapsed >= epid) {
+            if (minElapsed+1 >= epid) {
                 updateButton();
                 System.out.println("On change...");
                 this.cancel();
@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                next.setText("Episode "+(epid+1)+"\n" + titles[epid]);
+                next.setText("Episode "+(epid+2)+"\n" + titles[epid+1]);
                 next.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         nextEpisode(v);
@@ -125,7 +125,7 @@ public class MainActivity extends Activity {
 
     public void nextEpisode(View view) {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("epid", epid+1);
+        intent.putExtra("epid", epid+2);
         startActivity(intent);
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
         //finish();
