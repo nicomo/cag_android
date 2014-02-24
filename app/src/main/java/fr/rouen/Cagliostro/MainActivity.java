@@ -22,6 +22,17 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.prefs.Preferences;
@@ -33,6 +44,7 @@ public class MainActivity extends Activity {
     WebView wv;
     Button next;
     String[] titles;
+    String[] subtitles;
     SharedPreferences prefs;
 
     @Override
@@ -54,6 +66,35 @@ public class MainActivity extends Activity {
         Resources r = getResources();
         Typeface clarendon = Typeface.createFromAsset(getAssets(), "fonts/SuperClarendon_7.otf");
         titles = r.getStringArray(R.array.titles);
+        subtitles = r.getStringArray(R.array.subtitles);
+
+        InputStream is = getResources().openRawResource(R.raw.episodes);
+        Writer writer = new StringWriter();
+        char[] buffer = new char[1024];
+        try {
+            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            int n;
+            while ((n = reader.read(buffer)) != -1) {
+                writer.write(buffer, 0, n);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        } finally {
+
+        }
+
+        String jsonString = writer.toString();
+
+        try {
+            JSONObject jObject = new JSONObject(jsonString);
+            JSONArray jArray = jObject.getJSONArray("episodes");
+            for (int i = 0; i < jArray.length(); i++) {
+                JSONObject jsonobject = jArray.getJSONObject(i);
+                System.out.println(jsonobject .getString("title"));
+            }
+        } catch (JSONException e) {
+            System.out.println(e.getCause());
+        }
 
         setContentView(R.layout.episode);
 
@@ -62,7 +103,7 @@ public class MainActivity extends Activity {
         title.setTypeface(clarendon);
 
         TextView subtitle = (TextView)findViewById(R.id.subtitle);
-        //subtitle.setText(r.getString(R.string.ep1_subtitle));
+        subtitle.setText(subtitles[epid]);
         subtitle.setTypeface(clarendon);
 
         wv = (WebView)findViewById(R.id.webView);

@@ -19,6 +19,102 @@
         <item>La sentence</item>
         <item>La barque qui coule</item>
         <item>Une femme à la mer</item>
+        <item>La belle endormie</item>
+        <item>L\'inconsolée</item>
+        <item>Une des sept branches</item>
+        <item>Policiers et gendarmes </item>
+        <item>Cavale et travestissement</item>
+        <item>La comtesse lève le voile</item>
+        <item>Les délices de Capoue</item>
+        <item>Monte-en-l’air et rats d\'hôtels</item>
+        <item>Une revue aux Variétés</item>
+        <item>Coup de théâtre</item>
+        <item>Deux Volontés</item>
+        <item>La tirelire des moines</item>
+        <item>Les mystères du pays de Caux</item>
+        <item>La roche tarpéienne</item>
+        <item>Raoul contre Beaumagnan</item>
+        <item>Une lettre compromettante</item>
+        <item>Un vieux coffret de bois</item>
+        <item>Guet-apens</item>
+        <item>Passion criminelle</item>
+        <item>L\'interrogatoire</item>
+        <item>La main mutilée</item>
+        <item>Remords tardifs</item>
+        <item>Le vieux phare</item>
+        <item>Au bord de l\'abîme</item>
+        <item>Rivales</item>
+        <item>Démence et génie</item>
+        <item>Il y a vingt-quatre ans, deux hommes fuyaient...</item>
+        <item>Ad lapidem currebat olim regina…</item>
+        <item>Deux ennemis</item>
+        <item>Alcor</item>
+        <item>Le coffre-fort des moines</item>
+        <item>Héroïque enfant</item>
+        <item>Le dolmen de la reine</item>
+        <item>Poussières et cendres</item>
+        <item>L\'infernale créature</item>
+        <item>Le piège se resserre</item>
+        <item>Une apparition</item>
+        <item>Trois coups de poignards</item>
+        <item>Élevée dans le crime</item>
+        <item>Raoul triomphe ou la défaite du vice</item>
+        <item>Épilogue</item>
+    </string-array>
+
+    <string-array name="subtitles">
+        <item>Paru le 10 décembre 1923</item>
+        <item>Paru le 11 décembre 1923</item>
+        <item>Paru le 12 décembre 1923</item>
+        <item>Paru le 13 décembre 1923</item>
+        <item>Paru le 14 décembre 1923</item>
+        <item>Paru le 15 décembre 1923</item>
+        <item>Paru le 16 décembre 1923</item>
+        <item>Paru le 17 décembre 1923</item>
+        <item>Paru le 18 décembre 1923</item>
+        <item>Paru le 19 décembre 1923</item>
+        <item>Paru le 20 décembre 1923</item>
+        <item>Paru le 21 décembre 1923</item>
+        <item>Paru le 22 décembre 1923</item>
+        <item>Paru le 23 décembre 1923</item>
+        <item>Paru le 24 décembre 1923</item>
+        <item>Paru le 25 décembre 1923</item>
+        <item>Paru le 26 décembre 1923</item>
+        <item>Paru le 27 décembre 1923</item>
+        <item>Paru le 28 décembre 1923</item>
+        <item>Paru le 29 décembre 1923</item>
+        <item>Paru le 30 décembre 1923</item>
+        <item>Paru le 31 décembre 1923</item>
+        <item>Paru le 1er janvier 1924</item>
+        <item>Paru le 2 janvier 1924</item>
+        <item>Paru le 3 janvier 1924</item>
+        <item>Paru le 4 janvier 1924</item>
+        <item>Paru le 5 janvier 1924</item>
+        <item>Paru le 6 janvier 1924</item>
+        <item>Paru le 7 janvier 1924</item>
+        <item>Paru le 8 janvier 1924</item>
+        <item>Paru le 9 janvier 1924</item>
+        <item>Paru le 10 janvier 1924</item>
+        <item>Paru le 11 janvier 1924</item>
+        <item>Paru le 12 janvier 1924</item>
+        <item>Paru le 13 janvier 1924</item>
+        <item>Paru le 14 janvier 1924</item>
+        <item>Paru le 15 janvier 1924</item>
+        <item>Paru le 16 janvier 1924</item>
+        <item>Paru le 17 janvier 1924</item>
+        <item>Paru le 18 janvier 1924</item>
+        <item>Paru le 19 janvier 1924</item>
+        <item>Paru le 20 janvier 1924</item>
+        <item>Paru le 21 janvier 1924</item>
+        <item>Paru le 22 janvier 1924</item>
+        <item>Paru le 23 janvier 1924</item>
+        <item>Paru le 24 janvier 1924</item>
+        <item>Paru le 25 janvier 1924</item>
+        <item>Paru le 26 janvier 1924</item>
+        <item>Paru le 27 janvier 1924</item>
+        <item>Paru le 28 janvier 1924</item>
+        <item>Paru le 29 janvier 1924</item>
+        <item>Paru le 30 janvier 1924</item>
     </string-array>
 
 </resources>

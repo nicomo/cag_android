@@ -1,0 +1,18 @@
+{ "episodes": [
+    {
+        "title": "Arsène Lupin a vingt ans",
+        "subtitle": "Paru le 10 décembre 1923",
+        "pins": [
+            { "pid":  1, "cid":  1, "gender":   "Male" },
+            { "pid": 19, "cid":  2, "gender": "Female" }
+        ]
+    },
+    {
+        "title": "A l'ombre de l'Aiguille",
+        "subtitle": "Paru le 11 décembre 1923",
+        "pins": [
+            { "pid": 47, "cid":  3, "gender":   "Male" },
+            { "pid": 48, "cid":  4, "gender":   "Male" }
+        ]
+    }
+] }
