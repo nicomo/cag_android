@@ -1,5 +1,6 @@
 package fr.rouen.Cagliostro;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,13 +14,18 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.content.Intent;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import org.json.JSONArray;
@@ -43,6 +49,7 @@ public class MainActivity extends Activity {
     int epid;
     WebView wv;
     Button next;
+    JSONArray data;
     String[] titles;
     String[] subtitles;
     SharedPreferences prefs;
@@ -68,34 +75,6 @@ public class MainActivity extends Activity {
         titles = r.getStringArray(R.array.titles);
         subtitles = r.getStringArray(R.array.subtitles);
 
-        InputStream is = getResources().openRawResource(R.raw.episodes);
-        Writer writer = new StringWriter();
-        char[] buffer = new char[1024];
-        try {
-            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-            int n;
-            while ((n = reader.read(buffer)) != -1) {
-                writer.write(buffer, 0, n);
-            }
-        } catch (Exception e) {
-            System.out.println(e.getCause());
-        } finally {
-
-        }
-
-        String jsonString = writer.toString();
-
-        try {
-            JSONObject jObject = new JSONObject(jsonString);
-            JSONArray jArray = jObject.getJSONArray("episodes");
-            for (int i = 0; i < jArray.length(); i++) {
-                JSONObject jsonobject = jArray.getJSONObject(i);
-                System.out.println(jsonobject .getString("title"));
-            }
-        } catch (JSONException e) {
-            System.out.println(e.getCause());
-        }
-
         setContentView(R.layout.episode);
 
         TextView title = (TextView)findViewById(R.id.title);
@@ -107,11 +86,18 @@ public class MainActivity extends Activity {
         subtitle.setTypeface(clarendon);
 
         wv = (WebView)findViewById(R.id.webView);
+        wv.getSettings().setJavaScriptEnabled(true);
         if (savedInstanceState != null) {
             wv.restoreState(savedInstanceState);
         } else {
             wv.loadUrl("file:///android_asset/www/"+(epid+1)+".html");
         }
+        wv.addJavascriptInterface(new JavaScriptInterface(this), "Android");
+        wv.setWebViewClient(new WebViewClient() {
+            public void onPageFinished(WebView view, String url) {
+                placePins();
+            }
+        });
 
         VideoView vv=(VideoView)findViewById(R.id.videoView);
         vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.bg));
@@ -130,6 +116,34 @@ public class MainActivity extends Activity {
 
         Timer t = new Timer("refreshButton");
         t.schedule(_refreshButton, 0, 500);
+    }
+
+    public class JavaScriptInterface {
+        Context mContext;
+        JavaScriptInterface(Context c) {
+            mContext = c;
+        }
+
+        @JavascriptInterface
+        public void placePin(final int y, final int cid, final String gender) {
+            Toast.makeText(mContext, "Received Value from JS: " + y + ", " + cid + ", " + gender, Toast.LENGTH_SHORT).show();
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    FrameLayout pinContainer = (FrameLayout)findViewById(R.id.pinContainer);
+
+                    ImageButton pinButton = new ImageButton(mContext);
+                    pinButton.setImageResource(R.drawable.pin_person_anon_male);
+                    pinButton.setLayoutParams(new FrameLayout.LayoutParams(
+                            FrameLayout.LayoutParams.WRAP_CONTENT,
+                            FrameLayout.LayoutParams.WRAP_CONTENT));
+                    pinButton.setPadding(0, y, 0, 0);
+
+                    pinContainer.addView(pinButton);
+                }
+            });
+        }
     }
 
     private final TimerTask _refreshButton = new TimerTask() {
@@ -167,6 +181,45 @@ public class MainActivity extends Activity {
             }
         }
     };
+
+    public void placePins() {
+        InputStream is = getResources().openRawResource(R.raw.episodes);
+        Writer writer = new StringWriter();
+        char[] buffer = new char[1024];
+        try {
+            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            int n;
+            while ((n = reader.read(buffer)) != -1) {
+                writer.write(buffer, 0, n);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        } finally {
+
+        }
+
+        String jsonString = writer.toString();
+
+        try {
+            JSONObject jObject = new JSONObject(jsonString);
+            JSONArray data = jObject.getJSONArray("episodes");
+
+            JSONObject jep = data.getJSONObject(epid);
+            System.out.println(jep.getString("title"));
+             JSONArray jpins = jep.getJSONArray("pins");
+
+            for (int j = 0; j < jpins.length(); j++) {
+                JSONObject jpin = jpins.getJSONObject(j);
+                int pid = jpin.getInt("pid");
+                int cid = jpin.getInt("cid");
+                String gender = jpin.getString("gender");
+                wv.loadUrl("javascript:javascript:( function () { var y = document.getElementsByTagName('p')["+pid+"].getBoundingClientRect().top; window.Android.placePin(y, "+cid+", \""+gender+"\"); } ) ()");
+            }
+
+        } catch (JSONException e) {
+            System.out.println(e.getCause());
+        }
+    }
 
     public void nextEpisode(View view) {
         Intent intent = new Intent(this, MainActivity.class);
