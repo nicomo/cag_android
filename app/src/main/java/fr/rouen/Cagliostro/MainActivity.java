@@ -198,7 +198,8 @@ public class MainActivity extends Activity {
                 ImageButton pinButton = new ImageButton(this);
                 //pinButton.setImageResource(R.drawable.pin_person_anon_male);
                 //pinButton.setBackground(getResources().getDrawable(R.drawable.pin));
-                pinButton.setBackground(getResources().getDrawable(R.drawable.pin_person_anon_male));
+                int rid = gender.equals("Male") ? R.drawable.pin_person_anon_male : R.drawable.pin_person_anon_female;
+                pinButton.setBackground(getResources().getDrawable(rid));
 
                 pinContainer.addView(pinButton, params);
             }
