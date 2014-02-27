@@ -32,6 +32,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="fr.rouen.Cagliostro.CharacterActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".SettingsActivity"
             android:label="@string/settings_title" >
         </activity>
