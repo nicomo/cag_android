@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +25,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.MediaController;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -86,13 +88,11 @@ public class MainActivity extends Activity {
         subtitle.setTypeface(clarendon);
 
         wv = (WebView)findViewById(R.id.webView);
-        wv.getSettings().setJavaScriptEnabled(true);
         if (savedInstanceState != null) {
             wv.restoreState(savedInstanceState);
         } else {
             wv.loadUrl("file:///android_asset/www/"+(epid+1)+".html");
         }
-        wv.addJavascriptInterface(new JavaScriptInterface(this), "Android");
         wv.setWebViewClient(new WebViewClient() {
             public void onPageFinished(WebView view, String url) {
                 placePins();
@@ -116,34 +116,6 @@ public class MainActivity extends Activity {
 
         Timer t = new Timer("refreshButton");
         t.schedule(_refreshButton, 0, 500);
-    }
-
-    public class JavaScriptInterface {
-        Context mContext;
-        JavaScriptInterface(Context c) {
-            mContext = c;
-        }
-
-        @JavascriptInterface
-        public void placePin(final int y, final int cid, final String gender) {
-            Toast.makeText(mContext, "Received Value from JS: " + y + ", " + cid + ", " + gender, Toast.LENGTH_SHORT).show();
-
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    FrameLayout pinContainer = (FrameLayout)findViewById(R.id.pinContainer);
-
-                    ImageButton pinButton = new ImageButton(mContext);
-                    pinButton.setImageResource(R.drawable.pin_person_anon_male);
-                    pinButton.setLayoutParams(new FrameLayout.LayoutParams(
-                            FrameLayout.LayoutParams.WRAP_CONTENT,
-                            FrameLayout.LayoutParams.WRAP_CONTENT));
-                    pinButton.setPadding(0, y, 0, 0);
-
-                    pinContainer.addView(pinButton);
-                }
-            });
-        }
     }
 
     private final TimerTask _refreshButton = new TimerTask() {
@@ -206,14 +178,29 @@ public class MainActivity extends Activity {
 
             JSONObject jep = data.getJSONObject(epid);
             System.out.println(jep.getString("title"));
-             JSONArray jpins = jep.getJSONArray("pins");
+            JSONArray jpins = jep.getJSONArray("pins");
 
             for (int j = 0; j < jpins.length(); j++) {
                 JSONObject jpin = jpins.getJSONObject(j);
-                int pid = jpin.getInt("pid");
+                double pid = jpin.getDouble("pid");
                 int cid = jpin.getInt("cid");
                 String gender = jpin.getString("gender");
-                wv.loadUrl("javascript:javascript:( function () { var y = document.getElementsByTagName('p')["+pid+"].getBoundingClientRect().top; window.Android.placePin(y, "+cid+", \""+gender+"\"); } ) ()");
+
+                System.out.println(wv.getHeight());
+
+                RelativeLayout pinContainer = (RelativeLayout)findViewById(R.id.pinContainer);
+
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(140, 140);
+                params.topMargin = (int)(pid * wv.getHeight());
+                params.leftMargin = 0;
+                params.addRule(RelativeLayout.CENTER_HORIZONTAL, 1);
+
+                ImageButton pinButton = new ImageButton(this);
+                //pinButton.setImageResource(R.drawable.pin_person_anon_male);
+                //pinButton.setBackground(getResources().getDrawable(R.drawable.pin));
+                pinButton.setBackground(getResources().getDrawable(R.drawable.pin_person_anon_male));
+
+                pinContainer.addView(pinButton, params);
             }
 
         } catch (JSONException e) {

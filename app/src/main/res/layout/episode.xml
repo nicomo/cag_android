@@ -70,7 +70,7 @@
                 android:layout_weight="6"
             />
 
-            <FrameLayout
+            <RelativeLayout
                 android:layout_height="fill_parent"
                 android:layout_width="0dip"
                 android:layout_weight="2"
