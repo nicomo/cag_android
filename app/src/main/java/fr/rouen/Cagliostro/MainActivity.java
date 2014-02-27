@@ -183,7 +183,7 @@ public class MainActivity extends Activity {
             for (int j = 0; j < jpins.length(); j++) {
                 JSONObject jpin = jpins.getJSONObject(j);
                 double pid = jpin.getDouble("pid");
-                int cid = jpin.getInt("cid");
+                final int cid = jpin.getInt("cid");
                 String gender = jpin.getString("gender");
 
                 System.out.println(wv.getHeight());
@@ -202,11 +202,24 @@ public class MainActivity extends Activity {
                 pinButton.setBackground(getResources().getDrawable(rid));
 
                 pinContainer.addView(pinButton, params);
+
+                pinButton.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        gotoCharacter(v, cid);
+                    }
+                });
             }
 
         } catch (JSONException e) {
             System.out.println(e.getCause());
         }
+    }
+
+    public void gotoCharacter(View view, int cid) {
+        Intent intent = new Intent(this, CharacterActivity.class);
+        intent.putExtra("cid", cid);
+        startActivity(intent);
+        overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
     }
 
     public void nextEpisode(View view) {
