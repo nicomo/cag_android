@@ -3,8 +3,8 @@
         "title": "Arsène Lupin a vingt ans",
         "subtitle": "Paru le 10 décembre 1923",
         "pins": [
-            { "pid":  0.005, "cid":  1, "gender":   "Male" },
-            { "pid":  0.555, "cid":  2, "gender": "Female" }
+            { "pid":  0.000, "cid":  1, "gender":   "Male" },
+            { "pid":  0.550, "cid":  2, "gender": "Female" }
         ]
     },
     {

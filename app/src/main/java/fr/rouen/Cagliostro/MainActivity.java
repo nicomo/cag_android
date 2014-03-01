@@ -195,16 +195,16 @@ public class MainActivity extends Activity {
 
                 RelativeLayout pinContainer = (RelativeLayout)findViewById(R.id.pinContainer);
 
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(140, 140);
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(200, 200);
                 params.topMargin = (int)(pid * wv.getHeight());
                 params.leftMargin = 0;
                 params.addRule(RelativeLayout.CENTER_HORIZONTAL, 1);
 
                 final ImageButton pinButton = new ImageButton(this);
-                //pinButton.setImageResource(R.drawable.pin_person_anon_male);
-                //pinButton.setBackground(getResources().getDrawable(R.drawable.pin));
                 int rid = gender.equals("Male") ? R.drawable.pin_male : R.drawable.pin_female;
-                pinButton.setBackground(getResources().getDrawable(rid));
+                pinButton.setImageResource(rid);
+                pinButton.setAdjustViewBounds(true);
+                pinButton.setBackgroundResource(0);
 
                 pinContainer.addView(pinButton, params);
 
@@ -226,7 +226,7 @@ public class MainActivity extends Activity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
                         int iden = ctx.getResources().getIdentifier("pin_" + cid, "drawable", ctx.getPackageName());
-                        pinButton.setBackground(getResources().getDrawable(iden));
+                        pinButton.setImageResource(iden);
                         pinButton.startAnimation(flip_part2);
                     }
 
