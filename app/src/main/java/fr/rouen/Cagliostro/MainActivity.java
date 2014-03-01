@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
     String[] titles;
     String[] subtitles;
     SharedPreferences prefs;
+    boolean pinplaced = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,6 +148,10 @@ public class MainActivity extends Activity {
     };
 
     public void placePins(int wvh) {
+
+        if (pinplaced)
+            return;
+
         System.out.println("placePins for " + wvh);
 
         final Context ctx = this;
@@ -230,6 +235,8 @@ public class MainActivity extends Activity {
         } catch (JSONException e) {
             System.out.println(e.getCause());
         }
+
+        pinplaced = true;
     }
 
     public void gotoCharacter(View view, int cid) {
