@@ -51,7 +51,7 @@ import java.util.Date;
 public class MainActivity extends Activity {
 
     int epid;
-    WebView wv;
+    CAGWebView wv;
     Button next;
     JSONArray data;
     String[] titles;
@@ -89,17 +89,8 @@ public class MainActivity extends Activity {
         subtitle.setText(subtitles[epid]);
         subtitle.setTypeface(clarendon);
 
-        wv = (WebView)findViewById(R.id.webView);
-        if (savedInstanceState != null) {
-            wv.restoreState(savedInstanceState);
-        } else {
-            wv.loadUrl("file:///android_asset/www/"+(epid+1)+".html");
-        }
-        wv.setWebViewClient(new WebViewClient() {
-            public void onPageFinished(WebView view, String url) {
-                placePins();
-            }
-        });
+        wv = (CAGWebView)findViewById(R.id.webView);
+        wv.loadUrl("file:///android_asset/www/"+(epid+1)+".html");
 
         VideoView vv=(VideoView)findViewById(R.id.videoView);
         vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.bg));
@@ -128,7 +119,6 @@ public class MainActivity extends Activity {
 
             Date now = new Date();
             final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
-            System.out.println(delayedEps);
 
             if (epid+1 > minElapsed && delayedEps) {
                 runOnUiThread(new Runnable() {
@@ -156,7 +146,8 @@ public class MainActivity extends Activity {
         }
     };
 
-    public void placePins() {
+    public void placePins(int wvh) {
+        System.out.println("placePins for " + wvh);
 
         final Context ctx = this;
 
@@ -179,10 +170,9 @@ public class MainActivity extends Activity {
 
         try {
             JSONObject jObject = new JSONObject(jsonString);
-            JSONArray data = jObject.getJSONArray("episodes");
+            data = jObject.getJSONArray("episodes");
 
             JSONObject jep = data.getJSONObject(epid);
-            System.out.println(jep.getString("title"));
             JSONArray jpins = jep.getJSONArray("pins");
 
             for (int j = 0; j < jpins.length(); j++) {
@@ -191,12 +181,10 @@ public class MainActivity extends Activity {
                 final int cid = jpin.getInt("cid");
                 String gender = jpin.getString("gender");
 
-                System.out.println(wv.getHeight());
-
                 RelativeLayout pinContainer = (RelativeLayout)findViewById(R.id.pinContainer);
 
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(200, 200);
-                params.topMargin = (int)(pid * wv.getHeight());
+                params.topMargin = (int)(pid * wvh);
                 params.leftMargin = 0;
                 params.addRule(RelativeLayout.CENTER_HORIZONTAL, 1);
 
@@ -237,8 +225,6 @@ public class MainActivity extends Activity {
                 });
 
                 pinButton.startAnimation(flip_part1);
-
-
             }
 
         } catch (JSONException e) {
