@@ -16,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.content.Intent;
@@ -155,6 +157,9 @@ public class MainActivity extends Activity {
     };
 
     public void placePins() {
+
+        final Context ctx = this;
+
         InputStream is = getResources().openRawResource(R.raw.episodes);
         Writer writer = new StringWriter();
         char[] buffer = new char[1024];
@@ -195,10 +200,10 @@ public class MainActivity extends Activity {
                 params.leftMargin = 0;
                 params.addRule(RelativeLayout.CENTER_HORIZONTAL, 1);
 
-                ImageButton pinButton = new ImageButton(this);
+                final ImageButton pinButton = new ImageButton(this);
                 //pinButton.setImageResource(R.drawable.pin_person_anon_male);
                 //pinButton.setBackground(getResources().getDrawable(R.drawable.pin));
-                int rid = gender.equals("Male") ? R.drawable.pin_person_anon_male : R.drawable.pin_person_anon_female;
+                int rid = gender.equals("Male") ? R.drawable.pin_male : R.drawable.pin_female;
                 pinButton.setBackground(getResources().getDrawable(rid));
 
                 pinContainer.addView(pinButton, params);
@@ -208,6 +213,32 @@ public class MainActivity extends Activity {
                         gotoCharacter(v, cid);
                     }
                 });
+
+                Animation flip_part1 = AnimationUtils.loadAnimation(this, R.anim.flip_part1);
+                final Animation flip_part2 = AnimationUtils.loadAnimation(this, R.anim.flip_part2);
+
+                flip_part1.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        int iden = ctx.getResources().getIdentifier("pin_" + cid, "drawable", ctx.getPackageName());
+                        pinButton.setBackground(getResources().getDrawable(iden));
+                        pinButton.startAnimation(flip_part2);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+                pinButton.startAnimation(flip_part1);
+
+
             }
 
         } catch (JSONException e) {
