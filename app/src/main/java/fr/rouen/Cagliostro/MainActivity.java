@@ -2,15 +2,18 @@ package fr.rouen.Cagliostro;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +31,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -48,9 +52,10 @@ import java.util.TimerTask;
 import java.util.prefs.Preferences;
 import java.util.Date;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements ScrollViewListener {
 
     int epid;
+    CAGScrollView sv;
     CAGWebView wv;
     Button next;
     JSONArray data;
@@ -63,6 +68,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Intent intent = getIntent();
+        epid = intent.getIntExtra("epid", 0);
+
+        CAGApp appState = ((CAGApp)getApplicationContext());
+        data = appState.getJSONArray();
+
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         long timestamp = prefs.getLong("timestamp", 0);
         if (timestamp == 0) {
@@ -72,15 +83,15 @@ public class MainActivity extends Activity {
             editorPref.commit();
         }
 
-        Intent intent = getIntent();
-        epid = intent.getIntExtra("epid", 0);
-
         Resources r = getResources();
         Typeface clarendon = Typeface.createFromAsset(getAssets(), "fonts/SuperClarendon_7.otf");
         titles = r.getStringArray(R.array.titles);
         subtitles = r.getStringArray(R.array.subtitles);
 
         setContentView(R.layout.episode);
+
+        sv = (CAGScrollView)findViewById(R.id.scrollView);
+        sv.setScrollViewListener(this);
 
         TextView title = (TextView)findViewById(R.id.title);
         title.setText((epid+1) + ". " + titles[epid]);
@@ -154,31 +165,11 @@ public class MainActivity extends Activity {
 
         System.out.println("placePins for " + wvh);
 
-        final Context ctx = this;
-
-        InputStream is = getResources().openRawResource(R.raw.episodes);
-        Writer writer = new StringWriter();
-        char[] buffer = new char[1024];
         try {
-            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-            int n;
-            while ((n = reader.read(buffer)) != -1) {
-                writer.write(buffer, 0, n);
-            }
-        } catch (Exception e) {
-            System.out.println(e.getCause());
-        } finally {
-
-        }
-
-        String jsonString = writer.toString();
-
-        try {
-            JSONObject jObject = new JSONObject(jsonString);
-            data = jObject.getJSONArray("episodes");
-
             JSONObject jep = data.getJSONObject(epid);
             JSONArray jpins = jep.getJSONArray("pins");
+
+            System.out.println(jep.toString());
 
             for (int j = 0; j < jpins.length(); j++) {
                 JSONObject jpin = jpins.getJSONObject(j);
@@ -207,29 +198,8 @@ public class MainActivity extends Activity {
                     }
                 });
 
-                Animation flip_part1 = AnimationUtils.loadAnimation(this, R.anim.flip_part1);
-                final Animation flip_part2 = AnimationUtils.loadAnimation(this, R.anim.flip_part2);
-
-                flip_part1.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        int iden = ctx.getResources().getIdentifier("pin_" + cid, "drawable", ctx.getPackageName());
-                        pinButton.setImageResource(iden);
-                        pinButton.startAnimation(flip_part2);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-
-                pinButton.startAnimation(flip_part1);
+                jpin.put("pinButton", pinButton);
+                jpin.put("flipped", false);
             }
 
         } catch (JSONException e) {
@@ -274,6 +244,63 @@ public class MainActivity extends Activity {
             }
         });
         return true;
+    }
+
+    @Override
+    public void onScrollChanged(CAGScrollView scrollView, int x, int y, int oldx, int oldy) {
+        Rect scrollBounds = new Rect();
+        scrollView.getHitRect(scrollBounds);
+
+        try {
+            JSONObject jep = data.getJSONObject(epid);
+            JSONArray jpins = jep.getJSONArray("pins");
+
+            for (int j = 0; j < jpins.length(); j++) {
+                JSONObject jpin = jpins.getJSONObject(j);
+                double pid = jpin.getDouble("pid");
+                final int cid = jpin.getInt("cid");
+                String gender = jpin.getString("gender");
+                final ImageButton pinButton = (ImageButton)jpin.get("pinButton");
+                boolean flipped = jpin.getBoolean("flipped");
+
+                if (pinButton.getGlobalVisibleRect(scrollBounds) && !flipped) {
+                    jpin.put("flipped", true);
+
+                    Animation flip_part1 = AnimationUtils.loadAnimation(this, R.anim.flip_part1);
+                    final Animation flip_part2 = AnimationUtils.loadAnimation(this, R.anim.flip_part2);
+
+                    final Context ctx = this;
+
+                    flip_part1.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            try {
+                                int iden = ctx.getResources().getIdentifier("pin_" + cid, "drawable", ctx.getPackageName());
+                                pinButton.setImageResource(iden);
+                                pinButton.startAnimation(flip_part2);
+                            } catch (Exception e) {
+                                System.out.println(e.getCause());
+                            }
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+
+                        }
+                    });
+
+                    pinButton.startAnimation(flip_part1);
+                }
+            }
+
+        } catch (JSONException e) {
+            System.out.println(e.getCause());
+        }
     }
 }
 
