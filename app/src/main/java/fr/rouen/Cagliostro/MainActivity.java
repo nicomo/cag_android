@@ -6,6 +6,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
@@ -56,13 +57,14 @@ public class MainActivity extends Activity implements ScrollViewListener {
 
     int epid;
     CAGScrollView sv;
-    CAGWebView wv;
+    WebView wv;
     Button next;
     JSONArray data;
     String[] titles;
     String[] subtitles;
     SharedPreferences prefs;
     boolean pinplaced = false;
+    int pinupdated = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +103,7 @@ public class MainActivity extends Activity implements ScrollViewListener {
         subtitle.setText(subtitles[epid]);
         subtitle.setTypeface(clarendon);
 
-        wv = (CAGWebView)findViewById(R.id.webView);
+        wv = (WebView)findViewById(R.id.webView);
         wv.loadUrl("file:///android_asset/www/"+(epid+1)+".html");
 
         VideoView vv=(VideoView)findViewById(R.id.videoView);
@@ -119,8 +121,11 @@ public class MainActivity extends Activity implements ScrollViewListener {
         next.setLineSpacing(0, 1.3f);
         next.setText("Episode "+(epid+1)+"\nA paraitre");
 
-        Timer t = new Timer("refreshButton");
-        t.schedule(_refreshButton, 0, 500);
+        Timer tnb = new Timer("refreshButton");
+        tnb.schedule(_refreshButton, 0, 500);
+
+        Timer twv = new Timer("refreshWebView");
+        twv.schedule(_refreshWebView, 0, 500);
     }
 
     private final TimerTask _refreshButton = new TimerTask() {
@@ -158,6 +163,27 @@ public class MainActivity extends Activity implements ScrollViewListener {
         }
     };
 
+    private final TimerTask _refreshWebView = new TimerTask() {
+        @Override
+        public void run() {
+            int wvh = wv.getHeight();
+            System.out.println(wvh);
+            if (wvh > 0) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        placePins(wv.getHeight());
+                        updatePins();
+                    }
+                });
+            }
+
+            if (pinupdated > 0) {
+                this.cancel();
+            }
+        }
+    };
+
     public void placePins(int wvh) {
 
         if (pinplaced)
@@ -168,8 +194,6 @@ public class MainActivity extends Activity implements ScrollViewListener {
         try {
             JSONObject jep = data.getJSONObject(epid);
             JSONArray jpins = jep.getJSONArray("pins");
-
-            System.out.println(jep.toString());
 
             for (int j = 0; j < jpins.length(); j++) {
                 JSONObject jpin = jpins.getJSONObject(j);
@@ -203,7 +227,7 @@ public class MainActivity extends Activity implements ScrollViewListener {
             }
 
         } catch (JSONException e) {
-            System.out.println(e.getCause());
+            System.out.println(e.getMessage());
         }
 
         pinplaced = true;
@@ -248,14 +272,23 @@ public class MainActivity extends Activity implements ScrollViewListener {
 
     @Override
     public void onScrollChanged(CAGScrollView scrollView, int x, int y, int oldx, int oldy) {
+        updatePins();
+    }
+
+    public void updatePins() {
+
         Rect scrollBounds = new Rect();
-        scrollView.getHitRect(scrollBounds);
+        sv.getHitRect(scrollBounds);
 
         try {
             JSONObject jep = data.getJSONObject(epid);
             JSONArray jpins = jep.getJSONArray("pins");
 
             for (int j = 0; j < jpins.length(); j++) {
+
+                if (pinupdated == jpins.length())
+                    return;
+
                 JSONObject jpin = jpins.getJSONObject(j);
                 double pid = jpin.getDouble("pid");
                 final int cid = jpin.getInt("cid");
@@ -283,8 +316,9 @@ public class MainActivity extends Activity implements ScrollViewListener {
                                 int iden = ctx.getResources().getIdentifier("pin_" + cid, "drawable", ctx.getPackageName());
                                 pinButton.setImageResource(iden);
                                 pinButton.startAnimation(flip_part2);
+                                pinupdated++;
                             } catch (Exception e) {
-                                System.out.println(e.getCause());
+                                System.out.println(e.getMessage());
                             }
                         }
 
@@ -299,7 +333,7 @@ public class MainActivity extends Activity implements ScrollViewListener {
             }
 
         } catch (JSONException e) {
-            System.out.println(e.getCause());
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -62,7 +62,7 @@
                 android:layout_width="0dip"
                 android:layout_weight="1" />
 
-            <fr.rouen.Cagliostro.CAGWebView
+            <WebView
                 android:background="#f5efe2"
                 android:layout_height="wrap_content"
                 android:id="@+id/webView"

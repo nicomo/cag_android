@@ -11,12 +11,13 @@ public class CAGWebView extends WebView {
         super(context, attrs);
     }
 
-    @Override
+    /*@Override
     public void invalidate() {
         super.invalidate();
 
         if (getHeight() > 0) {
             ((MainActivity)getContext()).placePins(getHeight());
+            ((MainActivity)getContext()).updatePins();
         }
-    }
+    }*/
 }
