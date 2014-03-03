@@ -11,8 +11,22 @@
         "title": "A l'ombre de l'Aiguille",
         "subtitle": "Paru le 11 décembre 1923",
         "pins": [
-            { "pid": 0.00, "cid":  3, "gender":   "Male" },
-            { "pid": 0.10, "cid":  4, "gender":   "Male" }
+            { "pid": 0.875, "cid":  3, "gender":   "Male" },
+            { "pid": 0.895, "cid":  4, "gender":   "Male" }
+        ]
+    },
+    {
+        "title": "Joséphine Balsamo, née en 1788…",
+        "subtitle": "Paru le 12 décembre 1923",
+        "pins": [
+            { "pid": 0.180, "cid":  5, "gender":   "Male" },
+            { "pid": 0.195, "cid":  6, "gender":   "Male" },
+            { "pid": 0.210, "cid":  7, "gender":   "Male" },
+            { "pid": 0.230, "cid":  8, "gender":   "Male" },
+            { "pid": 0.300, "cid":  9, "gender":   "Male" },
+            { "pid": 0.595, "cid": 10, "gender":   "Male" },
+            { "pid": 0.610, "cid": 11, "gender":   "Male" },
+            { "pid": 0.985, "cid": 12, "gender": "Female" },
         ]
     }
 ] }
