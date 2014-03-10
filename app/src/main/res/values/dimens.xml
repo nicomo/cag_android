@@ -1,5 +1,8 @@
 <resources>
 
     <dimen name="nine_margin">88dp</dimen>
+    <dimen name="header_height">400dp</dimen>
+    <dimen name="title_size">50sp</dimen>
+    <dimen name="subtitle_size">30sp</dimen>
 
 </resources>
