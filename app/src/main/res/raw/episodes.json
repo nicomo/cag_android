@@ -75,8 +75,8 @@
          "title": "Policiers et gendarmes",
          "subtitle": "Paru le 24 décembre 1923",
          "pins": [
-              { "pid": 0.620, "cid":  14, "gender":   "Female" },
-              { "pid": 0.920, "cid":  17, "gender":   "Male" }
+              { "pid": 0.615, "cid":  14, "gender":   "Female" },
+              { "pid": 0.840, "cid":  17, "gender":   "Male" }
          ]
     },
     {
