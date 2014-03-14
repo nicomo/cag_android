@@ -31,25 +31,20 @@ public class CharacterCardAdapter extends BaseAdapter {
 
         View v;
 
-        if (convertView == null) {
-            v = new View(context);
-            v = inflater.inflate(R.layout.character_card, null);
+        v = new View(context);
+        v = inflater.inflate(R.layout.character_card, null);
 
-            try {
-                JSONObject character = characters.getJSONObject(position);
+        try {
+            JSONObject character = characters.getJSONObject(position);
 
-                TextView name = (TextView) v.findViewById(R.id.name);
-                name.setText(character.getString("name"));
+            TextView name = (TextView) v.findViewById(R.id.name);
+            name.setText(character.getString("name"));
 
-                ImageView avatar = (ImageView) v.findViewById(R.id.avatar);
-                int iden = context.getResources().getIdentifier("pin_" + (position+1), "drawable", context.getPackageName());
-                avatar.setImageResource(iden);
-            } catch (JSONException e) {
-                System.out.println(e.getMessage());
-            }
-
-        } else {
-            v = (View) convertView;
+            ImageView avatar = (ImageView) v.findViewById(R.id.avatar);
+            int iden = context.getResources().getIdentifier("pin_" + (position+1), "drawable", context.getPackageName());
+            avatar.setImageResource(iden);
+        } catch (JSONException e) {
+            System.out.println(e.getMessage());
         }
 
         return v;
