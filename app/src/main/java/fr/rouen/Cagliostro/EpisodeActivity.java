@@ -31,7 +31,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Date;
 
-public class MainActivity extends Activity implements ScrollViewListener {
+public class EpisodeActivity extends Activity implements ScrollViewListener {
 
     int epid;
     CAGScrollView sv;
@@ -43,6 +43,8 @@ public class MainActivity extends Activity implements ScrollViewListener {
     SharedPreferences prefs;
     boolean pinplaced = false;
     int pinupdated = 0;
+    Timer tnb;
+    Timer twv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,7 @@ public class MainActivity extends Activity implements ScrollViewListener {
         subtitle.setTypeface(clarendon);
 
         wv = (WebView)findViewById(R.id.webView);
+        wv.setVerticalScrollBarEnabled(false);
         wv.loadUrl("file:///android_asset/www/"+(epid+1)+".html");
 
         VideoView vv=(VideoView)findViewById(R.id.videoView);
@@ -99,10 +102,10 @@ public class MainActivity extends Activity implements ScrollViewListener {
         next.setLineSpacing(0, 1.3f);
         next.setText("Episode "+(epid+1)+"\nA paraitre");
 
-        Timer tnb = new Timer("refreshButton");
+        tnb = new Timer("refreshButton");
         tnb.schedule(_refreshButton, 0, 500);
 
-        Timer twv = new Timer("refreshWebView");
+        twv = new Timer("refreshWebView");
         twv.schedule(_refreshWebView, 0, 500);
     }
 
@@ -219,7 +222,7 @@ public class MainActivity extends Activity implements ScrollViewListener {
     }
 
     public void nextEpisode(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, EpisodeActivity.class);
         intent.putExtra("epid", epid+1);
         startActivity(intent);
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
@@ -228,10 +231,10 @@ public class MainActivity extends Activity implements ScrollViewListener {
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("epid", epid-1);
-        startActivity(intent);
+        super.onBackPressed();
+        //Intent intent = new Intent(this, EpisodeActivity.class);
+        //intent.putExtra("epid", epid-1);
+        //startActivity(intent);
         overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
         finish();
     }
@@ -244,8 +247,8 @@ public class MainActivity extends Activity implements ScrollViewListener {
         buttonSettings.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
 
             public boolean onMenuItemClick(MenuItem item) {
-                Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
-                MainActivity.this.startActivity(settingsIntent);
+                Intent settingsIntent = new Intent(EpisodeActivity.this, SettingsActivity.class);
+                EpisodeActivity.this.startActivity(settingsIntent);
                 return false;
             }
         });

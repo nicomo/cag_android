@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="fr.rouen.Cagliostro.MainActivity"
+            android:name=".EpisodeActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>

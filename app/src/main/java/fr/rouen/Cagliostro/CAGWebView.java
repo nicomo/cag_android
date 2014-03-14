@@ -16,8 +16,8 @@ public class CAGWebView extends WebView {
         super.invalidate();
 
         if (getHeight() > 0) {
-            ((MainActivity)getContext()).placePins(getHeight());
-            ((MainActivity)getContext()).updatePins();
+            ((EpisodeActivity)getContext()).placePins(getHeight());
+            ((EpisodeActivity)getContext()).updatePins();
         }
     }*/
 }

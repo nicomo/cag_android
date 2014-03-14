@@ -10,12 +10,9 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.etsy.android.grid.StaggeredGridView;
 
@@ -64,7 +61,7 @@ public class HomeActivity extends Activity {
         episodesgrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Intent intent = new Intent(context, MainActivity.class);
+                Intent intent = new Intent(context, EpisodeActivity.class);
                 intent.putExtra("epid", position);
                 startActivity(intent);
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
