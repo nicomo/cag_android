@@ -55,34 +55,50 @@
             android:textColor="#151313"
             android:paddingBottom="10dp" />
 
-        <View
-            android:layout_width="350dp"
-            android:layout_height="1dp"
-            android:background="#beb2b0"
-            android:layout_gravity="center_horizontal"/>
+        <com.etsy.android.grid.StaggeredGridView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/episodesgrid"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:item_margin="10dp"
+            app:column_count="6" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="TOUS LES EPISODES"
-            android:id="@+id/expander1"
-            android:layout_gravity="center_horizontal"
-            android:textSize="20sp"
-            android:paddingTop="20dp"
-            android:textColor="#151313" />
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/expander_icon1"
-            android:src="@drawable/expand_down"
-            android:layout_gravity="center" />
-
-        <View
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#beb2b0"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="toggleEpisodes"
+            android:id="@+id/ep_expander">
+            <View
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:background="#beb2b0"
+                android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="TOUS LES EPISODES"
+                android:id="@+id/ep_expander_label"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20sp"
+                android:paddingTop="20dp"
+                android:textColor="#151313" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/ep_expander_icon"
+                android:src="@drawable/expand_down"
+                android:layout_gravity="center" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#beb2b0"/>
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -93,8 +109,8 @@
             android:layout_gravity="center_horizontal"
             android:textSize="45sp"
             android:textColor="#151313"
-            android:paddingTop="20dp"
-            android:paddingBottom="10dp" />
+            android:paddingTop="30dp"
+            android:paddingBottom="20dp" />
 
         <ImageView
             android:layout_width="fill_parent"
@@ -117,8 +133,8 @@
             android:layout_gravity="center_horizontal"
             android:textSize="45sp"
             android:textColor="#151313"
-            android:paddingTop="20dp"
-            android:paddingBottom="10dp" />
+            android:paddingTop="30dp"
+            android:paddingBottom="20dp" />
 
         <GridView
             android:id="@+id/charactersgrid"

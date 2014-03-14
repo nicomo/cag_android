@@ -17,11 +17,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.etsy.android.grid.StaggeredGridView;
+
 import org.json.JSONArray;
 
 public class HomeActivity extends Activity {
 
     JSONArray characters;
+    JSONArray episodes;
     boolean charExpanded = false;
 
     @Override
@@ -30,6 +33,7 @@ public class HomeActivity extends Activity {
 
         CAGApp appState = ((CAGApp)getApplicationContext());
         characters = appState.getCharacters();
+        episodes = appState.getEpisodes();
 
         setContentView(R.layout.home);
 
@@ -46,10 +50,14 @@ public class HomeActivity extends Activity {
         title.setTypeface(clarendon);
 
         TextView characterstitle = (TextView)findViewById(R.id.characterstitle);
-        characterstitle.setTypeface(georgia);
+        characterstitle.setTypeface(clarendon);
 
         TextView placestitle = (TextView)findViewById(R.id.placestitle);
-        placestitle.setTypeface(georgia);
+        placestitle.setTypeface(clarendon);
+
+        StaggeredGridView episodesgrid = (StaggeredGridView) findViewById(R.id.episodesgrid);
+
+        episodesgrid.setAdapter(new EpisodeCardAdapter(this, episodes));
 
         GridView charactersgrid = (GridView)findViewById(R.id.charactersgrid);
 
@@ -80,6 +88,11 @@ public class HomeActivity extends Activity {
         });
 
         charactersgrid.setAdapter(new CharacterCardAdapter(this, characters));
+    }
+
+    public void toggleEpisodes(View view) {
+
+
     }
 
     public void toggleCharacters(View view) {
