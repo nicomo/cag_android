@@ -3,6 +3,8 @@
 /.idea/.name
 /.idea/misc.xml
 cag_android.iml
+.idea/libraries/library_1_0_4.xml
+.idea/libraries/support_v4_19_0_1.xml
 
 #
 # standard gitignore for android, see https://github.com/github/gitignore/blob/master/Android.gitignore
