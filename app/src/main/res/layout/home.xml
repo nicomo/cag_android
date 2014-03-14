@@ -126,35 +126,46 @@
             android:gravity="center"
             android:stretchMode="columnWidth"
             android:layout_width="fill_parent"
-            android:layout_height="300dp" >
+            android:horizontalSpacing="10dp"
+            android:padding="10dp"
+            android:layout_height="320dp" >
         </GridView>
 
-        <View
-            android:layout_width="350dp"
-            android:layout_height="1dp"
-            android:background="#beb2b0"
-            android:layout_gravity="center_horizontal"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="TOUS LES PERSONNAGES"
-            android:id="@+id/expander2"
-            android:layout_gravity="center_horizontal"
-            android:textSize="20sp"
-            android:paddingTop="20dp"
-            android:textColor="#151313" />
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/expander_icon2"
-            android:src="@drawable/expand_down"
-            android:layout_gravity="center" /><View
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#beb2b0"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="toggleCharacters"
+            android:id="@+id/char_expander">
+            <View
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:background="#beb2b0"
+                android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="TOUS LES PERSONNAGES"
+                android:id="@+id/char_expander_label"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20sp"
+                android:paddingTop="20dp"
+                android:textColor="#151313" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/char_expander_icon"
+                android:src="@drawable/expand_down"
+                android:layout_gravity="center" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#beb2b0"/>
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>
