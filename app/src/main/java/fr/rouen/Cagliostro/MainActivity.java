@@ -1,56 +1,34 @@
 package fr.rouen.Cagliostro;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.util.AttributeSet;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.content.Intent;
-import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.MediaController;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.prefs.Preferences;
 import java.util.Date;
 
 public class MainActivity extends Activity implements ScrollViewListener {
@@ -59,7 +37,7 @@ public class MainActivity extends Activity implements ScrollViewListener {
     CAGScrollView sv;
     WebView wv;
     Button next;
-    JSONArray data;
+    JSONArray episodes;
     String[] titles;
     String[] subtitles;
     SharedPreferences prefs;
@@ -74,7 +52,7 @@ public class MainActivity extends Activity implements ScrollViewListener {
         epid = intent.getIntExtra("epid", 0);
 
         CAGApp appState = ((CAGApp)getApplicationContext());
-        data = appState.getJSONArray();
+        episodes = appState.getEpisodes();
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         long timestamp = prefs.getLong("timestamp", 0);
@@ -192,7 +170,7 @@ public class MainActivity extends Activity implements ScrollViewListener {
         System.out.println("placePins for " + wvh);
 
         try {
-            JSONObject jep = data.getJSONObject(epid);
+            JSONObject jep = episodes.getJSONObject(epid);
             JSONArray jpins = jep.getJSONArray("pins");
 
             for (int j = 0; j < jpins.length(); j++) {
@@ -285,7 +263,7 @@ public class MainActivity extends Activity implements ScrollViewListener {
         sv.getHitRect(scrollBounds);
 
         try {
-            JSONObject jep = data.getJSONObject(epid);
+            JSONObject jep = episodes.getJSONObject(epid);
             JSONArray jpins = jep.getJSONArray("pins");
 
             for (int j = 0; j < jpins.length(); j++) {

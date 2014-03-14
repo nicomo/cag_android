@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5efe2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="LE JOURNAL"
+            android:id="@+id/journal"
+            android:layout_gravity="center_horizontal"
+            android:textSize="60sp"
+            android:paddingTop="30dp"
+            android:textColor="#3E321E"
+            android:paddingBottom="10dp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#beb2b0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Maurice Leblanc"
+            android:id="@+id/author"
+            android:layout_gravity="center_horizontal"
+            android:textSize="40sp"
+            android:paddingTop="20dp"
+            android:textColor="#151313" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/separator"
+            android:src="@drawable/separator"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/app_name"
+            android:id="@+id/title"
+            android:layout_gravity="center_horizontal"
+            android:textSize="45sp"
+            android:textColor="#151313"
+            android:paddingBottom="10dp" />
+
+        <View
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:background="#beb2b0"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="TOUS LES EPISODES"
+            android:id="@+id/expander1"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:paddingTop="20dp"
+            android:textColor="#151313" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/expander_icon1"
+            android:src="@drawable/expand_down"
+            android:layout_gravity="center" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#beb2b0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Les lieux du roman"
+            android:id="@+id/placestitle"
+            android:layout_gravity="center_horizontal"
+            android:textSize="45sp"
+            android:textColor="#151313"
+            android:paddingTop="20dp"
+            android:paddingBottom="10dp" />
+
+        <!--<ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="400dp"
+            android:id="@+id/map"
+            android:src="@drawable/map"
+            android:adjustViewBounds="false" />-->
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#beb2b0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Les personnages"
+            android:id="@+id/characterstitle"
+            android:layout_gravity="center_horizontal"
+            android:textSize="45sp"
+            android:textColor="#151313"
+            android:paddingTop="20dp"
+            android:paddingBottom="10dp" />
+
+        <GridView
+            android:id="@+id/charactersgrid"
+            android:numColumns="3"
+            android:gravity="center"
+            android:stretchMode="columnWidth"
+            android:layout_width="fill_parent"
+            android:layout_height="300dp" >
+        </GridView>
+
+        <View
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:background="#beb2b0"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="TOUS LES PERSONNAGES"
+            android:id="@+id/expander2"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:paddingTop="20dp"
+            android:textColor="#151313" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/expander_icon2"
+            android:src="@drawable/expand_down"
+            android:layout_gravity="center" /><View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#beb2b0"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -14,7 +14,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 
 public class CAGApp extends Application {
-    public JSONArray getJSONArray() {
+    public JSONArray getEpisodes() {
         InputStream is = getResources().openRawResource(R.raw.episodes);
         Writer writer = new StringWriter();
         char[] buffer = new char[1024];
@@ -37,6 +37,36 @@ public class CAGApp extends Application {
         try {
             JSONObject jObject = new JSONObject(jsonString);
             jsonArray = jObject.getJSONArray("episodes");
+        } catch (JSONException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return jsonArray;
+    }
+
+    public JSONArray getCharacters() {
+        InputStream is = getResources().openRawResource(R.raw.characters);
+        Writer writer = new StringWriter();
+        char[] buffer = new char[1024];
+        try {
+            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            int n;
+            while ((n = reader.read(buffer)) != -1) {
+                writer.write(buffer, 0, n);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+
+        }
+
+        String jsonString = writer.toString();
+
+        JSONArray jsonArray = new JSONArray();
+
+        try {
+            JSONObject jObject = new JSONObject(jsonString);
+            jsonArray = jObject.getJSONArray("characters");
         } catch (JSONException e) {
             System.out.println(e.getMessage());
         }
