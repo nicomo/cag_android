@@ -52,7 +52,7 @@ public class EpisodeCardAdapter extends BaseAdapter {
             JSONObject character = episodes.getJSONObject(position);
             int iden = context.getResources().getIdentifier("homecard_" + (position+1), "drawable", context.getPackageName());
             vh.photo.setImageResource(iden);
-            vh.title.setText(character.getString("title"));
+            vh.title.setText((position + 1) + ". " + character.getString("title"));
         } catch (JSONException e) {
             System.out.println(e.getMessage());
         }

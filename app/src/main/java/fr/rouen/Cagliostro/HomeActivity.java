@@ -59,6 +59,18 @@ public class HomeActivity extends Activity {
 
         episodesgrid.setAdapter(new EpisodeCardAdapter(this, episodes));
 
+        final Context context = this;
+
+        episodesgrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.putExtra("epid", position);
+                startActivity(intent);
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+            }
+        });
+
         GridView charactersgrid = (GridView)findViewById(R.id.charactersgrid);
 
         charactersgrid.setOnTouchListener(new View.OnTouchListener(){
@@ -73,17 +85,13 @@ public class HomeActivity extends Activity {
 
         });
 
-        final Context context = this;
-
         charactersgrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-
                 Intent intent = new Intent(context, CharacterActivity.class);
                 intent.putExtra("cid", position);
                 startActivity(intent);
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-
             }
         });
 
