@@ -3,8 +3,10 @@ package fr.rouen.Cagliostro;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -12,16 +14,20 @@ import android.view.animation.Transformation;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.etsy.android.grid.StaggeredGridView;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class HomeActivity extends Activity {
 
     JSONArray characters;
     JSONArray episodes;
+    boolean episodesExpanded = false;
     boolean charExpanded = false;
 
     @Override
@@ -96,12 +102,97 @@ public class HomeActivity extends Activity {
     }
 
     public void toggleEpisodes(View view) {
+        final StaggeredGridView v = (StaggeredGridView)findViewById(R.id.episodesgrid);
+        final double d = v.getContext().getResources().getDisplayMetrics().density;
 
+        if (episodesExpanded == false) {
+            final int initsize = 480;
+            final int targetsize = 1430;
 
+            Animation a = new Animation() {
+                @Override
+                protected void applyTransformation(float interpolatedTime, Transformation t) {
+                    v.getLayoutParams().height = interpolatedTime == 1
+                            ? (int) (targetsize * d)
+                            : (int) ((initsize * d) + ((targetsize - initsize) * d * interpolatedTime));
+                    v.requestLayout();
+                }
+
+                @Override
+                public boolean willChangeBounds() {
+                    return true;
+                }
+            };
+
+            a.setAnimationListener(new Animation.AnimationListener(){
+                @Override
+                public void onAnimationStart(Animation arg0) {
+                }
+                @Override
+                public void onAnimationRepeat(Animation arg0) {
+                }
+                @Override
+                public void onAnimationEnd(Animation arg0) {
+                    TextView t = (TextView) findViewById(R.id.ep_expander_label);
+                    t.setText("CACHER LES EPISODES");
+
+                    ImageView i = (ImageView) findViewById(R.id.ep_expander_icon);
+                    i.setImageResource(R.drawable.expand_up);
+
+                    episodesExpanded = true;
+                }
+            });
+
+            // 1dp/ms
+            a.setDuration((int) (500 / d));
+            v.startAnimation(a);
+        }
+        else
+        {
+            final int initsize = 1430;
+            final int targetsize = 480;
+
+            Animation a = new Animation() {
+                @Override
+                protected void applyTransformation(float interpolatedTime, Transformation t) {
+                    v.getLayoutParams().height = interpolatedTime == 1
+                            ? (int) (targetsize * d)
+                            : (int) ((initsize * d) + ((targetsize - initsize) * d * interpolatedTime));
+                    v.requestLayout();
+                }
+
+                @Override
+                public boolean willChangeBounds() {
+                    return true;
+                }
+            };
+
+            a.setAnimationListener(new Animation.AnimationListener(){
+                @Override
+                public void onAnimationStart(Animation arg0) {
+                }
+                @Override
+                public void onAnimationRepeat(Animation arg0) {
+                }
+                @Override
+                public void onAnimationEnd(Animation arg0) {
+                    TextView t = (TextView) findViewById(R.id.ep_expander_label);
+                    t.setText("TOUS LES EPISODES");
+
+                    ImageView i = (ImageView) findViewById(R.id.ep_expander_icon);
+                    i.setImageResource(R.drawable.expand_down);
+
+                    episodesExpanded = false;
+                }
+            });
+
+            // 1dp/ms
+            a.setDuration((int) (500 / d));
+            v.startAnimation(a);
+        }
     }
 
     public void toggleCharacters(View view) {
-
         final GridView v = (GridView)findViewById(R.id.charactersgrid);
         final double d = v.getContext().getResources().getDisplayMetrics().density;
 
@@ -144,7 +235,7 @@ public class HomeActivity extends Activity {
             });
 
             // 1dp/ms
-            a.setDuration((int) (500 / v.getContext().getResources().getDisplayMetrics().density));
+            a.setDuration((int) (500 / d));
             v.startAnimation(a);
         }
         else
@@ -187,7 +278,7 @@ public class HomeActivity extends Activity {
             });
 
             // 1dp/ms
-            a.setDuration((int) (500 / v.getContext().getResources().getDisplayMetrics().density));
+            a.setDuration((int) (500 / d));
             v.startAnimation(a);
         }
     }
