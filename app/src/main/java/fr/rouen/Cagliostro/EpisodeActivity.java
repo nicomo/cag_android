@@ -10,6 +10,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -319,6 +320,19 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
 
         } catch (JSONException e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // adds last episode syspref; nicomo
+        int lastep = prefs.getInt("lastep", 0);
+        if (lastep < epid) {
+            SharedPreferences.Editor editorPref = prefs.edit();
+            editorPref.putInt("lastep", epid);
+            editorPref.commit();
         }
     }
 }
