@@ -328,12 +328,14 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
         super.onPause();
 
         // adds last episode syspref; nicomo
-        int lastep = prefs.getInt("lastep", 0);
-        if (lastep < epid) {
+        int lastEp = prefs.getInt("lasteEp", 0);
+        if (lastEp < epid) {
             SharedPreferences.Editor editorPref = prefs.edit();
-            editorPref.putInt("lastep", epid);
+            editorPref.putInt("lastEp", epid);
             editorPref.commit();
         }
+        lastEp = prefs.getInt("lastEp", 0);
+        Log.i("nicomo", "current lastEp is " + lastEp);
     }
 }
 

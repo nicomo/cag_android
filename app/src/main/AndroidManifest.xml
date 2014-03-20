@@ -3,37 +3,41 @@
     package="fr.rouen.Cagliostro"
     android:versionCode="1"
     android:versionName="0.1" >
-    
-    <uses-sdk android:minSdkVersion="14"
-          android:targetSdkVersion="19" />
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    
-    <supports-screens android:smallScreens="false"
-                      android:normalScreens="false"
-                      android:largeScreens="true"
-                      android:xlargeScreens="true"
-                      android:requiresSmallestWidthDp="600" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="false"
+        android:requiresSmallestWidthDp="600"
+        android:smallScreens="false"
+        android:xlargeScreens="true" />
 
     <application
         android:name="fr.rouen.Cagliostro.CAGApp"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:hardwareAccelerated="true" >
+        android:theme="@style/AppTheme" >
         <activity
             android:name="fr.rouen.Cagliostro.HomeActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".EpisodeActivity"
+            android:name="fr.rouen.Cagliostro.EpisodeActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
@@ -43,9 +47,16 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name="fr.rouen.Cagliostro.SettingsActivity"
             android:label="@string/settings_title" >
         </activity>
+
+        <receiver android:name="fr.rouen.Cagliostro.Alarm">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

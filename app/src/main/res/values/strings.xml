@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">La Comtesse de Cagliostro</string>
-
     <string name="settings_title">Réglages</string>
     <string name="delayed_eps_pref_title">Episodes en différé</string>
     <string name="delayed_eps_pref_summary">En désactivant cette option, vous aurez accès à tous les épisodes du roman sans delai.</string>
@@ -61,7 +60,6 @@
         <item>Raoul triomphe ou la défaite du vice</item>
         <item>Épilogue</item>
     </string-array>
-
     <string-array name="subtitles">
         <item>Paru le 10 décembre 1923</item>
         <item>Paru le 11 décembre 1923</item>
@@ -116,5 +114,9 @@
         <item>Paru le 29 janvier 1924</item>
         <item>Paru le 30 janvier 1924</item>
     </string-array>
+
+    <string name="title_activity_notifications">NotificationsActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
