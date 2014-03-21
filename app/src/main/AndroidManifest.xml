@@ -57,6 +57,12 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".Notification">
+            <intent-filter>
+                <action android:name="" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

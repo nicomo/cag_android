@@ -36,6 +36,9 @@ public class Notification extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+        Log.i(TAG, "entering Notification onReceive");
+
+
         // set time to 6AM
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 6);

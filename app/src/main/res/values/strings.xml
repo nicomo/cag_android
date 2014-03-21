@@ -115,8 +115,4 @@
         <item>Paru le 30 janvier 1924</item>
     </string-array>
 
-    <string name="title_activity_notifications">NotificationsActivity</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-
 </resources>

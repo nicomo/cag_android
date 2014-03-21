@@ -2,8 +2,7 @@ package fr.rouen.Cagliostro;
 
 
 import android.app.AlarmManager;
-import android.app.Notification;
-import android.app.NotificationManager;
+//import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -61,13 +60,14 @@ public class Alarm extends BroadcastReceiver {
                 calendar.set(Calendar.SECOND, 0);
 
                 // Get the AlarmManager Service
-                mAlarmManager = (AlarmManager) context.getSystemService(context.ALARM_SERVICE);
+                mAlarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+
+
+                // TODO something wrong with the context of this intent, probably - nicomo
 
                 // Create PendingIntent to start the AlarmNotificationReceiver
-                mNotificationReceiverIntent = new Intent(context,
-                        Notification.class);
-                mNotificationReceiverPendingIntent = PendingIntent.getBroadcast(
-                        context, 0, mNotificationReceiverIntent, 0);
+                mNotificationReceiverIntent = new Intent(context, Notification.class);
+                mNotificationReceiverPendingIntent = PendingIntent.getBroadcast(context, 1, mNotificationReceiverIntent, 0);
 
                 // set alarm
                 mAlarmManager.set(AlarmManager.RTC,
@@ -75,10 +75,9 @@ public class Alarm extends BroadcastReceiver {
                         mNotificationReceiverPendingIntent);
                 //calendar.getTimeInMillis(),
 
-                // check to see if alarm has been set
-                boolean alarmUp = (PendingIntent.getBroadcast(context, 0,
-                        new Intent("fr.rouen.Cagliostro."),
-                        PendingIntent.FLAG_NO_CREATE) != null);
+                if (mAlarmManager != null) {
+                    Log.i(TAG,"mAlarmManager not null");
+                }
 
             }
 
