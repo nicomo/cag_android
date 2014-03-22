@@ -36,16 +36,6 @@ public class Notification extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        Log.i(TAG, "entering Notification onReceive");
-
-
-        // set time to 6AM
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 6);
-        calendar.set(Calendar.MINUTE, 0);
-        calendar.set(Calendar.SECOND, 0);
-
-
         // get preferences
         prefs = PreferenceManager.getDefaultSharedPreferences(context);
         delayedEps = prefs.getBoolean("delayedEps", true);
@@ -58,7 +48,7 @@ public class Notification extends BroadcastReceiver {
             // create intent
             mNotificationIntent = new Intent(context, EpisodeActivity.class);
             // the episode to be opened passed as Extra
-            mNotificationIntent.putExtra("epid", lastEp);
+            mNotificationIntent.putExtra("epid", lastEp+1);
             // wrap intent in a pending intent
             mContentIntent = PendingIntent.getActivity(context, 0,
                     mNotificationIntent, Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -76,10 +66,6 @@ public class Notification extends BroadcastReceiver {
             mNotificationManager.notify(MY_NOTIFICATION_ID,
                     notificationBuilder.build());
 
-            Log.i(TAG,"Sending notification"); // TODO remove
-
         }
-
     }
-
 }

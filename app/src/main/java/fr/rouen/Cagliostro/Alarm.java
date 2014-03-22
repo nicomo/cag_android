@@ -22,7 +22,9 @@ public class Alarm extends BroadcastReceiver {
     private SharedPreferences prefs;
     private long timestamp;
     private Boolean delayedEps;
-    private int lastEp;
+    private int lastEp; // last ep read
+    private int lastEpNotified; // last episode to have been notified
+    private int epToBeNotified; // farthest episode available;
 
     // AlarmManager and intents to be used in the alarm
     private AlarmManager mAlarmManager;
@@ -41,18 +43,29 @@ public class Alarm extends BroadcastReceiver {
             timestamp = prefs.getLong("timestamp", 0);
             delayedEps = prefs.getBoolean("delayedEps", true);
             lastEp = prefs.getInt("lastEp", 0);
+            lastEpNotified = prefs.getInt("lastEpNotified", 0);
 
             // compare timestamp with now to know if we have new episodes
             Date now = new Date();
             final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
-            Log.i(TAG,"minElapsed is " + (int) minElapsed); // TODO remove
-            Log.i(TAG,"lastep is " + lastEp);
+            if (minElapsed > 52) {
+                epToBeNotified = 52;
+            } else {
+                epToBeNotified = (int) minElapsed;
+            }
+
+            Log.i(TAG, "minElapsed is " + (int) minElapsed);
+            Log.i(TAG, "lastep is " + lastEp);
             Log.i(TAG, "delayedEps is " + delayedEps);
+            Log.i(TAG, "lastEpNotified is " + lastEpNotified);
+            Log.i(TAG, "epToBeNotified is " + epToBeNotified);
 
-            // if the episodes pref is on, and this is not the 1st episode
-            if (delayedEps && (lastEp > 0) && (lastEp < (int) minElapsed)) {
+            // if the episodes pref is on,
+            // this is not the 1st episode
+            // there is new episodes to display
+            // those episodes have not been notified yet
+            if (delayedEps && (lastEp > 0) && (lastEp < (int) minElapsed) && (lastEpNotified < epToBeNotified)) {
 
-                Log.i(TAG, "entered if delayedEps etc...");
                 // set time to 6AM
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(Calendar.HOUR_OF_DAY, 6);
@@ -62,22 +75,19 @@ public class Alarm extends BroadcastReceiver {
                 // Get the AlarmManager Service
                 mAlarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
-
-                // TODO something wrong with the context of this intent, probably - nicomo
-
                 // Create PendingIntent to start the AlarmNotificationReceiver
                 mNotificationReceiverIntent = new Intent(context, Notification.class);
                 mNotificationReceiverPendingIntent = PendingIntent.getBroadcast(context, 1, mNotificationReceiverIntent, 0);
 
                 // set alarm
                 mAlarmManager.set(AlarmManager.RTC,
-                        System.currentTimeMillis(),
+                        calendar.getTimeInMillis(),
                         mNotificationReceiverPendingIntent);
-                //calendar.getTimeInMillis(),
 
-                if (mAlarmManager != null) {
-                    Log.i(TAG,"mAlarmManager not null");
-                }
+                // update lastEpNotified
+                SharedPreferences.Editor editorPref = prefs.edit();
+                editorPref.putInt("lastEpNotified", epToBeNotified);
+                editorPref.commit();
 
             }
 
