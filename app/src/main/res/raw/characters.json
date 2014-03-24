@@ -2,161 +2,161 @@
 	{
 		"name": "Raoul d’Andrésy",
 		"gender": "Male",
-		"epid": 0
+		"epid": "0"
 	},
     {
 		"name": "Clarisse d’Étigues",
 		"gender": "Female",
-		"epid": 0
+		"epid": "0"
 	},
     {
 		"name": "Baron Godefroy d’Étigues",
 		"gender": "Male",
-		"epid": 1
+		"epid": "1"
 	},
     {
 		"name": "Comte Oscar de Bennetot",
 		"gender": "Male",
-		"epid": 1
+		"epid": "1"
 	},
     {
 		"name": "Marquis de Rolleville",
 		"gender": "Male",
-		"epid": 2,
+		"epid": "2"
 	},
     {
 		"name": "Mathieu de la Vaupalière",
 		"gender": "Male",
-		"epid": 2,
+		"epid": "2"
 	},
     {
 		"name": "d’Auppegard",
 		"gender": "Male",
-		"epid", 2
+		"epid": "2"
 	},
     {
 		"name": "Beaumagnan",
 		"gender": "Male",
-		"epid: 2
+		"epid": "2"
 	},
     {
 		"name": "prince d’Arcole",
 		"gender": "Male",
-		"epid": 2
+		"epid": "2"
 	},
     {
 		"name": "D’Ormont",
 		"gender": "Male",
-		"epid": 2
+		"epid": "2"
 	},
     {
 		"name": "Roux d’Estiers",
 		"gender": "Male",
-		"epid": 2
+		"epid": "2"
 	},
     {
 		"name": "Joséphine Balsamo",
 		"gender": "Female",
-		"epid": 2
+		"epid": "2"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-		"epid": 51
+		"epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	},
     {
 		"name": "Anonyme",
 		"gender": "Male",
-        "epid": 51
+        "epid": "51"
 	}
 ] }
