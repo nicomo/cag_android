@@ -39,8 +39,9 @@ public class HomeActivity extends Activity {
     boolean episodesExpanded = false;
     boolean charExpanded = false;
     SharedPreferences prefs;
-    Timer tep;
+    Timer timer;
     EpisodeCardAdapter eca;
+    CharacterCardAdapter cca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,8 @@ public class HomeActivity extends Activity {
             editorPref.putLong("timestamp", now.getTime());
             editorPref.commit();
         }
+        Date now = new Date();
+        final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
         final Boolean delayedEps = prefs.getBoolean("delayedEps", true);
 
         setContentView(R.layout.home);
@@ -89,8 +92,6 @@ public class HomeActivity extends Activity {
         episodesgrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Date now = new Date();
-                final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
                 if (position <= minElapsed || ! delayedEps) {
                     Intent intent = new Intent(context, EpisodeActivity.class);
                     intent.putExtra("epid", position);
@@ -103,7 +104,6 @@ public class HomeActivity extends Activity {
         GridView charactersgrid = (GridView)findViewById(R.id.charactersgrid);
 
         charactersgrid.setOnTouchListener(new View.OnTouchListener(){
-
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_MOVE){
@@ -111,32 +111,56 @@ public class HomeActivity extends Activity {
                 }
                 return false;
             }
-
         });
 
         charactersgrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Intent intent = new Intent(context, CharacterActivity.class);
-                intent.putExtra("cid", position);
-                startActivity(intent);
-                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                if (published(position)) {
+                    Intent intent = new Intent(context, CharacterActivity.class);
+                    intent.putExtra("cid", position);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                }
             }
         });
+        cca = new CharacterCardAdapter(this, characters);
+        charactersgrid.setAdapter(cca);
 
-        charactersgrid.setAdapter(new CharacterCardAdapter(this, characters));
-
-        tep = new Timer("refreshEpisodes");
-        tep.schedule(_refreshEpisodes, 0, 2000);
+        timer = new Timer("refreshEpisodesAndCharacters");
+        timer.schedule(_refreshEpisodesAndCharacters, 0, 2000);
     }
 
-    private final TimerTask _refreshEpisodes = new TimerTask() {
+    public boolean published(int cid) {
+        long timestamp = this.prefs.getLong("timestamp", 0);
+        Boolean delayedEps = this.prefs.getBoolean("delayedEps", true);
+        Date now = new Date();
+        final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+
+        return ! delayedEps || epidforcid(cid) < minElapsed;
+    }
+
+    public int epidforcid(int cid) {
+        CAGApp appState = ((CAGApp)getApplicationContext());
+        JSONArray characters = appState.getCharacters();
+
+        try {
+            return characters.getJSONObject(cid).getInt("epid");
+        } catch (JSONException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return 0;
+    }
+
+    private final TimerTask _refreshEpisodesAndCharacters = new TimerTask() {
         @Override
         public void run() {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     eca.notifyDataSetChanged();
+                    cca.notifyDataSetChanged();
                 }
             });
         }

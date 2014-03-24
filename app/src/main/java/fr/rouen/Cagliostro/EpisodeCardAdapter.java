@@ -8,16 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.etsy.android.grid.util.DynamicHeightTextView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.Date;
 
 public class EpisodeCardAdapter extends BaseAdapter {
@@ -61,12 +56,6 @@ public class EpisodeCardAdapter extends BaseAdapter {
 
         Date now = new Date();
         final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
-
-        System.out.println(now.getTime());
-        System.out.println(timestamp);
-        System.out.println(now.getTime() - timestamp);
-        System.out.println(( now.getTime() - timestamp ) / 60000.0);
-        System.out.println((int)(( now.getTime() - timestamp ) / 60000.0));
 
         try {
             JSONObject character = episodes.getJSONObject(position);
