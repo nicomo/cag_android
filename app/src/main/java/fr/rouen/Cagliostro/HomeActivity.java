@@ -1,5 +1,6 @@
 package fr.rouen.Cagliostro;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -99,6 +100,7 @@ public class HomeActivity extends Activity {
         });
 
         charactersgrid.setAdapter(new CharacterCardAdapter(this, characters));
+
     }
 
     public void toggleEpisodes(View view) {
@@ -282,5 +284,4 @@ public class HomeActivity extends Activity {
             v.startAnimation(a);
         }
     }
-
 }
