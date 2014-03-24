@@ -116,8 +116,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/map"
-            android:src="@drawable/map"
-            android:adjustViewBounds="false" />
+            android:scaleType="fitXY"
+            android:src="@drawable/map" />
 
         <View
             android:layout_width="fill_parent"
