@@ -20,15 +20,18 @@ public class EpisodeCardAdapter extends BaseAdapter {
 
     private Context context;
     private JSONArray episodes;
+    private Typeface clarendon;
 
     static class ViewHolder {
         ImageView photo;
         TextView title;
+
     }
 
     public EpisodeCardAdapter(Context context, JSONArray episodes) {
         this.context = context;
         this.episodes = episodes;
+        this.clarendon = Typeface.createFromAsset(context.getAssets(), "fonts/SuperClarendon_7.otf");
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -53,6 +56,7 @@ public class EpisodeCardAdapter extends BaseAdapter {
             int iden = context.getResources().getIdentifier("homecard_" + (position+1), "drawable", context.getPackageName());
             vh.photo.setBackgroundResource(iden);
             vh.title.setText((position + 1) + ". " + character.getString("title"));
+            vh.title.setTypeface(this.clarendon);
         } catch (JSONException e) {
             System.out.println(e.getMessage());
         }

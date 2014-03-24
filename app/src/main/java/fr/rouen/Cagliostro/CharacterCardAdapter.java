@@ -1,6 +1,7 @@
 package fr.rouen.Cagliostro;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +19,12 @@ public class CharacterCardAdapter extends BaseAdapter {
 
     private Context context;
     private JSONArray characters;
+    private Typeface georgia;
 
     public CharacterCardAdapter(Context context, JSONArray characters) {
         this.context = context;
         this.characters = characters;
+        this.georgia = Typeface.createFromAsset(context.getAssets(), "fonts/georgia.ttf");
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -39,6 +42,7 @@ public class CharacterCardAdapter extends BaseAdapter {
 
             TextView name = (TextView) v.findViewById(R.id.name);
             name.setText(character.getString("name"));
+            name.setTypeface(georgia);
 
             ImageView avatar = (ImageView) v.findViewById(R.id.avatar);
             int iden = context.getResources().getIdentifier("pin_" + (position+1), "drawable", context.getPackageName());
