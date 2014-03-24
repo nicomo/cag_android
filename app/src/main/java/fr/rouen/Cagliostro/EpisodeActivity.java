@@ -58,13 +58,6 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
         episodes = appState.getEpisodes();
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        long timestamp = prefs.getLong("timestamp", 0);
-        if (timestamp == 0) {
-            Date now = new Date();
-            SharedPreferences.Editor editorPref = prefs.edit();
-            editorPref.putLong("timestamp", now.getTime());
-            editorPref.commit();
-        }
 
         Resources r = getResources();
         Typeface clarendon = Typeface.createFromAsset(getAssets(), "fonts/SuperClarendon_7.otf");

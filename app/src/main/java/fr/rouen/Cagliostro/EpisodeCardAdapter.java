@@ -1,7 +1,9 @@
 package fr.rouen.Cagliostro;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,22 +18,25 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Date;
+
 public class EpisodeCardAdapter extends BaseAdapter {
 
     private Context context;
     private JSONArray episodes;
     private Typeface clarendon;
+    SharedPreferences prefs;
 
     static class ViewHolder {
         ImageView photo;
         TextView title;
-
     }
 
     public EpisodeCardAdapter(Context context, JSONArray episodes) {
         this.context = context;
         this.episodes = episodes;
         this.clarendon = Typeface.createFromAsset(context.getAssets(), "fonts/SuperClarendon_7.otf");
+        this.prefs = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -51,9 +56,26 @@ public class EpisodeCardAdapter extends BaseAdapter {
             vh = (ViewHolder) convertView.getTag();
         }
 
+        long timestamp = this.prefs.getLong("timestamp", 0);
+        Boolean delayedEps = this.prefs.getBoolean("delayedEps", true);
+
+        Date now = new Date();
+        final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+
+        System.out.println(now.getTime());
+        System.out.println(timestamp);
+        System.out.println(now.getTime() - timestamp);
+        System.out.println(( now.getTime() - timestamp ) / 60000.0);
+        System.out.println((int)(( now.getTime() - timestamp ) / 60000.0));
+
         try {
             JSONObject character = episodes.getJSONObject(position);
-            int iden = context.getResources().getIdentifier("homecard_" + (position+1), "drawable", context.getPackageName());
+            int iden;
+            if (position > minElapsed && delayedEps) {
+                iden = context.getResources().getIdentifier("disabled_homecard_" + (position + 1), "drawable", context.getPackageName());
+            } else {
+                iden = context.getResources().getIdentifier("homecard_" + (position + 1), "drawable", context.getPackageName());
+            }
             vh.photo.setBackgroundResource(iden);
             vh.title.setText((position + 1) + ". " + character.getString("title"));
             vh.title.setTypeface(this.clarendon);

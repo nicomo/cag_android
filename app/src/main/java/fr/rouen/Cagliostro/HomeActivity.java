@@ -3,11 +3,15 @@ package fr.rouen.Cagliostro;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.app.Activity;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -24,12 +28,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class HomeActivity extends Activity {
 
     JSONArray characters;
     JSONArray episodes;
     boolean episodesExpanded = false;
     boolean charExpanded = false;
+    SharedPreferences prefs;
+    Timer tep;
+    EpisodeCardAdapter eca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +49,16 @@ public class HomeActivity extends Activity {
         CAGApp appState = ((CAGApp)getApplicationContext());
         characters = appState.getCharacters();
         episodes = appState.getEpisodes();
+
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        final long timestamp = prefs.getLong("timestamp", 0);
+        if (timestamp == 0) {
+            Date now = new Date();
+            SharedPreferences.Editor editorPref = prefs.edit();
+            editorPref.putLong("timestamp", now.getTime());
+            editorPref.commit();
+        }
+        final Boolean delayedEps = prefs.getBoolean("delayedEps", true);
 
         setContentView(R.layout.home);
 
@@ -60,18 +81,22 @@ public class HomeActivity extends Activity {
         placestitle.setTypeface(clarendon);
 
         StaggeredGridView episodesgrid = (StaggeredGridView) findViewById(R.id.episodesgrid);
-
-        episodesgrid.setAdapter(new EpisodeCardAdapter(this, episodes));
+        eca = new EpisodeCardAdapter(this, episodes);
+        episodesgrid.setAdapter(eca);
 
         final Context context = this;
 
         episodesgrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Intent intent = new Intent(context, EpisodeActivity.class);
-                intent.putExtra("epid", position);
-                startActivity(intent);
-                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                Date now = new Date();
+                final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+                if (position <= minElapsed || ! delayedEps) {
+                    Intent intent = new Intent(context, EpisodeActivity.class);
+                    intent.putExtra("epid", position);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                }
             }
         });
 
@@ -101,7 +126,21 @@ public class HomeActivity extends Activity {
 
         charactersgrid.setAdapter(new CharacterCardAdapter(this, characters));
 
+        tep = new Timer("refreshEpisodes");
+        tep.schedule(_refreshEpisodes, 0, 2000);
     }
+
+    private final TimerTask _refreshEpisodes = new TimerTask() {
+        @Override
+        public void run() {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    eca.notifyDataSetChanged();
+                }
+            });
+        }
+    };
 
     public void toggleEpisodes(View view) {
         final StaggeredGridView v = (StaggeredGridView)findViewById(R.id.episodesgrid);
@@ -283,5 +322,21 @@ public class HomeActivity extends Activity {
             a.setDuration((int) (500 / d));
             v.startAnimation(a);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuItem buttonSettings = menu.add(R.string.settings_title);
+        buttonSettings.setIcon(android.R.drawable.ic_menu_preferences);
+        buttonSettings.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+        buttonSettings.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent settingsIntent = new Intent(HomeActivity.this, SettingsActivity.class);
+                HomeActivity.this.startActivity(settingsIntent);
+                return false;
+            }
+        });
+        return true;
     }
 }
