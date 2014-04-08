@@ -1,0 +1,128 @@
+{ "places": [
+	{
+		"name": "Abbaye de Boscherville",
+		"x": "0.66",
+		"y": "0.58",
+		"epid": "0",
+		"page": "1"
+	},
+	{
+		"name": "Abbaye de Fécamp",
+		"x": "0.31",
+		"y": "0.16",
+		"epid": "0",
+		"page": "1"
+	},
+	{
+		"name": "Abbaye Gruchet le Valasse",
+		"x": "0.37",
+		"y": "0.43",
+		"epid": "0",
+		"page": "1"
+	},
+	{
+        "name": "Abbaye de Jumièges",
+        "x": "0.57",
+        "y": "0.6",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Abbaye Montivilliers",
+        "x": "0.18",
+        "y": "0.46",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Abbaye St Wandrille",
+        "x": "0.56",
+        "y": "0.45",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Abbaye de Valmont",
+        "x": "0.36",
+        "y": "0.17",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Caudebec en Caux",
+        "x": "0.51",
+        "y": "0.44",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Côte des Deux Amants",
+        "x": "0.84",
+        "y": "0.7",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Duclair",
+        "x": "0.62",
+        "y": "0.49",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Etretat",
+        "x": "0.2",
+        "y": "0.21",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "La Haie d'Etigues",
+        "x": "0.25",
+        "y": "0.19",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "La Bouille",
+        "x": "0.65",
+        "y": "0.67",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Paris",
+        "x": "0.83",
+        "y": "0.9",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Pont de l'Arche",
+        "x": "0.78",
+        "y": "0.72",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Rouen",
+        "x": "0.73",
+        "y": "0.56",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Tancarville",
+        "x": "0.355",
+        "y": "0.49",
+        "epid": "0",
+        "page": "1"
+    },
+    {
+        "name": "Yvetot",
+        "x": "0.53",
+        "y": "0.32",
+        "epid": "0",
+        "page": "1"
+    }
+] }

@@ -9,19 +9,24 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.app.Activity;
 import android.preference.PreferenceManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
+import com.etsy.android.grid.ExtendableListView;
 import com.etsy.android.grid.StaggeredGridView;
 
 import org.json.JSONArray;
@@ -36,12 +41,14 @@ public class HomeActivity extends Activity {
 
     JSONArray characters;
     JSONArray episodes;
+    JSONArray places;
     boolean episodesExpanded = false;
     boolean charExpanded = false;
     SharedPreferences prefs;
     Timer timer;
     EpisodeCardAdapter eca;
     CharacterCardAdapter cca;
+    PlaceAdapter pla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +57,7 @@ public class HomeActivity extends Activity {
         CAGApp appState = ((CAGApp)getApplicationContext());
         characters = appState.getCharacters();
         episodes = appState.getEpisodes();
+        places = appState.getPlaces();
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         final long timestamp = prefs.getLong("timestamp", 0);
@@ -100,6 +108,10 @@ public class HomeActivity extends Activity {
                 }
             }
         });
+
+        MapView map = (MapView)findViewById(R.id.map);
+        pla = new PlaceAdapter(this, places);
+        map.setAdapter(pla);
 
         GridView charactersgrid = (GridView)findViewById(R.id.charactersgrid);
 

@@ -112,12 +112,11 @@
             android:paddingTop="30dp"
             android:paddingBottom="20dp" />
 
-        <ImageView
+        <fr.rouen.Cagliostro.MapView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/map"
-            android:scaleType="fitXY"
-            android:src="@drawable/map" />
+            android:background="@drawable/map" />
 
         <View
             android:layout_width="fill_parent"
