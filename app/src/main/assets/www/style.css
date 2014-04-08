@@ -10,9 +10,10 @@
 
 body {
     background-color: #f5efe2;
-    margin: 0;
-    padding-right: 10%;
     border-right: solid 1px #beb2b0;
+    width: 499px;
+    padding-left: 85px;
+    margin: 85px 0;
 }
 
 p {
@@ -26,9 +27,10 @@ p {
     -webkit-font-feature-settings: "liga", "dlig"; /* ligature */
     font-feature-settings: "liga", "dlig";
     text-align: justify;
+    margin-right: 10%;
 }
 
-p:first-child:first-letter {
+.dropcap {
     font-size: 3em;
     display:block;
     padding-top 0;
@@ -40,5 +42,5 @@ p:first-child:first-letter {
 }
 
 img {
-    width: 100%;
+    width: 450px;
 }
