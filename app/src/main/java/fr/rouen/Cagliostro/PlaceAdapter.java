@@ -1,6 +1,7 @@
 package fr.rouen.Cagliostro;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.preference.PreferenceManager;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.Toast;
+import android.app.Activity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,6 +32,8 @@ public class PlaceAdapter extends BaseAdapter {
 
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        final int plid = position;
+
         final double d = context.getResources().getDisplayMetrics().density;
 
         View v = new View(context);
@@ -48,6 +53,17 @@ public class PlaceAdapter extends BaseAdapter {
             lp.width = (int)(40*d);
             lp.x = place.getDouble("x");
             lp.y = place.getDouble("y");
+
+
+            placebtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View arg0) {
+                    Intent intent = new Intent(context, CharacterActivity.class);
+                    intent.putExtra("plid", plid);
+                    context.startActivity(intent);
+                    ((Activity) context).overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                }
+            });
 
             placebtn.setLayoutParams(lp);
 
@@ -72,7 +88,7 @@ public class PlaceAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 }
 

@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
-public class MapView extends AdapterView<PlaceAdapter> implements AdapterView.OnItemClickListener {
+public class MapView extends AdapterView<PlaceAdapter> {
 
     private PlaceAdapter mAdapter;
     private Context context;
@@ -36,11 +36,6 @@ public class MapView extends AdapterView<PlaceAdapter> implements AdapterView.On
     @Override
     public void setSelection(int i) {
         throw new UnsupportedOperationException("Not supported");
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
     }
 
     @Override
