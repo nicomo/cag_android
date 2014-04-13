@@ -38,16 +38,7 @@ public class CharacterCardAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View v;
-
-        v = new View(context);
-        v = inflater.inflate(R.layout.character_card, null);
-
-        /*long timestamp = this.prefs.getLong("timestamp", 0);
-        Boolean delayedEps = this.prefs.getBoolean("delayedEps", true);
-
-        Date now = new Date();
-        final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;*/
+        View v = inflater.inflate(R.layout.character_card, null);
 
         try {
             JSONObject character = characters.getJSONObject(position);
@@ -58,7 +49,7 @@ public class CharacterCardAdapter extends BaseAdapter {
 
             ImageView avatar = (ImageView) v.findViewById(R.id.avatar);
             int iden;
-            if (((HomeActivity)context).published(position)) {
+            if (((HomeActivity)context).charpublished(position)) {
                 iden = context.getResources().getIdentifier("pin_" + (position+1), "drawable", context.getPackageName());
             } else {
                 if (character.getString("gender").equals("Male")) {
@@ -77,7 +68,7 @@ public class CharacterCardAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 32;
+        return characters.length();
     }
 
     @Override
