@@ -85,6 +85,12 @@
 
         </LinearLayout>
 
+        <fr.rouen.Cagliostro.MapView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/map"
+            android:background="@drawable/map" />
+
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

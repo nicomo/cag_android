@@ -39,6 +39,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
     WebView wv;
     Button next;
     JSONArray episodes;
+    JSONArray places;
     String[] titles;
     String[] subtitles;
     SharedPreferences prefs;
@@ -46,6 +47,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
     int pinupdated = 0;
     Timer tnb;
     Timer twv;
+    PlaceAdapter pla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
 
         CAGApp appState = ((CAGApp)getApplicationContext());
         episodes = appState.getEpisodes();
+        places = appState.getPlaces();
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -91,6 +94,17 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
             }
         });
         vv.start();
+
+        try {
+            JSONObject jep = episodes.getJSONObject(epid);
+            JSONArray epplaces = jep.getJSONArray("places");
+
+            MapView map = (MapView)findViewById(R.id.map);
+            pla = new PlaceAdapter(this, places, epplaces);
+            map.setAdapter(pla);
+        } catch (JSONException e) {
+            System.out.println(e.getMessage());
+        }
 
         next = (Button)findViewById(R.id.nextButton);
         next.setTypeface(clarendon);

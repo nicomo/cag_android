@@ -19,14 +19,26 @@ public class PlaceAdapter extends BaseAdapter {
 
     private Context context;
     private JSONArray places;
+    private JSONArray epplaces;
     private Typeface georgia;
     SharedPreferences prefs;
+    boolean home;
 
     public PlaceAdapter(Context context, JSONArray places) {
         this.context = context;
         this.places = places;
         this.georgia = Typeface.createFromAsset(context.getAssets(), "fonts/georgia.ttf");
         this.prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        this.home = true;
+    }
+
+    public PlaceAdapter(Context context, JSONArray places, JSONArray epplaces) {
+        this.context = context;
+        this.places = places;
+        this.georgia = Typeface.createFromAsset(context.getAssets(), "fonts/georgia.ttf");
+        this.prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        this.epplaces = epplaces;
+        this.home = false;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -65,8 +77,18 @@ public class PlaceAdapter extends BaseAdapter {
 
             placebtn.setLayoutParams(lp);
 
-            if ( ! ((HomeActivity)context).placepublished(position))
+            if (this.home) {
+                if (!((HomeActivity) context).placepublished(position))
+                    placebtn.setVisibility(View.GONE);
+            } else {
                 placebtn.setVisibility(View.GONE);
+                for (int j = 0; j < epplaces.length(); j++) {
+                    int jplid = epplaces.getInt(j);
+                    System.out.println(jplid);
+                    if (jplid == plid)
+                        placebtn.setVisibility(View.VISIBLE);
+                }
+            }
 
             return placebtn;
 
