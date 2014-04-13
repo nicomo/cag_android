@@ -127,7 +127,7 @@ public class HomeActivity extends Activity {
         charactersgrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                if (published(position)) {
+                if (charpublished(position)) {
                     Intent intent = new Intent(context, CharacterActivity.class);
                     intent.putExtra("cid", position);
                     startActivity(intent);
@@ -138,11 +138,11 @@ public class HomeActivity extends Activity {
         cca = new CharacterCardAdapter(this, characters);
         charactersgrid.setAdapter(cca);
 
-        timer = new Timer("refreshEpisodesAndCharacters");
-        timer.schedule(_refreshEpisodesAndCharacters, 0, 2000);
+        timer = new Timer("refreshEpisodesAndCharactersAndPlaces");
+        timer.schedule(_refreshEpisodesAndCharactersAndPlaces, 0, 2000);
     }
 
-    public boolean published(int cid) {
+    public boolean charpublished(int cid) {
         long timestamp = this.prefs.getLong("timestamp", 0);
         Boolean delayedEps = this.prefs.getBoolean("delayedEps", true);
         Date now = new Date();
@@ -164,7 +164,29 @@ public class HomeActivity extends Activity {
         return 0;
     }
 
-    private final TimerTask _refreshEpisodesAndCharacters = new TimerTask() {
+    public int epidforplid(int plid) {
+        CAGApp appState = (CAGApp)getApplicationContext();
+        JSONArray characters = appState.getCharacters();
+
+        try {
+            return characters.getJSONObject(plid).getInt("epid");
+        } catch (JSONException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return 0;
+    }
+
+    public boolean placepublished(int plid) {
+        long timestamp = this.prefs.getLong("timestamp", 0);
+        Boolean delayedEps = this.prefs.getBoolean("delayedEps", true);
+        Date now = new Date();
+        final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+
+        return ! delayedEps || epidforplid(plid) < minElapsed;
+    }
+
+    private final TimerTask _refreshEpisodesAndCharactersAndPlaces = new TimerTask() {
         @Override
         public void run() {
             runOnUiThread(new Runnable() {
@@ -172,6 +194,8 @@ public class HomeActivity extends Activity {
                 public void run() {
                     eca.notifyDataSetChanged();
                     cca.notifyDataSetChanged();
+                    pla.notifyDataSetChanged();
+                    pla.notifyDataSetInvalidated();
                 }
             });
         }

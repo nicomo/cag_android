@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.Toast;
 import android.app.Activity;
 
 import org.json.JSONArray;
@@ -54,7 +53,6 @@ public class PlaceAdapter extends BaseAdapter {
             lp.x = place.getDouble("x");
             lp.y = place.getDouble("y");
 
-
             placebtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
@@ -66,6 +64,9 @@ public class PlaceAdapter extends BaseAdapter {
             });
 
             placebtn.setLayoutParams(lp);
+
+            if ( ! ((HomeActivity)context).placepublished(position))
+                placebtn.setVisibility(View.GONE);
 
             return placebtn;
 
@@ -83,6 +84,11 @@ public class PlaceAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
+        try {
+            return places.getJSONObject(position);
+        } catch (JSONException e) {
+            System.out.println(e.getMessage());
+        }
         return null;
     }
 
