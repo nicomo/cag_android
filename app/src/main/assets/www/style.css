@@ -42,3 +42,42 @@ p {
 img {
     width: 100%;
 }
+
+circle {
+  stroke: #177DB7;
+  fill: #177DB7;
+}
+
+text {
+  font-family: Superclarendon;
+  font-size: 20px;
+  fill: #177DB7;
+}
+
+.abbey_txt {
+  visibility: hidden;
+}
+
+.enigme {
+  text-align: center;
+}
+
+.paused {
+  -webkit-animation-play-state: paused;
+}
+
+.star {
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-name: pulse;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    stroke-width: 0;
+  }
+  100% {
+    stroke-width: 10;
+  }
+}

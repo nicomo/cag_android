@@ -79,6 +79,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
 
         wv = (WebView)findViewById(R.id.webView);
         wv.setVerticalScrollBarEnabled(false);
+        wv.getSettings().setJavaScriptEnabled(true);
         wv.loadUrl("file:///android_asset/www/"+(epid+1)+".html");
 
         VideoView vv=(VideoView)findViewById(R.id.videoView);

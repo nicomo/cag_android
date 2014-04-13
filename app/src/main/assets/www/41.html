@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="alcor.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 </head>
 <body>
 	<p><span class="dropcap">«&nbsp;U</span>ne petite balle là-dedans, et tu auras beau implorer les mânes de ton père… bernique&nbsp;! pas un sou pour la Josette&nbsp;! Je te le répète, ma petite Joséphine, je suis « tabou&nbsp;» comme on dit en Polynésie. Tabou des pieds à la tête&nbsp;! Mets-toi à genoux et baise-moi la main, c’est ce que tu as de mieux à faire.&nbsp;»</p>
@@ -66,7 +69,53 @@
 	<p>– Une étoile qui fait partie de la constellation de la Grande Ourse. Mais cela n’a pas d’importance. Quelle relation peut-il y avoir&nbsp;?…</p>
 	<p>Raoul eut un sourire de&nbsp;pitié.</p>
 	<p>– Évidemment, n’est-ce pas&nbsp;? le nom d’une étoile ne peut avoir aucun rapport avec l’emplacement d’une borne champêtre. On se tient ce raisonnement stupide, et l’effort s’arrête de ce côté. Malheureuse&nbsp;! </p>
-	<!-------------- insertion carte des 7 abbayes formant la grande ourse -->
+
+    <p class="enigme">
+        <span class="alcor_1">A</span><span class="alcor_2">d</span>
+        <span class="alcor_3">L</span><span class="alcor_4">a</span><span class="alcor_5">p</span><span class="alcor_6">i</span><span class="alcor_7">d</span><span class="alcor_8">e</span><span class="alcor_9">m</span>
+        <span class="alcor_10">C</span><span class="alcor_11">u</span><span class="alcor_12">r</span><span class="alcor_13">r</span><span class="alcor_14">e</span><span class="alcor_15">b</span><span class="alcor_16">a</span><span class="alcor_17">t</span>
+        <span class="alcor_18">O</span><span class="alcor_19">l</span><span class="alcor_20">i</span><span class="alcor_21">m</span>
+        <span class="alcor_22">R</span><span class="alcor_23">e</span><span class="alcor_24">g</span><span class="alcor_25">i</span><span class="alcor_26">n</span><span class="alcor_27">a</span>
+    </p>
+
+    <svg id="alcor_svg" width="100%" viewBox="0 0 768 530" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <path class="path" d="M580 400 L450 440 L430 310 L240 290 L250 75 L150 50 L50 300 L240 290" style="stroke: #177DB7; stroke-width: 4; fill: none;"/>
+
+        <circle class="star" id="starOne" cx="50" cy="300" r="18" />
+        <text class="star_txt" x="14" y="350">Dubhe</text>
+        <text class="abbey_txt" x="14" y="350">Montivilliers</text>
+
+        <circle class="star" id ="starTwo" cx="150" cy="50" r="18" style="-webkit-animation-play-state: paused;"/>
+        <text class="star_txt" x="150" y="20">Merak</text>
+        <text class="abbey_txt" x="150" y="20">Fécamp</text>
+
+        <circle class="star" id ="starThree" cx="250" cy="75" r="18" style="-webkit-animation-play-state: paused;" />
+        <text class="star_txt" x="280" y="80" >Phecda</text>
+        <text class="abbey_txt" x="280" y="80" >Valmont</text>
+
+        <circle class="star" id ="starFour" cx="240" cy="290" r="18" style="-webkit-animation-play-state: paused;"/>
+        <text class="star_txt" x="260" y="280">Megrez</text>
+        <text class="abbey_txt" x="260" y="280">Le Valasse</text>
+
+        <circle class="star" id ="starFive" cx="430" cy="310" r="18"  style="-webkit-animation-play-state: paused;"/>
+        <text class="star_txt" x="450" y="290">Alioth</text>
+        <text class="abbey_txt" x="450" y="290">Saint Wandrille</text>
+
+        <circle class="star" id="starSix" cx="450" cy="440" r="18" style="-webkit-animation-play-state: paused;"/>
+        <text class="star_txt" x="350" y="450">Mizar</text>
+        <text class="abbey_txt" x="310" y="450">Jumièges</text>
+
+
+        <circle class="star" id="starSeven" cx="490" cy="460" r="8" style="-webkit-animation-play-state: paused;"/>
+        <text id="alcor_txt" x="510" y="470">Alcor</text>
+
+        <circle class="star" id="starEight" cx="580" cy="400" r="18" style="-webkit-animation-play-state: paused;"/>
+        <text class="star_txt" x="610" y="410">Alkaid</text>
+        <text class="abbey_txt" x="610" y="410">Saint Georges</text>
+
+    </svg>
+
 	<p>Mais c’est justement cela qui m’a frappé, moi, quand j’ai tiré le mot Alcor des cinq initiales de l’inscription latine&nbsp;! Maître du mot talisman, du mot magique, et, d’autre part, ayant remarqué que toute l’aventure tournait autour du nombre sept (sept abbayes, sept moines, sept branches au chandelier, sept pierres de couleur enchâssées dans sept bagues) aussitôt, tu entends, aussitôt, par une sorte de mouvement réflexe de mon esprit, j’ai noté que l’étoile Alcor appartenait à la constellation de la Grande Ourse. Et le problème était&nbsp;résolu.</p>
 	<p>– Résolu&nbsp;?… Comment&nbsp;!</p>
 	<p>– Mais, nom d’un chien&nbsp;! parce que la constellation de la Grande Ourse est justement formée par sept étoiles principales&nbsp;! Sept&nbsp;! toujours le nombre sept&nbsp;! Commences-tu à voir la relation&nbsp;? Et dois-je te rappeler que si les Arabes ont choisi, et si les astronomes, depuis, ont accepté cette désignation d’Alcor, c’est parce que cette toute petite étoile, étant à peine visible, sert comme épreuve, tu entends&nbsp;? comme épreuve, pour spécifier que telle personne a bonne vue puisqu’elle peut la distinguer à l’œil nu. Alcor, c’est ce qu’il faut voir, ce qu’on cherche, la chose dissimulée, le trésor caché, la borne invisible où l’on glisse les pierres précieuses, c’est le coffre-fort.</p>
