@@ -69,6 +69,13 @@ public class MapView extends AdapterView<PlaceAdapter> {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int parentWidth = MeasureSpec.getSize(widthMeasureSpec);
+        this.setMeasuredDimension(parentWidth, (int)(parentWidth * 548.0 / 768.0));
+    }
+
+    @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
         return p instanceof LayoutParams;
     }
