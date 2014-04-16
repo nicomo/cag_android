@@ -13,12 +13,15 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
 import android.content.Intent;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,6 +42,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
     WebView wv;
     Button next;
     JSONArray episodes;
+    JSONArray characters;
     JSONArray places;
     String[] titles;
     String[] subtitles;
@@ -47,6 +51,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
     int pinupdated = 0;
     Timer tnb;
     Timer twv;
+    FooterCharacterAdapter cca;
     PlaceAdapter pla;
 
     @Override
@@ -58,6 +63,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
 
         CAGApp appState = ((CAGApp)getApplicationContext());
         episodes = appState.getEpisodes();
+        characters = appState.getCharacters();
         places = appState.getPlaces();
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -94,6 +100,43 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
             }
         });
         vv.start();
+
+        try {
+            JSONObject jep = episodes.getJSONObject(epid);
+            final JSONArray epchars = jep.getJSONArray("pins");
+
+            GridView charactersgrid = (GridView)findViewById(R.id.charactersgrid);
+
+            charactersgrid.setOnTouchListener(new View.OnTouchListener(){
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    if(event.getAction() == MotionEvent.ACTION_MOVE){
+                        return true;
+                    }
+                    return false;
+                }
+            });
+
+            final Context ctx = this;
+
+            charactersgrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v,
+                                        int position, long id) {
+                    try {
+                        Intent intent = new Intent(ctx, CharacterActivity.class);
+                        intent.putExtra("cid", epchars.getJSONObject(position).getInt("cid"));
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                    } catch (JSONException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+            });
+            cca = new FooterCharacterAdapter(this, characters, epchars);
+            charactersgrid.setAdapter(cca);
+        } catch (JSONException e) {
+            System.out.println(e.getMessage());
+        }
 
         try {
             JSONObject jep = episodes.getJSONObject(epid);

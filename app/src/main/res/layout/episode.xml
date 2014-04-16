@@ -88,15 +88,37 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_marginLeft="@dimen/nine_margin"
             android:layout_marginRight="@dimen/nine_margin"
             android:layout_marginBottom="@dimen/nine_margin">
 
-        <fr.rouen.Cagliostro.MapView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/map"
-            android:background="@drawable/map" />
+            <View
+                android:layout_width="150dp"
+                android:layout_height="1dp"
+                android:background="#beb2b0"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:text="DANS CET EPISODE"/>
+
+            <GridView
+                android:id="@+id/charactersgrid"
+                android:numColumns="@integer/footer_columns"
+                android:gravity="center"
+                android:stretchMode="columnWidth"
+                android:layout_width="wrap_content"
+                android:horizontalSpacing="5dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp">
+            </GridView>
+
+            <fr.rouen.Cagliostro.MapView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map"
+                android:background="@drawable/map" />
 
         </LinearLayout>
 
