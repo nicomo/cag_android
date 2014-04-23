@@ -62,6 +62,7 @@ public class CharacterCardAdapter extends BaseAdapter {
 
             ImageView avatar = (ImageView) v.findViewById(R.id.avatar);
             TextView name = (TextView) v.findViewById(R.id.name);
+            name.setTypeface(this.georgia);
             int iden;
 
             if (this.home) {
