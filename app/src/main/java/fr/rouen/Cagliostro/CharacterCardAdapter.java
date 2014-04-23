@@ -61,11 +61,13 @@ public class CharacterCardAdapter extends BaseAdapter {
             JSONObject character = characters.getJSONObject(position);
 
             ImageView avatar = (ImageView) v.findViewById(R.id.avatar);
+            TextView name = (TextView) v.findViewById(R.id.name);
             int iden;
 
             if (this.home) {
                 if (((HomeActivity) context).charpublished(position)) {
                     iden = context.getResources().getIdentifier("pin_" + (position + 1), "drawable", context.getPackageName());
+                    name.setText(character.getString("name"));
                 } else {
                     if (character.getString("gender").equals("Male")) {
                         iden = context.getResources().getIdentifier("pin_male", "drawable", context.getPackageName());
