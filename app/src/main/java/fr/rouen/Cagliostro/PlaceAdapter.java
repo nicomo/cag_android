@@ -68,7 +68,7 @@ public class PlaceAdapter extends BaseAdapter {
             placebtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
-                    Intent intent = new Intent(context, CharacterActivity.class);
+                    Intent intent = new Intent(context, PlaceActivity.class);
                     intent.putExtra("plid", plid);
                     context.startActivity(intent);
                     ((Activity) context).overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
