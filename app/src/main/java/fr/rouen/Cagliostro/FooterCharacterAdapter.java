@@ -40,9 +40,9 @@ public class FooterCharacterAdapter extends BaseAdapter {
         View v = inflater.inflate(R.layout.footer_character_card, null);
 
         try {
-            JSONObject epchar = epchars.getJSONObject(position);
+            int epcharid = epchars.getInt(position);
             ImageView avatar = (ImageView) v.findViewById(R.id.avatar);
-            int iden = context.getResources().getIdentifier("pin_" + epchar.getInt("cid"), "drawable", context.getPackageName());
+            int iden = context.getResources().getIdentifier("pin_" + epcharid, "drawable", context.getPackageName());
             avatar.setImageResource(iden);
         } catch (JSONException e) {
             System.out.println(e.getMessage());

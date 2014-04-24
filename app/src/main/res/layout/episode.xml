@@ -103,16 +103,17 @@
                 android:layout_height="30dp"
                 android:text="DANS CET EPISODE"/>
 
-            <GridView
+            <fr.rouen.Cagliostro.MyGridView
                 android:id="@+id/charactersgrid"
                 android:numColumns="@integer/footer_columns"
                 android:gravity="center"
                 android:stretchMode="columnWidth"
                 android:layout_width="wrap_content"
                 android:horizontalSpacing="5dp"
-                android:layout_height="60dp"
+                android:verticalSpacing="5dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp">
-            </GridView>
+            </fr.rouen.Cagliostro.MyGridView>
 
             <fr.rouen.Cagliostro.MapView
                 android:layout_width="fill_parent"

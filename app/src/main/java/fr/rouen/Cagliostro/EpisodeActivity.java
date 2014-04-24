@@ -10,6 +10,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -103,9 +104,9 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
 
         try {
             JSONObject jep = episodes.getJSONObject(epid);
-            final JSONArray epchars = jep.getJSONArray("pins");
+            final JSONArray epchars = jep.getJSONArray("chars");
 
-            GridView charactersgrid = (GridView)findViewById(R.id.charactersgrid);
+            MyGridView charactersgrid = (MyGridView)findViewById(R.id.charactersgrid);
 
             charactersgrid.setOnTouchListener(new View.OnTouchListener(){
                 @Override
@@ -124,7 +125,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
                                         int position, long id) {
                     try {
                         Intent intent = new Intent(ctx, CharacterActivity.class);
-                        intent.putExtra("cid", epchars.getJSONObject(position).getInt("cid") - 1);
+                        intent.putExtra("cid", epchars.getInt(position) - 1);
                         startActivity(intent);
                         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                     } catch (JSONException e) {
