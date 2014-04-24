@@ -23,13 +23,13 @@
         "title": "Une conspiration",
         "subtitle": "Paru le 12 décembre 1923",
         "pins": [
-            { "pid": 0.180, "cid":  5, "gender":   "Male" },
-            { "pid": 0.195, "cid":  6, "gender":   "Male" },
-            { "pid": 0.230, "cid":  8, "gender":   "Male" },
-            { "pid": 0.300, "cid":  9, "gender":   "Male" },
-            { "pid": 0.595, "cid": 10, "gender":   "Male" },
-            { "pid": 0.610, "cid": 11, "gender":   "Male" },
-            { "pid": 0.985, "cid": 12, "gender": "Female" }
+            { "pid": 0.180, "cid":  4, "gender":   "Male" },
+            { "pid": 0.195, "cid":  5, "gender":   "Male" },
+            { "pid": 0.230, "cid":  6, "gender":   "Male" },
+            { "pid": 0.300, "cid":  7, "gender":   "Male" },
+            { "pid": 0.595, "cid":  8, "gender":   "Male" },
+            { "pid": 0.610, "cid":  9, "gender":   "Male" },
+            { "pid": 0.985, "cid": 10, "gender": "Female" }
          ],
         "places" : [11],
         "chars": [0,2,3,4,5,6,7,8,9,10]
@@ -97,6 +97,9 @@
     {
          "title": "Une des sept branches",
          "subtitle": "Paru le 23 décembre 1923",
+         "pins": [
+            { "pid": 0.286, "cid":  11, "gender":   "Male" }
+        ],
          "places" : [18],
          "chars": [0,1,2,3,4,6]
     },
@@ -104,8 +107,8 @@
          "title": "Policiers et gendarmes",
          "subtitle": "Paru le 24 décembre 1923",
          "pins": [
-              { "pid": 0.615, "cid":  14, "gender":   "Female" },
-              { "pid": 0.840, "cid":  17, "gender":   "Male" }
+              { "pid": 0.615, "cid":  12, "gender":   "Female" },
+              { "pid": 0.840, "cid":  13, "gender":   "Male" }
          ],
          "places" : [17, 19],
          "chars": [0,2,3,4,6,10,11]
@@ -126,7 +129,7 @@
          "title": "Les délices de Capoue",
          "subtitle": "Paru le 27 décembre 1923",
          "pins": [
-              { "pid": 0.500, "cid":  20, "gender":   "Female" }
+              { "pid": 0.500, "cid":  14, "gender":   "Female" }
           ],
          "places" : [0, 4, 12, 14, 15],
          "chars": [0,10,14]
@@ -141,7 +144,8 @@
          "title": "Une revue de qualité",
          "subtitle": "Paru le 29 décembre 1923",
          "pins": [
-             { "pid": 0.220, "cid":  22, "gender":   "Female" }
+             { "pid": 0.222, "cid":  15, "gender":   "Female" },
+             { "pid": 0.225, "cid":  16, "gender":   "Female" }
          ],
          "places" : [13],
          "chars": [0,10,11,15,16]
@@ -150,7 +154,7 @@
          "title": "Coup de théâtre",
          "subtitle": "Paru le 30 décembre 1923",
          "pins": [
-            { "pid": 0.250, "cid":  23, "gender":   "Male" }
+            { "pid": 0.250, "cid":  17, "gender":   "Male" }
          ],
          "places" : [13],
          "chars": [0,10,11,15,16,17]
@@ -212,8 +216,11 @@
     {
          "title": "L'interrogatoire",
          "subtitle": "Paru le 9 janvier 1924",
+         "pins": [
+            { "pid": 0.455, "cid":  18, "gender":   "Female" }
+         ],
          "places" : [9],
-        "chars": [0,10,11]
+         "chars": [0,10,11]
     },
     {
          "title": "La main mutilée",
@@ -290,6 +297,9 @@
     {
          "title": "Le dolmen de la Reine",
          "subtitle": "Paru le 22 janvier 1924",
+         "pins": [
+            { "pid": 0.495, "cid":  19, "gender":   "Male" }
+         ],
          "places" : [3, 7, 20, 21],
          "chars": [0,2,3,6,19]
     },
