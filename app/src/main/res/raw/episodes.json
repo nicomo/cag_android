@@ -7,7 +7,7 @@
             { "pid": 0.67, "cid":  2, "gender": "Female" }
         ],
         "places" : [11],
-        "chars": [1,2]
+        "chars": [0,1]
     },
     {
         "title": "A l'ombre de l'Aiguille",
@@ -17,7 +17,7 @@
             { "pid": 0.895, "cid":  4, "gender":   "Male" }
         ],
         "places" : [10, 11],
-        "chars": [1,2,3,4]
+        "chars": [0,1,2,3]
     },
     {
         "title": "Une conspiration",
@@ -32,62 +32,73 @@
             { "pid": 0.985, "cid": 12, "gender": "Female" }
          ],
         "places" : [11],
-        "chars": [1,3,4,5,6,8,9,10,11,12]
+        "chars": [0,2,3,4,5,6,7,8,9,10]
     },
     {
         "title": "Joséphine Balsamo, née en 1788…",
         "subtitle": "Paru le 13 décembre 1923",
-        "places" : [11]
+        "places" : [11],
+        "chars": [0,2,3,4,5,6,7,8,9,10]
     },
     {
         "title": "Les trois portraits",
         "subtitle": "Paru le 14 décembre 1923",
-        "places" : [11]
+        "places" : [11],
+        "chars": [0,2,3,4,5,6,7,8,9,10]
     },
     {
         "title": "Un ange de mort",
         "subtitle": "Paru le 15 décembre 1923",
-        "places" : [11]
+        "places" : [11],
+        "chars": [0,2,3,4,5,6,7,8,9,10]
     },
     {
         "title": "Un tribunal d'inquisition",
         "subtitle": "Paru le 16 décembre 1923",
-        "places" : [11]
+        "places" : [11],
+        "chars": [0,2,3,4,5,6,7,8,9,10]
     },
     {
          "title": "Passion fatale",
          "subtitle": "Paru le 17 décembre 1923",
-         "places" : [11]
+         "places" : [11],
+         "chars": [0,2,3,4,5,6,7,8,9,10]
     },
     {
          "title": "La sentence",
          "subtitle": "Paru le 18 décembre 1923",
-         "places" : [11]
+         "places" : [11],
+         "chars": [0,2,3,4,5,6,7,8,9,10]
     },
     {
          "title": "La barque qui coule",
          "subtitle": "Paru le 19 décembre 1923",
-         "places" : [10]
+         "places" : [10],
+         "chars": [0,2,3,4,5,6,7,8,9,10]
     },
     {
          "title": "Une femme à la mer",
          "subtitle": "Paru le 20 décembre 1923",
-         "places" : [10]
+         "places" : [10],
+         "chars": [2,3,4,8,9,10]
     },
     {
          "title": "La belle endormie",
          "subtitle": "Paru le 21 décembre 1923",
-         "places" : [10]
+         "places" : [10],
+         "chars": [0,2,3,10]
     },
     {
          "title": "L'inconsolée",
          "subtitle": "Paru le 22 décembre 1923",
-         "places" : [18]
+         "places" : [18],
+         "chars": [0,10]
     },
     {
          "title": "Une des sept branches",
          "subtitle": "Paru le 23 décembre 1923",
-         "places" : [18]
+         "places" : [18],
+         "chars": [0,1,2,3,4,6]
     },
     {
          "title": "Policiers et gendarmes",
@@ -96,17 +107,20 @@
               { "pid": 0.615, "cid":  14, "gender":   "Female" },
               { "pid": 0.840, "cid":  17, "gender":   "Male" }
          ],
-         "places" : [17, 19]
+         "places" : [17, 19],
+         "chars": [0,2,3,4,6,10,11]
     },
     {
          "title": "Cavale et travestissement",
          "subtitle": "Paru le 25 décembre 1923",
-         "places" : [17]
+         "places" : [17],
+         "chars": [0,10,11,12,13]
     },
     {
          "title": "La comtesse lève le voile",
          "subtitle": "Paru le 26 décembre 1923",
-         "places" : [17]
+         "places" : [17],
+         "chars": [0,10,11,13]
     },
     {
          "title": "Les délices de Capoue",
@@ -114,12 +128,14 @@
          "pins": [
               { "pid": 0.500, "cid":  20, "gender":   "Female" }
           ],
-          "places" : [0, 4, 12, 14, 15]
+         "places" : [0, 4, 12, 14, 15],
+         "chars": [0,10,14]
     },
     {
          "title": "Monte-en-l'air et rats d'hôtels",
          "subtitle": "Paru le 28 décembre 1923",
-         "places" : [13]
+         "places" : [13],
+         "chars": [0,2,3,6,10,11]
     },
     {
          "title": "Une revue de qualité",
@@ -127,7 +143,8 @@
          "pins": [
              { "pid": 0.220, "cid":  22, "gender":   "Female" }
          ],
-         "places" : [13]
+         "places" : [13],
+         "chars": [0,10,11,15,16]
     },
     {
          "title": "Coup de théâtre",
@@ -135,161 +152,193 @@
          "pins": [
             { "pid": 0.250, "cid":  23, "gender":   "Male" }
          ],
-         "places" : [13]
+         "places" : [13],
+         "chars": [0,10,11,15,16,17]
     },
     {
          "title": "Deux volontés",
          "subtitle": "Paru le 31 décembre 1923",
-         "places" : [13]
+         "places" : [13],
+         "chars": [0,10]
     },
     {
          "title": "La tirelire des moines",
          "subtitle": "Paru le 1er janvier 1924",
-         "places" : [13]
+         "places" : [13],
+         "chars": [0,10]
     },
     {
          "title": "Les mystères du Pays de Caux",
          "subtitle": "Paru le 2 janvier 1924",
-         "places" : [13]
+         "places" : [13],
+         "chars": [0,10]
     },
     {
          "title": "La roche tarpéienne",
          "subtitle": "Paru le 3 janvier 1924",
-         "places" : [13]
+         "places" : [13],
+         "chars": [0,10,11,15,16]
     },
     {
          "title": "Raoul contre Beaumagnan",
          "subtitle": "Paru le 4 janvier 1924",
-         "places" : [13]
+         "places" : [13],
+         "chars": [0,2,3,6]
     },
     {
          "title": "Une lettre compromettante",
          "subtitle": "Paru le 5 janvier 1924",
-         "places" : [13]
+         "places" : [13],
+         "chars": [0,2,3,6]
     },
     {
          "title": "Un vieux coffret de bois",
          "subtitle": "Paru le 6 janvier 1924",
-         "places" : [13]
+         "places" : [13],
+         "chars": [0,2,3,6,10]
     },
     {
          "title": "Guet-apens",
          "subtitle": "Paru le 7 janvier 1924",
-         "places" : [8, 13]
+         "places" : [8, 13],,
+         "chars": [0,10]
     },
     {
          "title": "Passion criminelle",
          "subtitle": "Paru le 8 janvier 1924",
-         "places" : [8, 15, 20]
+         "places" : [8, 15, 20],
+         "chars": [0,10,11]
     },
     {
          "title": "L'interrogatoire",
          "subtitle": "Paru le 9 janvier 1924",
-         "places" : [9]
+         "places" : [9],
+        "chars": [0,10,11]
     },
     {
          "title": "La main mutilée",
          "subtitle": "Paru le 10 janvier 1924",
-         "places" : [9]
+         "places" : [9],
+         "chars": [0,10,11]
     },
     {
          "title": "Remords tardifs",
          "subtitle": "Paru le 11 janvier 1924",
-         "places" : [9, 20]
+         "places" : [9, 20],
+         "chars": [0,10,11]
     },
     {
          "title": "Le vieux phare",
          "subtitle": "Paru le 12 janvier 1924",
-         "places" : [16, 20]
+         "places" : [16, 20],
+         "chars": [0,6]
     },
     {
          "title": "Au bord de l'abîme",
          "subtitle": "Paru le 13 janvier 1924",
-         "places" : [16]
+         "places" : [16],
+         "chars": [0,6,10]
     },
     {
          "title": "Rivales",
          "subtitle": "Paru le 14 janvier 1924",
-         "places" : [16]
+         "places" : [16],
+         "chars": [0,6,10,11]
     },
     {
          "title": "Démence et génie",
          "subtitle": "Paru le 15 janvier 1924",
-         "places" : [16]
+         "places" : [16],
+         "chars": [0,1,6,10,11]
     },
     {
          "title": "Il y a vingt-quatre ans, deux hommes fuyaient...",
          "subtitle": "Paru le 16 janvier 1924",
-         "places" : [16]
+         "places" : [16],
+         "chars": [0,1,10]
     },
     {
          "title": "Ad lapidem currebat olim regina...",
          "subtitle": "Paru le 17 janvier 1924",
-         "places" : [16]
+         "places" : [16],
+         "chars": [0,1,10,11]
     },
     {
          "title": "Deux ennemis",
          "subtitle": "Paru le 18 janvier 1924",
-         "places" : [16]
+         "places" : [16],
+         "chars": [0,1,10,11]
     },
     {
          "title": "Alcor",
          "subtitle": "Paru le 19 janvier 1924",
-         "places" : [16]
+         "places" : [16],
+         "chars": [0,10]
     },
     {
          "title": "Le coffre-fort des moines",
          "subtitle": "Paru le 20 janvier 1924",
-         "places" : [16]
+         "places" : [16],
+         "chars": [0,6,10,11,17]
     },
     {
          "title": "Héroïque enfant",
          "subtitle": "Paru le 21 janvier 1924",
-         "places" : [16]
+         "places" : [16],
+         "chars": [0,1,6,11]
     },
     {
          "title": "Le dolmen de la Reine",
          "subtitle": "Paru le 22 janvier 1924",
-         "places" : [3, 7, 20, 21]
+         "places" : [3, 7, 20, 21],
+         "chars": [0,2,3,6,19]
     },
     {
          "title": "Poussières et cendres",
          "subtitle": "Paru le 23 janvier 1924",
-         "places" : [21]
+         "places" : [21],
+         "chars": [0,2,3,6]
     },
     {
          "title": "L'infernale créature",
          "subtitle": "Paru le 24 janvier 1924",
-         "places" : [10, 11]
+         "places" : [10, 11],
+         "chars": [0,2,10,11]
     },
     {
          "title": "La piège se resserre",
          "subtitle": "Paru le 25 janvier 1924",
-         "places" : [11]
+         "places" : [11],
+         "chars": [0,10,11]
     },
     {
          "title": "Une apparition",
          "subtitle": "Paru le 26 janvier 1924",
-         "places" : [11]
+         "places" : [11],
+         "chars": [0,10,11,17]
     },
     {
          "title": "Trois coups de poignard",
          "subtitle": "Paru le 27 janvier 1924",
-         "places" : [11]
+         "places" : [11],
+         "chars": [0,10]
     },
     {
          "title": "Elevée dans le crime",
          "subtitle": "Paru le 28 janvier 1924",
-         "places" : [11]
+         "places" : [11],
+         "chars": [0,10]
     },
     {
          "title": "Raoul triomphe ou la défaîte du vice",
          "subtitle": "Paru le 29 janvier 1924",
-         "places" : [11]
+         "places" : [11],
+         "chars": [0,10]
     },
     {
          "title": "Epilogue",
          "subtitle": "Paru le 30 janvier 1924",
-         "places" : [11]
+         "places" : [11],
+         "chars": [0,1,10]
     }
 ] }
