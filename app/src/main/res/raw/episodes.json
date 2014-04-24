@@ -200,7 +200,7 @@
     {
          "title": "Guet-apens",
          "subtitle": "Paru le 7 janvier 1924",
-         "places" : [8, 13],,
+         "places" : [8, 13],
          "chars": [0,10]
     },
     {
@@ -236,7 +236,7 @@
     {
          "title": "Au bord de l'abîme",
          "subtitle": "Paru le 13 janvier 1924",
-         "places" : [16],
+         "places": [16],
          "chars": [0,6,10]
     },
     {
