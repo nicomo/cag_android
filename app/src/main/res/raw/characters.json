@@ -10,47 +10,42 @@
 		"epid": "0"
 	},
     {
-		"name": "Baron Godefroy d’Étigues",
+		"name": "Godefroy d’Étigues",
 		"gender": "Male",
 		"epid": "1"
 	},
     {
-		"name": "Comte Oscar de Bennetot",
+		"name": "Oscar de Bennetot",
 		"gender": "Male",
 		"epid": "1"
 	},
     {
-		"name": "Marquis de Rolleville",
+		"name": "Guy de Rolleville",
 		"gender": "Male",
 		"epid": "2"
 	},
     {
-		"name": "Mathieu de la Vaupalière",
+		"name": "Matthieu de la Vaupalière",
 		"gender": "Male",
 		"epid": "2"
 	},
     {
-		"name": "d’Auppegard",
+		"name": "Désiré Beaumagnan",
 		"gender": "Male",
 		"epid": "2"
 	},
     {
-		"name": "Beaumagnan",
+		"name": "Prince d’Arcole",
 		"gender": "Male",
 		"epid": "2"
 	},
     {
-		"name": "prince d’Arcole",
+		"name": "Gustave d’Ormont",
 		"gender": "Male",
 		"epid": "2"
 	},
     {
-		"name": "D’Ormont",
-		"gender": "Male",
-		"epid": "2"
-	},
-    {
-		"name": "Roux d’Estiers",
+		"name": "Charles Roux d’Estiers",
 		"gender": "Male",
 		"epid": "2"
 	},
@@ -60,102 +55,52 @@
 		"epid": "2"
 	},
     {
-		"name": "Anonyme",
+		"name": "Léonard",
 		"gender": "Male",
-		"epid": "51"
+		"epid": "13"
 	},
     {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
+		"name": "Eugénie Vasseur",
+		"gender": "Female",
+        "epid": "14"
 	},
     {
-		"name": "Anonyme",
+		"name": "La maréchaussée de Doudeville",
 		"gender": "Male",
-        "epid": "51"
+        "epid": "14"
 	},
     {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
+		"name": "Albertine Delâtre",
+		"gender": "Female",
+        "epid": "17"
 	},
     {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
+		"name": "Brigitte Rousselin",
+		"gender": "Female",
+        "epid": "19"
 	},
     {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
+		"name": "Valentine Petipeton",
+		"gender": "Female",
+        "epid": "19"
 	},
     {
-		"name": "Anonyme",
+		"name": "Dominique Caillé",
 		"gender": "Male",
-        "epid": "51"
+        "epid": "20"
 	},
     {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
+		"name": "Marthe Rousselin",
+		"gender": "Female",
+        "epid": "30"
 	},
     {
-		"name": "Anonyme",
+		"name": "Mgr d'Ambricourt",
 		"gender": "Male",
-        "epid": "51"
+        "epid": "43"
 	},
     {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
-	},
-    {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
-	},
-    {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
-	},
-    {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
-	},
-    {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
-	},
-    {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
-	},
-    {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
-	},
-    {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
-	},
-    {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
-	},
-    {
-		"name": "Anonyme",
-		"gender": "Male",
-        "epid": "51"
-	},
-    {
-		"name": "Anonyme",
+		"name": "Joseph Pellegrini",
 		"gender": "Male",
         "epid": "51"
 	}
