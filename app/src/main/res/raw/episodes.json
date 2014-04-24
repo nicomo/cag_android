@@ -12,6 +12,7 @@
         "title": "A l'ombre de l'Aiguille",
         "subtitle": "Paru le 11 décembre 1923",
         "pins": [
+            { "pid": 0.875, "cid":  3, "gender":   "Male" },
             { "pid": 0.895, "cid":  4, "gender":   "Male" }
         ],
         "places" : [10, 11]
