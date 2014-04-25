@@ -67,7 +67,7 @@ public class CharacterCardAdapter extends BaseAdapter {
 
             if (this.home) {
                 if (((HomeActivity) context).charpublished(position)) {
-                    iden = context.getResources().getIdentifier("pin_" + (position + 1), "drawable", context.getPackageName());
+                    iden = context.getResources().getIdentifier("pin_" + position, "drawable", context.getPackageName());
                     name.setText(character.getString("name"));
                 } else {
                     if (character.getString("gender").equals("Male")) {
@@ -77,7 +77,7 @@ public class CharacterCardAdapter extends BaseAdapter {
                     }
                 }
             } else {
-                iden = context.getResources().getIdentifier("pin_" + (position + 1), "drawable", context.getPackageName());
+                iden = context.getResources().getIdentifier("pin_" + position, "drawable", context.getPackageName());
             }
             avatar.setImageResource(iden);
         } catch (JSONException e) {

@@ -125,7 +125,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
                                         int position, long id) {
                     try {
                         Intent intent = new Intent(ctx, CharacterActivity.class);
-                        intent.putExtra("cid", epchars.getInt(position) - 1);
+                        intent.putExtra("cid", epchars.getInt(position));
                         startActivity(intent);
                         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                     } catch (JSONException e) {
@@ -232,7 +232,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
             for (int j = 0; j < jpins.length(); j++) {
                 JSONObject jpin = jpins.getJSONObject(j);
                 double pid = jpin.getDouble("pid");
-                final int cid = jpin.getInt("cid") - 1;
+                final int cid = jpin.getInt("cid");
                 String gender = jpin.getString("gender");
 
                 RelativeLayout pinContainer = (RelativeLayout)findViewById(R.id.pinContainer);

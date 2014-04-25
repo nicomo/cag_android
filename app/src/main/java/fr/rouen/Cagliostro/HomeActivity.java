@@ -298,7 +298,7 @@ public class HomeActivity extends Activity {
 
         if (charExpanded == false) {
             final int initsize = 320;
-            final int targetsize = 1120;
+            final int targetsize = 720;
 
             Animation a = new Animation() {
                 @Override

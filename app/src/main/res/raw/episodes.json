@@ -3,8 +3,8 @@
         "title": "Arsène Lupin a vingt ans",
         "subtitle": "Paru le 10 décembre 1923",
         "pins": [
-            { "pid": 0.00, "cid":  1, "gender":   "Male" },
-            { "pid": 0.67, "cid":  2, "gender": "Female" }
+            { "pid": 0.00, "cid":  0, "gender":   "Male" },
+            { "pid": 0.67, "cid":  1, "gender": "Female" }
         ],
         "places" : [11],
         "chars": [0,1]
@@ -13,8 +13,8 @@
         "title": "A l'ombre de l'Aiguille",
         "subtitle": "Paru le 11 décembre 1923",
         "pins": [
-            { "pid": 0.875, "cid":  3, "gender":   "Male" },
-            { "pid": 0.895, "cid":  4, "gender":   "Male" }
+            { "pid": 0.875, "cid":  2, "gender":   "Male" },
+            { "pid": 0.895, "cid":  3, "gender":   "Male" }
         ],
         "places" : [10, 11],
         "chars": [0,1,2,3]
