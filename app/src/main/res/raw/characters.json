@@ -2,7 +2,8 @@
 	{
 		"name": "Raoul d’Andrésy",
 		"gender": "Male",
-		"epid": "0"
+		"epid": "0",
+		"friends": [1,10,17,18,20]
 	},
     {
 		"name": "Clarisse d’Étigues",

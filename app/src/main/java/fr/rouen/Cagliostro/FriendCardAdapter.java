@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class FooterCharacterAdapter extends BaseAdapter {
+public class FriendCardAdapter extends BaseAdapter {
 
     private Context context;
     private JSONArray characters;
@@ -22,7 +23,7 @@ public class FooterCharacterAdapter extends BaseAdapter {
     private Typeface georgia;
     SharedPreferences prefs;
 
-    public FooterCharacterAdapter(Context context, JSONArray characters, JSONArray epchars) {
+    public FriendCardAdapter(Context context, JSONArray characters, JSONArray epchars) {
         this.context = context;
         this.characters = characters;
         this.georgia = Typeface.createFromAsset(context.getAssets(), "fonts/georgia.ttf");
@@ -35,12 +36,27 @@ public class FooterCharacterAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View v = inflater.inflate(R.layout.footer_character_card, null);
+        View v = inflater.inflate(R.layout.character_card, null);
 
         try {
-            int epcharid = epchars.getInt(position);
+            JSONObject character = characters.getJSONObject(position);
+
             ImageView avatar = (ImageView) v.findViewById(R.id.avatar);
-            int iden = context.getResources().getIdentifier("pin_" + epcharid, "drawable", context.getPackageName());
+
+            int iden;
+
+            if (((CharacterActivity) context).charpublished(position)) {
+                iden = context.getResources().getIdentifier("pin_" + position, "drawable", context.getPackageName());
+                TextView name = (TextView) v.findViewById(R.id.name);
+                name.setText(character.getString("name"));
+                name.setTypeface(this.georgia);
+            } else {
+                if (character.getString("gender").equals("Male")) {
+                    iden = context.getResources().getIdentifier("pin_male", "drawable", context.getPackageName());
+                } else {
+                    iden = context.getResources().getIdentifier("pin_female", "drawable", context.getPackageName());
+                }
+            }
             avatar.setImageResource(iden);
         } catch (JSONException e) {
             System.out.println(e.getMessage());
