@@ -3,133 +3,551 @@
 		"name": "Abbaye de Boscherville",
 		"x": "0.66",
 		"y": "0.58",
-		"epid": "17"
+		"epid": "17",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
 	},
 	{
 		"name": "Abbaye de Fécamp",
 		"x": "0.31",
 		"y": "0.16",
-		"epid": "0"
+		"epid": "0",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
 	},
 	{
 		"name": "Abbaye Gruchet le Valasse",
 		"x": "0.34",
 		"y": "0.42",
-		"epid": "0"
+		"epid": "0",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
 	},
 	{
         "name": "Abbaye de Jumièges",
         "x": "0.57",
         "y": "0.6",
-        "epid": "43"
+        "epid": "43",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Abbaye Montivilliers",
         "x": "0.18",
         "y": "0.46",
-        "epid": "17"
+        "epid": "17",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Abbaye St Wandrille",
         "x": "0.56",
         "y": "0.45",
-        "epid": "0"
+        "epid": "0",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Abbaye de Valmont",
         "x": "0.36",
         "y": "0.17",
-        "epid": "0"
+        "epid": "0",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Caudebec-en-Caux",
         "x": "0.51",
         "y": "0.44",
-        "epid": "43"
+        "epid": "43",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Côte des Deux Amants",
         "x": "0.84",
         "y": "0.7",
-        "epid": "27"
+        "epid": "27",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Duclair",
         "x": "0.62",
         "y": "0.49",
-        "epid": "30"
+        "epid": "30",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Etretat",
         "x": "0.2",
         "y": "0.21",
-        "epid": "1"
+        "epid": "1",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "La Haie d'Etigues",
         "x": "0.25",
         "y": "0.19",
-        "epid": "0"
+        "epid": "0",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "La Bouille",
         "x": "0.65",
         "y": "0.67",
-        "epid": "17"
+        "epid": "17",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Paris",
         "x": "0.83",
         "y": "0.9",
-        "epid": "18"
+        "epid": "18",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Pont-de-l'Arche",
         "x": "0.78",
         "y": "0.72",
-        "epid": "17"
+        "epid": "17",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Rouen",
         "x": "0.73",
         "y": "0.56",
-        "epid": "17"
+        "epid": "17",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Tancarville",
         "x": "0.355",
         "y": "0.49",
-        "epid": "33"
+        "epid": "33",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Yvetot",
         "x": "0.53",
         "y": "0.32",
-        "epid": "14"
+        "epid": "14",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Château de Gueures",
         "x": "0.65",
         "y": "0.1",
-        "epid": "12"
+        "epid": "12",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Doudeville",
         "x": "0.54",
         "y": "0.17",
-        "epid": "14"
+        "epid": "14",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Lillebonne",
         "x": "0.38",
         "y": "0.44",
-        "epid": "29"
+        "epid": "29",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     },
     {
         "name": "Le Mesnil-sous-Jumièges",
         "x": "0.6",
         "y": "0.59",
-        "epid": "43"
+        "epid": "43",
+        "intro": "some lame text for now",
+        "itineraire": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "historique": "some lame text for now",
+        "celebs": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "conversation": [
+            "some lame text for now",
+            "some lame text for now",
+            "some lame text for now"
+        ],
+        "savoir": "some lame text for now",
+        "events": "some lame text for now"
     }
 
 ] }
