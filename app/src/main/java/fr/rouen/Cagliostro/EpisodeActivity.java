@@ -93,7 +93,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
         wv.loadUrl("file:///android_asset/www/"+(epid+1)+".html");
 
         VideoView vv=(VideoView)findViewById(R.id.videoView);
-        vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.bg));
+        vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + getResources().getIdentifier("header_"+this.epid, "raw", getPackageName())));
         vv.setOnPreparedListener (new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
@@ -179,7 +179,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
                     }
                 });
             }
-            else
+            else if (epid < 51)
             {
                 runOnUiThread(new Runnable() {
                     @Override
