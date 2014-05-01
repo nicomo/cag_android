@@ -3,106 +3,126 @@
 		"name": "Raoul d’Andrésy",
 		"gender": "Male",
 		"epid": "0",
-		"friends": [1,10,17,18,20]
+		"friends": [1,10]
 	},
     {
 		"name": "Clarisse d’Étigues",
 		"gender": "Female",
-		"epid": "0"
+		"epid": "0",
+		"friends": [0,15,18,12,19,2]
 	},
     {
 		"name": "Godefroy d’Étigues",
 		"gender": "Male",
-		"epid": "1"
+		"epid": "1",
+		"friends": [3,8,4,5,6,7,9,1,18]
 	},
     {
 		"name": "Oscar de Bennetot",
 		"gender": "Male",
-		"epid": "1"
+		"epid": "1",
+		"friends": [2,4,5,6,7,8,9]
 	},
     {
 		"name": "Guy de Rolleville",
 		"gender": "Male",
-		"epid": "2"
+		"epid": "2",
+		"friends": [2,3,5,6,7,8,9]
 	},
     {
 		"name": "Matthieu de la Vaupalière",
 		"gender": "Male",
-		"epid": "2"
+		"epid": "2",
+		"friends": [2,3,4,6,7,8,9]
 	},
     {
 		"name": "Désiré Beaumagnan",
 		"gender": "Male",
-		"epid": "2"
+		"epid": "2",
+		"friends": [2,3,4,5,7,8,9]
 	},
     {
 		"name": "Prince d’Arcole",
 		"gender": "Male",
-		"epid": "2"
+		"epid": "2",
+		"friends": [2,3,4,5,6,8,9,15]
 	},
     {
 		"name": "Gustave d’Ormont",
 		"gender": "Male",
-		"epid": "2"
+		"epid": "2",
+		"friends": [2,3,4,5,6,7,9]
 	},
     {
 		"name": "Charles Roux d’Estiers",
 		"gender": "Male",
-		"epid": "2"
+		"epid": "2",
+		"friends": [2,3,4,5,6,7,8]
 	},
     {
 		"name": "Joséphine Balsamo",
 		"gender": "Female",
-		"epid": "2"
+		"epid": "2",
+		"friends": [11,20,17,0,12,14]
 	},
     {
 		"name": "Léonard",
 		"gender": "Male",
-		"epid": "13"
+		"epid": "13",
+		"friends": [10]
 	},
     {
 		"name": "Eugénie Vasseur",
 		"gender": "Female",
-        "epid": "14"
+        "epid": "14",
+        "friends": [14,18,13,11,17,10]
 	},
     {
 		"name": "La maréchaussée de Doudeville",
 		"gender": "Male",
-        "epid": "14"
+        "epid": "14",
+        "friends": [14,18,19]
 	},
     {
 		"name": "Albertine Delâtre",
 		"gender": "Female",
-        "epid": "17"
+        "epid": "17",
+        "friends": [13,18,19]
 	},
     {
 		"name": "Brigitte Rousselin",
 		"gender": "Female",
-        "epid": "19"
+        "epid": "19",
+        "friends": [13,1,7]
 	},
     {
 		"name": "Valentine Petipeton",
 		"gender": "Female",
-        "epid": "19"
+        "epid": "19",
+        "friends": [14,12,13,15,7,18]
 	},
     {
 		"name": "Dominique Caillé",
 		"gender": "Male",
-        "epid": "20"
+        "epid": "20",
+        "friends": [0,10,11]
 	},
     {
 		"name": "Marthe Rousselin",
 		"gender": "Female",
-        "epid": "30"
+        "epid": "30",
+        "friends": [1,15,12,14,19,13]
 	},
     {
 		"name": "Mgr d'Ambricourt",
 		"gender": "Male",
-        "epid": "43"
+        "epid": "43",
+        "friends": [13,14,18,6,2]
 	},
     {
 		"name": "Joseph Pellegrini",
 		"gender": "Male",
-        "epid": "51"
+        "epid": "51",
+        "friends": [10,11]
 	}
 ] }
