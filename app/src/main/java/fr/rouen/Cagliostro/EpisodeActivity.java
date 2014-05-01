@@ -12,10 +12,13 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
@@ -24,8 +27,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import org.json.JSONArray;
@@ -45,6 +50,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
     JSONArray episodes;
     JSONArray characters;
     JSONArray places;
+    JSONArray messages;
     String[] titles;
     String[] subtitles;
     SharedPreferences prefs;
@@ -66,6 +72,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
         episodes = appState.getEpisodes();
         characters = appState.getCharacters();
         places = appState.getPlaces();
+        messages = appState.getMessages();
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -311,6 +318,51 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
     @Override
     public void onScrollChanged(CAGScrollView scrollView, int x, int y, int oldx, int oldy) {
         updatePins();
+
+        float yy = y;
+        float ttl = scrollView.getChildAt(0).getHeight() - scrollView.getHeight();
+        float offset = yy/ttl;
+
+        for (int i = 0; i < messages.length(); i++)
+        {
+            try {
+                JSONArray charmessages = messages.getJSONArray(i);
+                for (int j = 0; j < charmessages.length(); j++)
+                {
+                    JSONObject message = charmessages.getJSONObject(j);
+
+                    if (message.getInt("toast") == 1
+                            && message.getInt("epid") == epid
+                            && offset >= message.getDouble("pid")
+                            && ! message.has("shown")
+                        )
+                    {
+                        LayoutInflater inflater = getLayoutInflater();
+                        View layout = inflater.inflate(R.layout.message, (ViewGroup) findViewById(R.id.messageroot));
+
+                        ImageView avatar = (ImageView) layout.findViewById(R.id.avatar);
+                        avatar.setImageResource(getResources().getIdentifier("pin_" + i, "drawable", getPackageName()));
+
+                        TextView name = (TextView) layout.findViewById(R.id.name);
+                        name.setTypeface(null, Typeface.BOLD);
+                        name.setText(characters.getJSONObject(j).getString("name"));
+
+                        TextView msg = (TextView) layout.findViewById(R.id.msg);
+                        msg.setText(message.getString("msg"));
+
+                        Toast toast = new Toast(this);
+                        toast.setDuration(Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.BOTTOM, 0, 50);
+                        toast.setView(layout);
+                        toast.show();
+
+                        message.put("shown", true);
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void updatePins() {
