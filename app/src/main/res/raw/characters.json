@@ -3,126 +3,168 @@
 		"name": "Raoul d’Andrésy",
 		"gender": "Male",
 		"epid": "0",
-		"friends": [1,10]
+		"friends": [1,10],
+		"quote": "Il nous faut de l&apos;audace, encore de l&apos;audace, toujours de l&apos;audace.",
+		"quote_auth": "George Danton"
 	},
     {
 		"name": "Clarisse d’Étigues",
 		"gender": "Female",
 		"epid": "0",
-		"friends": [0,15,18,12,19,2]
+		"friends": [0,15,18,12,19,2],
+		"quote": "Un regard de toi, une seule parole m’en dit plus que toute la sagesse de ce monde.",
+		"quote_auth": "J. W. von Goethe"
 	},
     {
 		"name": "Godefroy d’Étigues",
 		"gender": "Male",
 		"epid": "1",
-		"friends": [3,8,4,5,6,7,9,1,18]
+		"friends": [3,8,4,5,6,7,9,1,18],
+		"quote": "Un bon gendre est un gendre mort.",
+		"quote_auth": "G. d&apos;Étigues"
 	},
     {
 		"name": "Oscar de Bennetot",
 		"gender": "Male",
 		"epid": "1",
-		"friends": [2,4,5,6,7,8,9]
+		"friends": [2,4,5,6,7,8,9],
+		"quote": "La loi du plus fort est toujours la meilleure.",
+		"quote_auth": "La Fontaine"
 	},
     {
 		"name": "Guy de Rolleville",
 		"gender": "Male",
 		"epid": "2",
-		"friends": [2,3,5,6,7,8,9]
+		"friends": [2,3,5,6,7,8,9],
+		"quote": "Quand on aime, on ne compte pas !",
+		"quote_auth": "Josette Dufoin, nourrice."
 	},
     {
 		"name": "Matthieu de la Vaupalière",
 		"gender": "Male",
 		"epid": "2",
-		"friends": [2,3,4,6,7,8,9]
+		"friends": [2,3,4,6,7,8,9],
+		"quote": "L&apos;avantage des médecins, c&apos;est que lorsqu&apos;ils commettent une erreur, ils l&apos;enterrent tout de suite.",
+		"quote_auth": "Alphonse Allais"
 	},
     {
 		"name": "Désiré Beaumagnan",
 		"gender": "Male",
 		"epid": "2",
-		"friends": [2,3,4,5,7,8,9]
+		"friends": [2,3,4,5,7,8,9],
+		"quote": "Tout le mal de ce monde vient de ce qu&apos;on n&apos;est pas assez bon ou pas assez pervers.",
+		"quote_auth": "Machiavel"
 	},
     {
 		"name": "Prince d’Arcole",
 		"gender": "Male",
 		"epid": "2",
-		"friends": [2,3,4,5,6,8,9,15]
+		"friends": [2,3,4,5,6,8,9,15],
+		"quote": "Dire que j&apos;ai gâché des années de ma vie, que j&apos;ai voulu mourir, que j&apos;ai eu mon plus grand amour, pour une femme qui ne me plaisait pas, qui n&apos;était pas mon genre !",
+		"quote_auth": "Un mondain"
 	},
     {
 		"name": "Gustave d’Ormont",
 		"gender": "Male",
 		"epid": "2",
-		"friends": [2,3,4,5,6,7,9]
+		"friends": [2,3,4,5,6,7,9],
+		"quote": "Ce qui ne te tue pas te rend plus fort.",
+		"quote_auth": "Nietzsche"
 	},
     {
 		"name": "Charles Roux d’Estiers",
 		"gender": "Male",
 		"epid": "2",
-		"friends": [2,3,4,5,6,7,8]
+		"friends": [2,3,4,5,6,7,8],
+		"quote": "Toute machine qui s’arrête est une machine morte.",
+		"quote_auth": "Emile Zola"
 	},
     {
 		"name": "Joséphine Balsamo",
 		"gender": "Female",
 		"epid": "2",
-		"friends": [11,20,17,0,12,14]
+		"friends": [11,20,17,0,12,14],
+		"quote": "Il n’y a que les esprits légers pour ne pas juger sur les apparences.",
+		"quote_auth": "Oscar Wilde"
 	},
     {
 		"name": "Léonard",
 		"gender": "Male",
 		"epid": "13",
-		"friends": [10]
+		"friends": [10],
+		"quote": "Le silence est un ami qui ne trahit jamais.",
+		"quote_auth": "Sagesse orientale"
 	},
     {
 		"name": "Eugénie Vasseur",
 		"gender": "Female",
         "epid": "14",
-        "friends": [14,18,13,11,17,10]
+        "friends": [14,18,13,11,17,10],
+        "quote": "Le meilleur douillon du pays de Caux.",
+		"quote_auth": "Monsieur Flochart, sous-préfet"
 	},
     {
 		"name": "La maréchaussée de Doudeville",
 		"gender": "Male",
         "epid": "14",
-        "friends": [14,18,19]
+        "friends": [14,18,19],
+        "quote": "Gendarme : Rempart de la société.",
+		"quote_auth": "Gustave Flaubert, Dictionnaire des idées reçues"
 	},
     {
 		"name": "Albertine Delâtre",
 		"gender": "Female",
         "epid": "17",
-        "friends": [13,18,19]
+        "friends": [13,18,19],
+        "quote": "Calomniez, calomniez, il en restera toujours quelque chose ! ",
+		"quote_auth": "Voltaire"
 	},
     {
 		"name": "Brigitte Rousselin",
 		"gender": "Female",
         "epid": "19",
-        "friends": [13,1,7]
+        "friends": [13,1,7],
+        "quote": "Diversité, c’est ma devise !",
+		"quote_auth": "La Fontaine"
 	},
     {
 		"name": "Valentine Petipeton",
 		"gender": "Female",
         "epid": "19",
-        "friends": [14,12,13,15,7,18]
+        "friends": [14,12,13,15,7,18],
+        "quote": "La révolution sera la floraison de l’humanité, comme l’amour est la floraison du cœur.",
+		"quote_auth": "Louise Michel"
 	},
     {
 		"name": "Dominique Caillé",
 		"gender": "Male",
         "epid": "20",
-        "friends": [0,10,11]
+        "friends": [0,10,11],
+        "quote": "Quand j’étais gamin, j’avais la passion des cartes. Je restais des heures à considérer l’Amérique du Sud, l’Afrique ou l’Australie – perdu dans toutes les gloires de l’exploration. A cette époque, il y avait pas mal d’espaces blancs sur la terre, et quand j’en apercevais un sur la carte qui avait l’air particulièrement attrayant (mais ils ont tous cet air-là !), je posais le doigt dessus et disais : ‘Quand je serai grand, j’irai là !’",
+		"quote_auth": "Rudyard Kipling"
 	},
     {
 		"name": "Marthe Rousselin",
 		"gender": "Female",
         "epid": "30",
-        "friends": [1,15,12,14,19,13]
+        "friends": [1,15,12,14,19,13],
+        "quote": "Comment voulez-vous gouverner un pays où il existe 258 variétés de fromage ?",
+		"quote_auth": "Sagesse du pays d&apos;Artois"
 	},
     {
 		"name": "Mgr d'Ambricourt",
 		"gender": "Male",
         "epid": "43",
-        "friends": [13,14,18,6,2]
+        "friends": [13,14,18,6,2],
+        "quote": "Faites ce que je dis, mais ne faites pas ce que je fais.",
+		"quote_auth": "Évangile selon Saint Matthieu"
 	},
     {
 		"name": "Joseph Pellegrini",
 		"gender": "Male",
         "epid": "51",
-        "friends": [10,11]
+        "friends": [10,11],
+        "quote": "Quand on tire, on raconte pas sa vie.",
+		"quote_auth": "Sagesse nord-américaine"
 	}
 ] }
