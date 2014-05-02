@@ -21,14 +21,16 @@ public class FriendCardAdapter extends BaseAdapter {
     private JSONArray characters;
     private JSONArray epchars;
     private Typeface georgia;
+    private int cid;
     SharedPreferences prefs;
 
-    public FriendCardAdapter(Context context, JSONArray characters, JSONArray epchars) {
+    public FriendCardAdapter(Context context, JSONArray characters, int cid, JSONArray epchars) {
         this.context = context;
         this.characters = characters;
         this.georgia = Typeface.createFromAsset(context.getAssets(), "fonts/georgia.ttf");
         this.prefs = PreferenceManager.getDefaultSharedPreferences(context);
         this.epchars = epchars;
+        this.cid = cid;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -39,17 +41,18 @@ public class FriendCardAdapter extends BaseAdapter {
         View v = inflater.inflate(R.layout.character_card, null);
 
         try {
-            JSONObject character = characters.getJSONObject(position);
+            int nextcid = characters.getJSONObject(cid).getJSONArray("friends").getInt(position);
+            JSONObject character = characters.getJSONObject(nextcid);
 
             ImageView avatar = (ImageView) v.findViewById(R.id.avatar);
 
             int iden;
+            TextView name = (TextView) v.findViewById(R.id.name);
+            name.setTypeface(this.georgia);
 
-            if (((CharacterActivity) context).charpublished(position)) {
-                iden = context.getResources().getIdentifier("pin_" + position, "drawable", context.getPackageName());
-                TextView name = (TextView) v.findViewById(R.id.name);
+            if (((CharacterActivity) context).charpublished(nextcid)) {
+                iden = context.getResources().getIdentifier("pin_" + nextcid, "drawable", context.getPackageName());
                 name.setText(character.getString("name"));
-                name.setTypeface(this.georgia);
             } else {
                 if (character.getString("gender").equals("Male")) {
                     iden = context.getResources().getIdentifier("pin_male", "drawable", context.getPackageName());

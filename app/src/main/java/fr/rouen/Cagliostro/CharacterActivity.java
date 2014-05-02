@@ -75,18 +75,24 @@ public class CharacterActivity extends Activity {
         friendsgrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                //if (charpublished(position)) {
-                    Intent intent = new Intent(context, CharacterActivity.class);
-                    intent.putExtra("cid", position);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-                //}
+                try {
+                    int nextcid = characters.getJSONObject(cid).getJSONArray("friends").getInt(position);
+                    if (charpublished(nextcid)) {
+                        Intent intent = new Intent(context, CharacterActivity.class);
+                        intent.putExtra("cid", nextcid);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
         });
 
         try {
             friends = characters.getJSONObject(cid).getJSONArray("friends");
-            cca = new FriendCardAdapter(this, characters, friends);
+            cca = new FriendCardAdapter(this, characters, cid, friends);
             friendsgrid.setAdapter(cca);
         } catch (JSONException e) {
             e.printStackTrace();

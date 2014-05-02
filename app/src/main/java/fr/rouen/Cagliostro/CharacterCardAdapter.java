@@ -46,12 +46,12 @@ public class CharacterCardAdapter extends BaseAdapter {
             ImageView avatar = (ImageView) v.findViewById(R.id.avatar);
 
             int iden;
+            TextView name = (TextView) v.findViewById(R.id.name);
+            name.setTypeface(this.georgia);
 
             if (((HomeActivity) context).charpublished(position)) {
                 iden = context.getResources().getIdentifier("pin_" + position, "drawable", context.getPackageName());
-                TextView name = (TextView) v.findViewById(R.id.name);
                 name.setText(character.getString("name"));
-                name.setTypeface(this.georgia);
             } else {
                 if (character.getString("gender").equals("Male")) {
                     iden = context.getResources().getIdentifier("pin_male", "drawable", context.getPackageName());
