@@ -7,9 +7,11 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Gallery;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,9 +26,11 @@ public class CharacterActivity extends Activity {
     int cid;
     JSONArray characters;
     JSONArray friends;
+    JSONArray confessions;
     Typeface clarendon;
     Typeface georgia;
     FriendCardAdapter cca;
+    ConfessionsAdapter confa;
     SharedPreferences prefs;
 
     @Override
@@ -44,6 +48,7 @@ public class CharacterActivity extends Activity {
 
         CAGApp appState = ((CAGApp)getApplicationContext());
         characters = appState.getCharacters();
+        confessions = appState.getConfessions();
 
         TextView name = (TextView)findViewById(R.id.name);
         ImageView avatar = (ImageView)findViewById(R.id.avatar);
@@ -86,7 +91,6 @@ public class CharacterActivity extends Activity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
         });
 
@@ -97,6 +101,10 @@ public class CharacterActivity extends Activity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        Gallery confessionspager = (Gallery)findViewById(R.id.confessionspager);
+        confa = new ConfessionsAdapter(this, confessions, cid);
+        confessionspager.setAdapter(confa);
     }
 
     @Override

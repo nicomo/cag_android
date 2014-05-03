@@ -1,4 +1,4 @@
-{ "questions" : [
+{ "confessions" : [
 	{ "question" : "Ma plus grande qualité.",
       "reponses" : [
 			"Le charme.",
@@ -26,7 +26,7 @@
    	},
 	{ "question" : "Ce que j’apprécie le plus chez mes amis.",
      "reponses" : [
-			"L&apos;admiration.",
+			"L’admiration.",
 			"La gaieté !",
 			"Un bel arbre généalogique.",
 			"Un bon terrain de chasse.",
@@ -41,7 +41,7 @@
 			"Un bon coup de fourchette.",
 			"L’honnêteté, la modestie, la tempérance.",
 			"L’indiscrétion.",
-			" Le diamant, le meilleur ami de la femme.",
+			"Le diamant, le meilleur ami de la femme.",
 			"Le courage.",
 			"Les qualités du vrai coéquipier : la franchise et la débrouillardise.",
 			"L’honneur qu’ils me font d’être mes amis.",
@@ -60,17 +60,17 @@
 			"La comtesse, ma faiblesse.",
 			"L’âge qui fait de moi un vieux beau, hélas.",
 			"Le manque de souplesse.",
-			"J’ai du mal à visser droit : l&apos;impatience.",
+			"J’ai du mal à visser droit : l’impatience.",
 			"J’ai trop de scrupules.",
 			"Non renseigné.",
 			"La gourmandise !",
 			"La maréchaussée de Doudeville  est irréprochable !",
 			"Une vue basse. Pourquoi ces journaux sont-ils écrits si petit !",
 			"Un défaut ? Quel défaut ?",
-			" Je ne rajeunis pas.",
+			"Je ne rajeunis pas.",
 			"Trop pauvre pour monter une expédition",
 			"J’aime trop.",
-			"L&apos;an passé, j’ai volé un ruban. Dans la sacristie.",
+			"L’an passé, j’ai volé un ruban. Dans la sacristie.",
 			"Trop sentimental."
 		  ]
    },
@@ -104,9 +104,9 @@
 			"Aimer et me faire aimer.",
 			"Epouser Raoul.",
 			"Écraser la tête du jeune gringalet qui tourne autour de ma fille. Avec un seul poing.",
-			"Une Smith &amp; Remington, calibre 6, à détente mexicaine.",
+			"Une Smith & Remington, calibre 6, à détente mexicaine.",
 			"Un canard barboteur sud-américain. Ou un Vauquerville à huppe bleue. J’hésite.",
-			"Disséquer le cerveau de Charcot, l&apos;aliéniste.",
+			"Disséquer le cerveau de Charcot, l’aliéniste.",
 			"Résoudre l’énigme des moines.",
 			"Une invitation chez la duchesse de Merguantes serait la consécration de ma vie mondaine. Il paraît que le petit Trousp la connaît bien.",
 			"Gagner la 2e édition du grand concours international de boules lyonnaises.",
@@ -166,7 +166,7 @@
 			"Présidente de la Confrérie des Gouste-Douillon.",
 			"Gendarme un jour, gendarme toujours !",
 			"Officier de la police des mœurs",
-			"Moi-même, c&apos;est suffisant. Et bien assez épuisant.",
+			"Moi-même, c’est suffisant. Et bien assez épuisant.",
 			"Plus jeune.",
 			"Le plus grand explorateur de tous les temps.",
 			"Médaille d’or du meilleur Neufchâtel de Seine-inférieure.",
@@ -180,7 +180,7 @@
 			"Le beau, l’intrépide Raoul d’Andrésy.",
 			"Jules-Jacques-Philibert-Marie de Caux de Praslin-Chabrillac, comte de Fitz-Montguyon, troisième du nom.",
 			"Mes chiens.",
-			"Messieurs Jean Tasse &amp; Jacques Humule, antiquaires,  5 rue Damiette, Rouen.",
+			"Messieurs Jean Tasse & Jacques Humule, antiquaires,  5 rue Damiette, Rouen.",
 			"Arthur J. Hamburger, diététicien.",
 			"Son éminence le cardinal de Richelieu. Louis XIII ne fut guère plus qu’une poupée entre ses mains…",
 			"Brummel. Sans lui, on porterait encore des culottes et des perruques.",
@@ -264,7 +264,7 @@
 			"Le Portrait de Dorian Gray.",
 			"Non renseigné.",
 			"L’Ode au douillon, de monsieur Donselet, de l’académie française.",
-			"Le feuilleton Le Gendarme de &quot;La dépêche de Doudeville&quot; : Le Gendarme à Deauville, Le Gendarme à Yvetot, le gendarme et les sélénites…",
+			"Le feuilleton Le Gendarme de « La dépêche de Doudeville » : Le Gendarme à Deauville, Le Gendarme à Yvetot, le gendarme et les sélénites…",
 			"Le Quotidien du crime, La Gazette du bagne, La Revue illustrée du parricide…",
 			"L’art de la guerre, de Sun Tse. Il en faut des ruses pour survivre dans ce monde d’hommes !",
 			"La Guerre civile en France, de Monsieur Marx.",
@@ -321,13 +321,13 @@
 			"Le pragmatisme suppose quelques arrangements avec la morale.",
 			"Les fautes d’étourderie.",
 			"Les péchés véniels.",
-			"Aucune : les indulgences, ça s&apos;achète."
+			"Aucune : les indulgences, ça s’achète."
 		  ]
    },
    { "question" : "Ma devise",
      "reponses" : [
 			"Impossible n’est pas français !",
-			"Celui qui m&apos;enflamme a le pouvoir de m&apos;éteindre.",
+			"Celui qui m’enflamme a le pouvoir de m’éteindre.",
 			"C’est comme ça, et pas autrement.",
 			"Discute pas.",
 			"On ne sait jamais, ça peut toujours servir.",
@@ -344,7 +344,7 @@
 			"Qui s’y frotte sy pique !",
 			"A nous deux, Versailles !",
 			"La fin justifie les moyens.",
-			"Ce n&apos;est pas la vache qui beugle le plus fort qui a le plus de lait.",
+			"Ce n’est pas la vache qui beugle le plus fort qui a le plus de lait.",
 			"Après tout, Judas aussi était apôtre !",
 			"Le franc-or, le bon du trésor, le dollar."
 		  ]
