@@ -1,17 +1,18 @@
 package fr.rouen.Cagliostro;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Gallery;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +22,8 @@ import org.json.JSONException;
 
 import java.util.Date;
 
-public class CharacterActivity extends Activity {
+
+public class CharacterActivity extends FragmentActivity {
 
     int cid;
     JSONArray characters;
@@ -102,8 +104,8 @@ public class CharacterActivity extends Activity {
             e.printStackTrace();
         }
 
-        Gallery confessionspager = (Gallery)findViewById(R.id.confessionspager);
-        confa = new ConfessionsAdapter(this, confessions, cid);
+        ViewPager confessionspager = (ViewPager)findViewById(R.id.confessionspager);
+        confa = new ConfessionsAdapter(super.getSupportFragmentManager(), confessions, cid);
         confessionspager.setAdapter(confa);
     }
 

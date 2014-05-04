@@ -12,7 +12,7 @@
         android:text="Question 1"
         android:id="@+id/q1"
         android:textStyle="bold"
-        android:padding="5dp"/>
+        android:padding="10dp"/>
 
     <View
         android:layout_width="fill_parent"
@@ -27,14 +27,16 @@
         android:text="Réponse 1"
         android:id="@+id/r1"
         android:textStyle="italic"
-        android:padding="5dp"/>
+        android:padding="10dp"/>
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#beb2b0"
-        android:padding="5dp"
-        android:paddingBottom="10dp"/>
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="15dp"/>
 
     <TextView
         android:layout_width="fill_parent"
@@ -43,7 +45,7 @@
         android:text="Question 2"
         android:id="@+id/q2"
         android:textStyle="bold"
-        android:padding="5dp"/>
+        android:padding="10dp"/>
 
     <View
         android:layout_width="fill_parent"
@@ -58,7 +60,7 @@
         android:text="Réponse 2"
         android:id="@+id/r2"
         android:textStyle="italic"
-        android:padding="5dp"/>
+        android:padding="10dp"/>
 
     <View
         android:layout_width="fill_parent"
