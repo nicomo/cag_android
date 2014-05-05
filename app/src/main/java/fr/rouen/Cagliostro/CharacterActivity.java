@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -16,6 +17,8 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.viewpagerindicator.CirclePageIndicator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -104,9 +107,19 @@ public class CharacterActivity extends FragmentActivity {
             e.printStackTrace();
         }
 
+        TextView confessionstitle = (TextView)findViewById(R.id.confessionstitle);
+        confessionstitle.setTypeface(georgia);
+
         ViewPager confessionspager = (ViewPager)findViewById(R.id.confessionspager);
         confa = new ConfessionsAdapter(super.getSupportFragmentManager(), confessions, cid);
         confessionspager.setAdapter(confa);
+
+        CirclePageIndicator indicator = (CirclePageIndicator)findViewById(R.id.pagerindicator);
+        indicator.setViewPager(confessionspager);
+        indicator.setFillColor(Color.parseColor("#151313"));
+        indicator.setPageColor(Color.parseColor("#beb2b0"));
+        indicator.setStrokeWidth(0);
+        indicator.setRadius(8);
     }
 
     @Override

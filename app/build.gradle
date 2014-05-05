@@ -9,6 +9,7 @@ buildscript {
 apply plugin: 'android'
 
 repositories {
+    maven { url "http://dl.bintray.com/populov/maven" }
     mavenCentral()
 }
 
@@ -34,4 +35,5 @@ dependencies {
     //compile files('../lib/justifiedtextviewlibrary.jar')
     //compile 'com.etsy.android.grid:library:1.0.4'
     compile "com.android.support:support-v4:19.0.1"
+    compile 'com.viewpagerindicator:library:2.4.1@aar'
 }
