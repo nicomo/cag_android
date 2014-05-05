@@ -110,6 +110,9 @@ public class CharacterActivity extends FragmentActivity {
         TextView confessionstitle = (TextView)findViewById(R.id.confessionstitle);
         confessionstitle.setTypeface(georgia);
 
+        TextView messagestitle = (TextView)findViewById(R.id.messagestitle);
+        messagestitle.setTypeface(georgia);
+
         ViewPager confessionspager = (ViewPager)findViewById(R.id.confessionspager);
         confa = new ConfessionsAdapter(super.getSupportFragmentManager(), confessions, cid);
         confessionspager.setAdapter(confa);
