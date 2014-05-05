@@ -1,7 +1,5 @@
 package fr.rouen.Cagliostro;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -32,10 +30,12 @@ public class CharacterActivity extends FragmentActivity {
     JSONArray characters;
     JSONArray friends;
     JSONArray confessions;
+    JSONArray messages;
     Typeface clarendon;
     Typeface georgia;
     FriendCardAdapter cca;
     ConfessionsAdapter confa;
+    MessagesAdapter messa;
     SharedPreferences prefs;
 
     @Override
@@ -54,6 +54,7 @@ public class CharacterActivity extends FragmentActivity {
         CAGApp appState = ((CAGApp)getApplicationContext());
         characters = appState.getCharacters();
         confessions = appState.getConfessions();
+        messages = appState.getMessages();
 
         TextView name = (TextView)findViewById(R.id.name);
         ImageView avatar = (ImageView)findViewById(R.id.avatar);
@@ -117,12 +118,23 @@ public class CharacterActivity extends FragmentActivity {
         confa = new ConfessionsAdapter(super.getSupportFragmentManager(), confessions, cid);
         confessionspager.setAdapter(confa);
 
-        CirclePageIndicator indicator = (CirclePageIndicator)findViewById(R.id.pagerindicator);
-        indicator.setViewPager(confessionspager);
-        indicator.setFillColor(Color.parseColor("#151313"));
-        indicator.setPageColor(Color.parseColor("#beb2b0"));
-        indicator.setStrokeWidth(0);
-        indicator.setRadius(8);
+        ViewPager messagespager = (ViewPager)findViewById(R.id.messagespager);
+        messa = new MessagesAdapter(super.getSupportFragmentManager(), messages, cid);
+        messagespager.setAdapter(messa);
+
+        CirclePageIndicator confindicator = (CirclePageIndicator)findViewById(R.id.confessionspagerindicator);
+        confindicator.setViewPager(confessionspager);
+        confindicator.setFillColor(Color.parseColor("#151313"));
+        confindicator.setPageColor(Color.parseColor("#beb2b0"));
+        confindicator.setStrokeWidth(0);
+        confindicator.setRadius(8);
+
+        CirclePageIndicator messindicator = (CirclePageIndicator)findViewById(R.id.messagespagerindicator);
+        messindicator.setViewPager(messagespager);
+        messindicator.setFillColor(Color.parseColor("#151313"));
+        messindicator.setPageColor(Color.parseColor("#beb2b0"));
+        messindicator.setStrokeWidth(0);
+        messindicator.setRadius(8);
     }
 
     @Override

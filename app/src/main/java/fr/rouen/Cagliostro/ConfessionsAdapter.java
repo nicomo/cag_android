@@ -28,7 +28,7 @@ public class ConfessionsAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 7;
+        return this.confessions.length() / 2;
     }
 }
 

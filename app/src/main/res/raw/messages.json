@@ -1,10 +1,10 @@
 { "messages": [
 	[
 		{"epid": 3, "pid":  0.333, "toast": 1, "msg": "Mince ! C’est une vieille, alors !"},
-		{"epid": 0, "pid":  0, "toast": 0, "msg": "some lame text for now"},
-		{"epid": 0, "pid":  0, "toast": 0, "msg": "some lame text for now"},
-		{"epid": 0, "pid":  0, "toast": 0, "msg": "some lame text for now"},
-		{"epid": 0, "pid":  0, "toast": 0, "msg": "some lame text for now"}
+		{"epid": 0, "pid":  0, "toast": 0, "msg": "Mon second message."},
+		{"epid": 0, "pid":  0, "toast": 0, "msg": "Un troisème message, un peu plus long cette fois. Pour passer sur deux lignes."},
+		{"epid": 0, "pid":  0, "toast": 0, "msg": "Blalalah."},
+		{"epid": 0, "pid":  0, "toast": 0, "msg": "Lalala."}
 	],
 	[
 		{"epid": 0, "pid":  0, "toast": 0, "msg": "some lame text for now"},
