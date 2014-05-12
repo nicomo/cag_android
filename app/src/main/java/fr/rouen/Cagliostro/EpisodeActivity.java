@@ -160,6 +160,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
         next = (Button)findViewById(R.id.nextButton);
         next.setTypeface(clarendon);
         next.setLineSpacing(0, 1.3f);
+        next.setBackgroundResource(getResources().getIdentifier("button_epid_" + (epid + 1), "drawable", getPackageName()));
         next.setText("Episode "+(epid+1)+"\nA paraitre");
 
         tnb = new Timer("refreshButton");
