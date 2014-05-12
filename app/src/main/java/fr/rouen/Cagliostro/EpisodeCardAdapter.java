@@ -61,9 +61,9 @@ public class EpisodeCardAdapter extends BaseAdapter {
             JSONObject character = episodes.getJSONObject(position);
             int iden;
             if (position > minElapsed && delayedEps) {
-                iden = context.getResources().getIdentifier("disabled_homecard_" + (position + 1), "drawable", context.getPackageName());
+                iden = context.getResources().getIdentifier("homecard_" + position + "_", "drawable", context.getPackageName());
             } else {
-                iden = context.getResources().getIdentifier("homecard_" + (position + 1), "drawable", context.getPackageName());
+                iden = context.getResources().getIdentifier("homecard_" + position, "drawable", context.getPackageName());
             }
             vh.photo.setBackgroundResource(iden);
             vh.title.setText((position + 1) + ". " + character.getString("title"));
