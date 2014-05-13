@@ -68,13 +68,13 @@ public class PlaceAdapter extends BaseAdapter {
             placebtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
-                    ImageView test = new ImageView(context);
+                    /*ImageView test = new ImageView(context);
                     test.setImageResource(R.drawable.bubblelefttop);
-                    parent.addView(test);
-                    /*Intent intent = new Intent(context, PlaceActivity.class);
+                    parent.addView(test);*/
+                    Intent intent = new Intent(context, PlaceActivity.class);
                     intent.putExtra("plid", plid);
                     context.startActivity(intent);
-                    ((Activity) context).overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);*/
+                    ((Activity) context).overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }
             });
 
