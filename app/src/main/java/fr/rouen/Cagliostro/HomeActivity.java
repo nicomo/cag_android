@@ -20,6 +20,7 @@ import android.view.animation.Transformation;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -397,5 +398,26 @@ public class HomeActivity extends Activity {
             }
         });
         return true;
+    }
+
+    public void playVideo(View view) {
+        int vid = 0;
+        switch (view.getId()) {
+            case (R.id.button1):
+                vid = 1;
+                break;
+            case (R.id.button2):
+                vid = 2;
+                break;
+            case (R.id.button3):
+                vid = 3;
+                break;
+            case (R.id.button4):
+                vid = 4;
+                break;
+        }
+        System.out.println("Playing : " + vid);
+        Intent va = new Intent(this, VideoActivity.class);
+        startActivity(va);
     }
 }

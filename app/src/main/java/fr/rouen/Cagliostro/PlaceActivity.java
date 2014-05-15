@@ -26,7 +26,7 @@ public class PlaceActivity extends Activity {
 
         TextView name = (TextView)findViewById(R.id.name);
         try {
-            name.setText(places.getJSONObject(plid).getString("name"));
+            getActionBar().setTitle(places.getJSONObject(plid).getString("name"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
