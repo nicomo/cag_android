@@ -7,11 +7,13 @@ import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 public class PlaceActivity extends Activity {
 
     int plid;
     JSONArray places;
+    PlaceAdapter pla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +26,18 @@ public class PlaceActivity extends Activity {
         CAGApp appState = ((CAGApp)getApplicationContext());
         places = appState.getPlaces();
 
-        TextView name = (TextView)findViewById(R.id.name);
         try {
             getActionBar().setTitle(places.getJSONObject(plid).getString("name"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        JSONArray epplaces = new JSONArray();
+        epplaces.put(plid);
+        MapView map = (MapView)findViewById(R.id.map);
+        pla = new PlaceAdapter(this, places, epplaces);
+        map.setAdapter(pla);
+
     }
 
     @Override
