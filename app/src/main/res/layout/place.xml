@@ -4,6 +4,19 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/photospager"
+        android:layout_width="fill_parent"
+        android:layout_height="488dp"
+        android:gravity="top"
+        />
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/photospagerindicator"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:padding="10dp"/>
+
     <fr.rouen.Cagliostro.MapView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
