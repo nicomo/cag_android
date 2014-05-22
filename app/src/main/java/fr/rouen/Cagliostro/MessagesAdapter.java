@@ -34,7 +34,7 @@ public class MessagesAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         try {
-            return (this.messages.getJSONArray(cid).length()+1) / 3;
+            return this.messages.getJSONArray(cid).length();
         } catch (JSONException e) {
             e.printStackTrace();
         }
