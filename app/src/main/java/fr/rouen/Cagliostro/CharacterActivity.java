@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.viewpagerindicator.CirclePageIndicator;
@@ -55,6 +56,9 @@ public class CharacterActivity extends FragmentActivity {
         characters = appState.getCharacters();
         confessions = appState.getConfessions();
         messages = appState.getMessages();
+
+        LinearLayout charbg = (LinearLayout)findViewById(R.id.charbg);
+        charbg.setBackgroundResource(this.getResources().getIdentifier("char_" + cid + "_bg", "drawable", this.getPackageName()));
 
         TextView name = (TextView)findViewById(R.id.name);
         ImageView avatar = (ImageView)findViewById(R.id.avatar);
