@@ -38,6 +38,7 @@ public class CharacterActivity extends FragmentActivity {
     ConfessionsAdapter confa;
     MessagesAdapter messa;
     SharedPreferences prefs;
+    PhotosAdapter pha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,21 @@ public class CharacterActivity extends FragmentActivity {
         }
 
         final Context context = this;
+
+        try {
+            ViewPager photopager = (ViewPager)findViewById(R.id.photospager);
+            pha = new PhotosAdapter(super.getSupportFragmentManager(), characters.getJSONObject(cid).getInt("numphotos"), this, cid, "char");
+            photopager.setAdapter(pha);
+
+            CirclePageIndicator ind = (CirclePageIndicator)findViewById(R.id.photospagerindicator);
+            ind.setViewPager(photopager);
+            ind.setFillColor(Color.parseColor("#151313"));
+            ind.setPageColor(Color.parseColor("#beb2b0"));
+            ind.setStrokeWidth(0);
+            ind.setRadius(8);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         TextView myfriends = (TextView)findViewById(R.id.myfriends);
         myfriends.setTypeface(georgia);

@@ -12,12 +12,14 @@ public class PhotosAdapter extends FragmentPagerAdapter {
     int num;
     int plid;
     Context context;
+    String prefix;
 
-    public PhotosAdapter(FragmentManager fm, int num, Context context, int plid) {
+    public PhotosAdapter(FragmentManager fm, int num, Context context, int plid, String prefix) {
         super(fm);
         this.num = num;
         this.context = context;
         this.plid = plid;
+        this.prefix = prefix;
     }
 
     @Override
@@ -26,6 +28,7 @@ public class PhotosAdapter extends FragmentPagerAdapter {
         f.position = position;
         f.context = this.context;
         f.plid = this.plid;
+        f.prefix = this.prefix;
         return f;
     }
 

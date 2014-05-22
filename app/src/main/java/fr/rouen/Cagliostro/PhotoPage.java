@@ -19,6 +19,7 @@ public class PhotoPage extends Fragment {
     public int position;
     Context context;
     int plid;
+    String prefix;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,7 +28,7 @@ public class PhotoPage extends Fragment {
         View v = inflater.inflate(R.layout.photo_card, container, false);
 
         ImageView img = (ImageView) v.findViewById(R.id.image);
-        img.setImageResource(context.getResources().getIdentifier("place_" + plid + "_header_" + position, "drawable", context.getPackageName()));
+        img.setImageResource(context.getResources().getIdentifier(prefix + "_" + plid + "_image_" + position, "drawable", context.getPackageName()));
 
         return v;
     }
