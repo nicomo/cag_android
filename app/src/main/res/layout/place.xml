@@ -1,27 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#f5efe2">
+<ScrollView
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/photospager"
-        android:layout_width="fill_parent"
-        android:layout_height="488dp"
-        android:gravity="top"
-        />
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f5efe2">
 
-    <com.viewpagerindicator.CirclePageIndicator
-        android:id="@+id/photospagerindicator"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:padding="10dp"/>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/photospager"
+            android:layout_width="fill_parent"
+            android:layout_height="488dp"
+            android:gravity="top"
+            />
 
-    <fr.rouen.Cagliostro.MapView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/map"
-        android:background="@drawable/map"
-        android:layout_margin="50dp"/>
-</LinearLayout>
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/photospagerindicator"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:id="@+id/name"
+            android:paddingLeft="110dp"
+            android:paddingRight="50dp"
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"
+            android:textSize="35dp" />
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp">
+            
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bullhorn" />
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum"
+                android:padding="10dp"
+                android:id="@+id/intro"
+                android:layout_marginRight="13dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="12dp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/bicycle" />
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Lorem ipsum"
+                        android:padding="5dp"
+                        android:id="@+id/itin1"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/car" />
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Lorem ipsum"
+                        android:padding="5dp"
+                        android:id="@+id/itin2"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/train"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Lorem ipsum"
+                        android:padding="5dp"
+                        android:id="@+id/itin3"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="HISTORIQUE"
+                    android:background="@drawable/episode_card"
+                    android:padding="10dp"
+                    android:layout_marginTop="25dp"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum"
+                    android:background="@drawable/episode_card"
+                    android:padding="10dp"
+                    android:id="@+id/historique"/>
+            </LinearLayout>
+            
+        </LinearLayout>
+
+        <fr.rouen.Cagliostro.MapView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/map"
+            android:background="@drawable/map"
+            android:layout_margin="50dp"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="13dp">
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CELEBRITES"
+                    android:background="@drawable/episode_card"
+                    android:padding="10dp"
+                    android:layout_marginTop="25dp"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/episode_card"
+                    android:padding="10dp"
+                    android:id="@+id/celebs"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="GUIDE DE CONVERSATION"
+                    android:background="@drawable/episode_card"
+                    android:padding="10dp"
+                    android:layout_marginTop="25dp"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/episode_card"
+                    android:padding="10dp"
+                    android:id="@+id/conversation"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="12dp">
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LE SAVIEZ-VOUS ?"
+                    android:background="@drawable/episode_card"
+                    android:padding="10dp"
+                    android:layout_marginTop="25dp"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum"
+                    android:background="@drawable/episode_card"
+                    android:padding="10dp"
+                    android:id="@+id/savoir"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="EVENEMENTS LOCAUX"
+            android:background="@drawable/episode_card"
+            android:padding="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum"
+            android:background="@drawable/episode_card"
+            android:padding="10dp"
+            android:id="@+id/events"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="50dp"/>
+
+    </LinearLayout>
+
+
+</ScrollView>
