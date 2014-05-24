@@ -66,6 +66,9 @@ public class HomeActivity extends Activity {
             SharedPreferences.Editor editorPref = prefs.edit();
             editorPref.putLong("timestamp", now.getTime());
             editorPref.commit();
+            
+            Intent help = new Intent(this, HelpModal.class);
+            startActivity(help);
         }
         Date now = new Date();
         final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;

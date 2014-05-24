@@ -60,6 +60,7 @@
             android:name="fr.rouen.Cagliostro.SettingsActivity"
             android:label="@string/settings_title" >
         </activity>
+        <activity android:name="fr.rouen.Cagliostro.HelpModal" android:theme="@android:style/Theme.Dialog" android:label="@string/app_name"></activity>
 
         <receiver android:name="fr.rouen.Cagliostro.Alarm">
             <intent-filter>
