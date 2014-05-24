@@ -8,6 +8,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -121,6 +122,12 @@ public class PlaceActivity extends FragmentActivity {
         MapView map = (MapView)findViewById(R.id.map);
         pla = new PlaceAdapter(this, places, epplaces);
         map.setAdapter(pla);
+
+        ImageView bottomimage0 = (ImageView)findViewById(R.id.bottomimage0);
+        bottomimage0.setBackgroundResource(getResources().getIdentifier("place_" + plid + "_bottomimage_0", "drawable", getPackageName()));
+
+        ImageView bottomimage1 = (ImageView)findViewById(R.id.bottomimage1);
+        bottomimage1.setBackgroundResource(getResources().getIdentifier("place_" + plid + "_bottomimage_1", "drawable", getPackageName()));
     }
 
     @Override
