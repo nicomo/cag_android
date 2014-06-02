@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f5efe2">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="400dp"
+            android:id="@+id/charbg">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="bottom"
+                android:background="#88ffffff">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:id="@+id/avatar"
+                    android:layout_gravity="center"
+                    android:padding="50dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Name"
+                    android:id="@+id/name"
+                    android:focusableInTouchMode="false"
+                    android:textColor="#151313"
+                    android:textSize="30sp"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="50dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="left">
+
+                <TextView
+                    android:id="@+id/confessionstitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Confessions"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="#beb2b0"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/confessionspager"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:gravity="top"
+                    />
+
+                <com.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/confessionspagerindicator"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/messagestitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Messages"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="#beb2b0"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/messagespager"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:gravity="top"
+                    />
+
+                <com.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/messagespagerindicator"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/photospager"
+            android:layout_width="fill_parent"
+            android:layout_height="488dp"
+            android:gravity="top"
+            />
+
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/photospagerindicator"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Mes connaissances"
+            android:id="@+id/myfriends"
+            android:paddingTop="50dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:textSize="24dp" />
+
+        <GridView
+            android:id="@+id/friendsgrid"
+            android:numColumns="2"
+            android:gravity="center"
+            android:stretchMode="columnWidth"
+            android:layout_width="fill_parent"
+            android:horizontalSpacing="10dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="50dp"
+            android:paddingTop="10dp">
+        </GridView>
+
+    </LinearLayout>
+
+</ScrollView>
