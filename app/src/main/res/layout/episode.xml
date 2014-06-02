@@ -132,6 +132,7 @@
             android:textColor="#3d3d38"
             android:gravity="left"
             android:paddingLeft="@dimen/nine_margin"
+            android:paddingRight="@dimen/nine_margin"
             android:paddingBottom="@dimen/nine_margin"
             android:paddingTop="@dimen/nine_margin">
         </Button>
