@@ -348,6 +348,9 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
                         name.setTypeface(null, Typeface.BOLD);
                         name.setText(characters.getJSONObject(j).getString("name"));
 
+                        TextView ref = (TextView) layout.findViewById(R.id.ref);
+                        ref.setText(message.getString("msg_ref"));
+
                         TextView msg = (TextView) layout.findViewById(R.id.msg);
                         msg.setText(message.getString("msg"));
 
