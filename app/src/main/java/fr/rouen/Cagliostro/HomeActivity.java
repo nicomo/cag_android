@@ -421,6 +421,7 @@ public class HomeActivity extends Activity {
         }
         System.out.println("Playing : " + vid);
         Intent va = new Intent(this, VideoActivity.class);
+        va.putExtra("vid", vid);
         startActivity(va);
     }
 }
