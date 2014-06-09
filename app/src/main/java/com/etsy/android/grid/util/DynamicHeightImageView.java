@@ -32,14 +32,9 @@ public class DynamicHeightImageView extends ImageView {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        if (mHeightRatio > 0.0) {
-            // set the image views size
-            int width = MeasureSpec.getSize(widthMeasureSpec);
-            int height = (int) (width * mHeightRatio);
-            setMeasuredDimension(width, height);
-        }
-        else {
-            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        }
+        // set the image views size
+        int width = MeasureSpec.getSize(widthMeasureSpec);
+        int height = (int) (width * mHeightRatio);
+        setMeasuredDimension(width, height);
     }
 }

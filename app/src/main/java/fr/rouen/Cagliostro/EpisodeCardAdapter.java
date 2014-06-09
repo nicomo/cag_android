@@ -2,7 +2,10 @@ package fr.rouen.Cagliostro;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.etsy.android.grid.util.DynamicHeightImageView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,7 +48,7 @@ public class EpisodeCardAdapter extends BaseAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.episode_card, parent, false);
             vh = new ViewHolder();
-            vh.photo = (ImageView) convertView.findViewById(R.id.photo);
+            vh.photo = (DynamicHeightImageView) convertView.findViewById(R.id.photo);
             vh.title = (TextView) convertView.findViewById(R.id.title);
 
             convertView.setTag(vh);
@@ -65,7 +71,10 @@ public class EpisodeCardAdapter extends BaseAdapter {
             } else {
                 iden = context.getResources().getIdentifier("homecard_" + position, "drawable", context.getPackageName());
             }
-            vh.photo.setBackgroundResource(iden);
+            vh.photo.setImageResource(iden);
+            Drawable drawing = vh.photo.getDrawable();
+            Bitmap bitmap = ((BitmapDrawable)drawing).getBitmap();
+            ((DynamicHeightImageView)vh.photo).setHeightRatio((float)bitmap.getHeight()/(float)bitmap.getWidth());
             vh.title.setText((position + 1) + ". " + character.getString("title"));
             vh.title.setTypeface(this.clarendon);
         } catch (JSONException e) {

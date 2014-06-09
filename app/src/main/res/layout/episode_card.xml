@@ -2,18 +2,20 @@
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/episode_card"
     >
 
     <com.etsy.android.grid.util.DynamicHeightImageView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/photo" />
+        android:background="#ff0000"
+        android:id="@+id/photo"
+        android:layout_gravity="center"/>
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:textAppearance="?android:attr/textAppearanceSmall"
