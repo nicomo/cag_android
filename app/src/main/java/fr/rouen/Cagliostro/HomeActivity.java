@@ -170,10 +170,10 @@ public class HomeActivity extends Activity {
 
     public int epidforplid(int plid) {
         CAGApp appState = (CAGApp)getApplicationContext();
-        JSONArray characters = appState.getCharacters();
+        JSONArray places = appState.getPlaces();
 
         try {
-            return characters.getJSONObject(plid).getInt("epid");
+            return places.getJSONObject(plid).getInt("epid");
         } catch (JSONException e) {
             System.out.println(e.getMessage());
         }
