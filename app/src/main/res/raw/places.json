@@ -186,24 +186,25 @@
 		"x": "0.51",
 		"y": "0.44",
 		"epid": "43",
-		"intro": "some lame text for now",
+		"intro": "Serrée entre deux collines rondes, Caudebec La Pittoresque mérite toute l’attention du curieux. Déambulez entre les maisons à pans de bois au charme médiéval Peut-être croiserez-vous une jeune femme en haute coiffe, au détour de l’église Notre-Dame, un très joli édifice du XVe siècle ? Ne manquez pas la charmante promenade à travers un vallon boisé entre Allouville et Caudebec. Au XVIe siècle, la ville était fameuse pour sa fabrique de gros chapeaux appelés 'caudebecs'.",
 		"itineraire": [
-			"some lame text for now",
-			"some lame text for now",
-			"some lame text for now"
+			"Caudebec-en-Caux – Doudeville, une grande heure et demie",
+			"Caudebec-en-Caux – Fécamp, deux petites heures.",
+			"Ligne Barentin-Caudebec, une heure vingt-cinq et de nombreux arrêts."
 		],
-		"historique": "some lame text for now",
+		"historique": "Avant l’arrivée de Guillaume le Conquérant, au début du XIe siècle, Caudebec n’est qu’un modeste bourg de pêcheurs sans marché ni foire. La ville prend alors peu à peu son essor. Avec la Guerre de Cent ans, le rôle militaire de Caudebec s’affirme. Des remparts sont construits autour de la ville. Caudebec n’en est pas moins prise par les Anglais en 1419 Plus tard, la ville souffre des Guerres de Religion. On a découvert tout récemment un oppidum (fort) celtique d’une superficie de 26 hectares sur le territoire de la commune.",
 		"celebs": [
-			"some lame text for now",
-			"some lame text for now"
+			"François-Théodore Licquet, poète né à Caudebec en 1787. Conservateur de la bibliothèque publique de Rouen.",
+			"Eustache de Chandoisel de Caumont, maire actuel de Caudebec",
+			"Adrien Sacquespée, peintre et poète né en 1629. Tableaux conservés au musée de Rouen."
 		],
 		"conversation": [
-			"some lame text for now",
-			"some lame text for now",
-			"some lame text for now"
+			"L'cu'é d'Valmont. Le curé de Valmont.",
+			"I scé faire d'un cat un quien. Il sait faire d'un chat un chien.",
+			"Gouliafre ! Gourmand!"
 		],
-		"savoir" : "some lame text for now",
-		"events": "some lame text for now",
+		"savoir" : "Les Caudebécais sont appelés les ‘Friands de Caudebec’, par un voisinage jaloux de leur prospérité. Il faut dire qu’entre sa friture d’éperlan et sa moutarde à l’estragon, la ville mérite sa réputation gastronomique ! - Un poète ami des arbres écrivit  une supplique en vers au conseil municipal en 1833 pour protester contre la destruction des arbres de la promenade du quai.",
+		"events": "Mascaret spectaculaire à l’époque des grandes marées – visite nocturne de la tour maudite de Henrique de Maulévrier. Âmes sensibles s’abstenir ! – restes de l’abbaye de Saint-Wandrille à 3 km.",
 		"numphotos": "4"
 	},
 	{
