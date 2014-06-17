@@ -42,7 +42,7 @@
 		"friends": [2,3,5,6,7,8,9],
 		"quote": "Quand on aime, on ne compte pas !",
 		"quote_auth": "Josette Dufoin, nourrice.",
-		"numphotos": 3
+		"numphotos": 2
 	},
     {
 		"name": "Matthieu de la Vaupalière",
@@ -60,7 +60,7 @@
 		"friends": [2,3,4,5,7,8,9],
 		"quote": "Tout le mal de ce monde vient de ce qu&apos;on n&apos;est pas assez bon ou pas assez pervers.",
 		"quote_auth": "Machiavel",
-		"numphotos": 3
+		"numphotos": 2
 	},
     {
 		"name": "Prince d’Arcole",
@@ -186,6 +186,6 @@
         "friends": [10,11],
         "quote": "Quand on tire, on raconte pas sa vie.",
 		"quote_auth": "Sagesse nord-américaine",
-		"numphotos": 3
+		"numphotos": 2
 	}
 ] }
