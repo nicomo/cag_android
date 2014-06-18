@@ -207,7 +207,7 @@
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique eu est eu cursus. Etiam sagittis ornare arcu at condimentum. Donec cursus nisi lacus, eget consequat velit elementum et."
+                        android:text="Jacques Derouard, biographe de Maurice Leblanc, évoque l’amour de l’écrivain pour une invention toute récente, la bicyclette…"
                         android:padding="5dp"
                         android:lines="5"/>
                 </LinearLayout>
@@ -228,7 +228,7 @@
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique eu est eu cursus. Etiam sagittis ornare arcu at condimentum. Donec cursus nisi lacus, eget consequat velit elementum et."
+                        android:text="Maurice Leblanc est-il Arsène Lupin ? Arsène Lupin est-il Maurice Leblanc ? Créature et créateur se confondent…"
                         android:padding="5dp"
                         android:lines="5"/>
                 </LinearLayout>
@@ -253,7 +253,7 @@
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique eu est eu cursus. Etiam sagittis ornare arcu at condimentum. Donec cursus nisi lacus, eget consequat velit elementum et."
+                        android:text="La Comtesse de Cagliostro est publiée en feuilleton dans ‘Le Journal’ en 1923-1924. Á chaque jour son nouvel épisode…"
                         android:padding="5dp"
                         android:lines="5"/>
                 </LinearLayout>
@@ -274,7 +274,7 @@
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique eu est eu cursus. Etiam sagittis ornare arcu at condimentum. Donec cursus nisi lacus, eget consequat velit elementum et."
+                        android:text="La Comtesse de Cagliostro est le récit des origines d’Arsène Lupin. Tout en parcourant le pays de Caux, le lecteur voit Raoul devenir Lupin."
                         android:padding="5dp"
                         android:lines="5"/>
                 </LinearLayout>
