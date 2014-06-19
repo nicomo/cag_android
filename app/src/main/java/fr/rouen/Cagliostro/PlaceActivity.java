@@ -123,11 +123,11 @@ public class PlaceActivity extends FragmentActivity {
         pla = new PlaceAdapter(this, places, epplaces);
         map.setAdapter(pla);
 
-        ImageView bottomimage0 = (ImageView)findViewById(R.id.bottomimage0);
+        /*ImageView bottomimage0 = (ImageView)findViewById(R.id.bottomimage0);
         bottomimage0.setBackgroundResource(getResources().getIdentifier("place_" + plid + "_bottomimage_0", "drawable", getPackageName()));
 
         ImageView bottomimage1 = (ImageView)findViewById(R.id.bottomimage1);
-        bottomimage1.setBackgroundResource(getResources().getIdentifier("place_" + plid + "_bottomimage_1", "drawable", getPackageName()));
+        bottomimage1.setBackgroundResource(getResources().getIdentifier("place_" + plid + "_bottomimage_1", "drawable", getPackageName()));*/
     }
 
     @Override
