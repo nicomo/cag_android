@@ -15,6 +15,12 @@ body {
     border-right: solid 1px #beb2b0;
 }
 
+body.credits {
+    border: none;
+    margin: 85px;
+    padding: 0;
+}
+
 p {
     font-family: "Georgia" Serif;
     font-size: 1.2em;
@@ -26,6 +32,11 @@ p {
     -webkit-font-feature-settings: "liga", "dlig"; /* ligature */
     font-feature-settings: "liga", "dlig";
     text-align: justify;
+}
+
+body.credits p {
+    margin: 0;
+    font-size: 1.0em;
 }
 
 .dropcap {

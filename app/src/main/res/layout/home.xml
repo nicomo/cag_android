@@ -283,5 +283,11 @@
 
         </TableLayout>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Crédits &amp; mentions légales"
+            android:onClick="gotoCredits"/>
+
     </LinearLayout>
 </ScrollView>
