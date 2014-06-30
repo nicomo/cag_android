@@ -26,7 +26,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_gravity="bottom">
+                android:layout_gravity="bottom"
+                android:background="#88ffffff">
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -37,7 +38,8 @@
                     android:focusableInTouchMode="false"
                     android:textColor="#151313"
                     android:textSize="50sp"
-                    android:paddingLeft="@dimen/nine_margin" />
+                    android:paddingLeft="@dimen/nine_margin"
+                    android:paddingTop="@dimen/nine_margin"/>
 
                 <TextView
                     android:layout_width="fill_parent"

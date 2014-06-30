@@ -74,7 +74,7 @@
                 <android.support.v4.view.ViewPager
                     android:id="@+id/confessionspager"
                     android:layout_width="fill_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="270dp"
                     android:gravity="top"
                     />
 
@@ -118,7 +118,7 @@
                 <android.support.v4.view.ViewPager
                     android:id="@+id/messagespager"
                     android:layout_width="fill_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="300dp"
                     android:gravity="top"
                     />
 

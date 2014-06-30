@@ -233,6 +233,8 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
 
         System.out.println("placePins for " + wvh);
 
+        final double d = getResources().getDisplayMetrics().density;
+
         try {
             JSONObject jep = episodes.getJSONObject(epid);
             JSONArray jpins = jep.getJSONArray("pins");
@@ -245,7 +247,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
 
                 RelativeLayout pinContainer = (RelativeLayout)findViewById(R.id.pinContainer);
 
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(200, 200);
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams((int)(d*100), (int)(d*100));
                 params.topMargin = (int)(pid * wvh);
                 params.leftMargin = 0;
                 params.addRule(RelativeLayout.CENTER_HORIZONTAL, 1);

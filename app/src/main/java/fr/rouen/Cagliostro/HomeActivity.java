@@ -424,4 +424,9 @@ public class HomeActivity extends Activity {
         va.putExtra("vid", vid);
         startActivity(va);
     }
+
+    public void gotoCredits(View view) {
+        Intent ca = new Intent(this, CreditsActivity.class);
+        startActivity(ca);
+    }
 }
