@@ -1,6 +1,6 @@
 { "messages": [
 	[
-		{"epid": 3, "pid": 0.333, "toast": 1, "msg": "Mince ! C’est une vieille, alors !", "msg_ref": "«  la créature infernale » devait avoir dépassé la cinquantaine."},
+		{"epid": 2, "pid": 0.333, "toast": 1, "msg": "Mince ! C’est une vieille, alors !", "msg_ref": "La créature infernale devait avoir dépassé la cinquantaine."},
 		{"epid": 11, "pid": 0.333, "toast": 1, "msg": "D’après Comment réparer une barque avec une chaussette et une flûte à bec, d’Angus Mc Gyver (traduit de l’écossais par Louis Lépine)", "msg_ref": "J’ai bouché le trou avec un morceau de bois coiffé d’un chiffon."},
 		{"epid": 14, "pid": 0.9, "toast": 1, "msg": "Raoul d’Andrésy vous recommande : ‘Essai sur la brique quadrangulaire en pays de Caux’, Société Savante de Motteville, 1889.", "msg_ref": "Parce que les briques des onze autres sont de dimensions abandonnées depuis deux cents ans."},
 		{"epid": 19, "pid": 0.7, "toast": 1, "msg": "C'est à lire, je vous le recommande : Théophraste Lupin, ‘Le Ju-jitsu facile’, Paris, 1867.", "msg_ref": "Il me vient des instructions posthumes d'un sieur Théophraste Lupin, chapitre des méthodes japonaises."},
