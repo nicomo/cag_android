@@ -28,6 +28,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -163,6 +164,11 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
         next.setBackgroundResource(getResources().getIdentifier("button_epid_" + (epid + 1), "drawable", getPackageName()));
         next.setText("Episode "+(epid+1)+"\nA paraitre");
 
+        if (epid == 51)
+        {
+            ((LinearLayout)next.getParent()).removeView(next);
+        }
+
         tnb = new Timer("refreshButton");
         tnb.schedule(_refreshButton, 0, 500);
 
@@ -209,7 +215,6 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
         @Override
         public void run() {
             int wvh = wv.getHeight();
-            System.out.println(wvh);
             if (wvh > 0) {
                 runOnUiThread(new Runnable() {
                     @Override
@@ -230,8 +235,6 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
 
         if (pinplaced)
             return;
-
-        System.out.println("placePins for " + wvh);
 
         final double d = getResources().getDisplayMetrics().density;
 
