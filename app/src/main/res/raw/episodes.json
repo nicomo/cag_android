@@ -204,6 +204,9 @@
     {
          "title": "Guet-apens",
          "subtitle": "Paru le 7 janvier 1924",
+        "pins": [
+            { "pid": 0.100, "cid":  20, "gender":   "Male" }
+         ],
          "places" : [8, 13],
          "chars": [0,10]
     },
