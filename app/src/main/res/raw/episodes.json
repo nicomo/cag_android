@@ -141,11 +141,11 @@
          "chars": [0,2,3,6,10,11]
     },
     {
-         "title": "Une revue de qualité",
+         "title": "Une revue aux Variétés",
          "subtitle": "Paru le 29 décembre 1923",
          "pins": [
              { "pid": 0.222, "cid":  15, "gender":   "Female" },
-             { "pid": 0.225, "cid":  16, "gender":   "Female" }
+             { "pid": 0.275, "cid":  16, "gender":   "Female" }
          ],
          "places" : [13],
          "chars": [0,10,11,15,16]
