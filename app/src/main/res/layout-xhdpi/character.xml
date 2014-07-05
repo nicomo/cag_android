@@ -155,19 +155,19 @@
             android:paddingRight="50dp"
             android:textSize="24dp" />
 
-        <GridView
+        <fr.rouen.Cagliostro.MyGridView
             android:id="@+id/friendsgrid"
             android:numColumns="2"
             android:gravity="center"
             android:stretchMode="columnWidth"
             android:layout_width="fill_parent"
             android:horizontalSpacing="10dp"
-            android:layout_height="wrap_content"
+            android:layout_height="500dp"
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
             android:paddingBottom="50dp"
             android:paddingTop="10dp">
-        </GridView>
+        </fr.rouen.Cagliostro.MyGridView>
 
     </LinearLayout>
 

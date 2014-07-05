@@ -145,7 +145,7 @@
             android:paddingRight="50dp"
             android:textSize="24dp" />
 
-        <GridView
+        <fr.rouen.Cagliostro.MyGridView
             android:id="@+id/friendsgrid"
             android:numColumns="2"
             android:gravity="center"
@@ -157,7 +157,7 @@
             android:paddingRight="50dp"
             android:paddingBottom="50dp"
             android:paddingTop="10dp">
-        </GridView>
+        </fr.rouen.Cagliostro.MyGridView>
 
     </LinearLayout>
 
