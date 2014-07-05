@@ -47,7 +47,8 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
     int epid;
     CAGScrollView sv;
     WebView wv;
-    Button next;
+    RelativeLayout next;
+    TextView nexttext;
     JSONArray episodes;
     JSONArray characters;
     JSONArray places;
@@ -158,11 +159,12 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
             System.out.println(e.getMessage());
         }
 
-        next = (Button)findViewById(R.id.nextButton);
-        next.setTypeface(clarendon);
-        next.setLineSpacing(0, 1.3f);
+        next = (RelativeLayout)findViewById(R.id.nextButton);
+        nexttext = (TextView)findViewById(R.id.nextButtonText);
+        nexttext.setTypeface(clarendon);
+        nexttext.setLineSpacing(0, 1.3f);
         next.setBackgroundResource(getResources().getIdentifier("button_epid_" + (epid + 1), "drawable", getPackageName()));
-        next.setText("Episode "+(epid+1)+"\nA paraitre");
+        nexttext.setText("Episode "+(epid+1)+"\nA paraitre");
 
         if (epid == 51)
         {
@@ -189,7 +191,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        next.setText(String.format("Episode %d\nA praitre dans %5.2f minutes", epid + 2, epid + 1 - minElapsed));
+                        nexttext.setText(String.format("Episode %d\nA praitre dans %5.2f minutes", epid + 2, epid + 1 - minElapsed));
                     }
                 });
             }
@@ -198,7 +200,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        next.setText("Episode "+(epid+2)+"\n" + titles[epid+1]);
+                        nexttext.setText("Episode "+(epid+2)+"\n" + titles[epid+1]);
                         next.setOnClickListener(new View.OnClickListener() {
                             public void onClick(View v) {
                                 nextEpisode(v);
