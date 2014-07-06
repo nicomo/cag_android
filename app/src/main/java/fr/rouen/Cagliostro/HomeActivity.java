@@ -34,6 +34,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Date;
+import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -49,6 +50,7 @@ public class HomeActivity extends Activity {
     EpisodeCardAdapter eca;
     CharacterCardAdapter cca;
     PlaceAdapter pla;
+    MapView map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +114,7 @@ public class HomeActivity extends Activity {
             }
         });
 
-        MapView map = (MapView)findViewById(R.id.map);
+        map = (MapView)findViewById(R.id.map);
         pla = new PlaceAdapter(this, places);
         map.setAdapter(pla);
 
@@ -143,7 +145,7 @@ public class HomeActivity extends Activity {
         charactersgrid.setAdapter(cca);
 
         timer = new Timer("refreshEpisodesAndCharactersAndPlaces");
-        timer.schedule(_refreshEpisodesAndCharactersAndPlaces, 0, 2000);
+        timer.schedule(_refreshEpisodesAndCharactersAndPlaces, 0, 5000);
     }
 
     public boolean charpublished(int cid) {
@@ -198,8 +200,8 @@ public class HomeActivity extends Activity {
                 public void run() {
                     eca.notifyDataSetChanged();
                     cca.notifyDataSetChanged();
-                    pla.notifyDataSetChanged();
-                    pla.notifyDataSetInvalidated();
+                    pla = new PlaceAdapter(HomeActivity.this, places);
+                    map.setAdapter(pla);
                 }
             });
         }
@@ -210,8 +212,8 @@ public class HomeActivity extends Activity {
         final double d = v.getContext().getResources().getDisplayMetrics().density;
 
         if (episodesExpanded == false) {
-            final int initsize = 480;
-            final int targetsize = 1430;
+            final int initsize = 460;
+            final int targetsize = 1400;
 
             Animation a = new Animation() {
                 @Override
@@ -253,8 +255,8 @@ public class HomeActivity extends Activity {
         }
         else
         {
-            final int initsize = 1430;
-            final int targetsize = 480;
+            final int initsize = 1400;
+            final int targetsize = 460;
 
             Animation a = new Animation() {
                 @Override
