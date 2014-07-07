@@ -111,7 +111,7 @@
               { "pid": 0.840, "cid":  13, "gender":   "Male" }
          ],
          "places" : [17, 19],
-         "chars": [0,2,3,4,6,10,11]
+         "chars": [0,10,11,12,13]
     },
     {
          "title": "Cavale et travestissement",
