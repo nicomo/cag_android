@@ -4,8 +4,8 @@
 		{"epid": 10, "pid": 0.333, "toast": 1, "msg": "D’après Comment réparer une barque avec une chaussette et une flûte à bec, d’Angus Mc Gyver (traduit de l’écossais par Louis Lépine)", "msg_ref": "J’ai bouché le trou avec un morceau de bois coiffé d’un chiffon."},
 		{"epid": 13, "pid": 0.9, "toast": 1, "msg": "Raoul d’Andrésy vous recommande : ‘Essai sur la brique quadrangulaire en pays de Caux’, Société Savante de Motteville, 1889.", "msg_ref": "Parce que les briques des onze autres sont de dimensions abandonnées depuis deux cents ans."},
 		{"epid": 18, "pid": 0.7, "toast": 1, "msg": "C'est à lire, je vous le recommande : Théophraste Lupin, ‘Le Ju-jitsu facile’, Paris, 1867.", "msg_ref": "Il me vient des instructions posthumes d'un sieur Théophraste Lupin, chapitre des méthodes japonaises."},
-		{"epid": 20, "pid": 0.9, "toast": 1, "msg": "Donc, un prisonnier pendant la Terreur confie un secret au chevalier des Aubes, qui le rapporte 72 ans après au cardinal de Bonnechose…", "msg_ref": "Tu sauras, mon enfant, « garder, quoi qu'il arrive, un secret d'où dépendent les intérêts les plus graves. »"},
-		{"epid": 31, "pid": 0.12, "toast": 1, "msg": "Mise à jour de mon statut : célibataire!", "msg_ref": "« Adieu, Josine. »"}
+		{"epid": 21, "pid": 0.9, "toast": 1, "msg": "Donc, un prisonnier pendant la Terreur confie un secret au chevalier des Aubes, qui le rapporte 72 ans après au cardinal de Bonnechose…", "msg_ref": "Tu sauras, mon enfant, « garder, quoi qu'il arrive, un secret d'où dépendent les intérêts les plus graves. »"},
+		{"epid": 32, "pid": 0.12, "toast": 1, "msg": "Mise à jour de mon statut : célibataire!", "msg_ref": "« Adieu, Josine. »"}
 	],[
 		{"epid": 16, "pid": 0.25, "toast": 1, "msg": "Non mon Raoul, non!", "msg_ref": "Elle attirait la tête du jeune homme, et leurs bouches s'unirent."},
 		{"epid": 11, "pid": 0.1, "toast": 0, "msg": "Que je suis malheureuse! J'en ai la nausée!", "msg_ref": "« Il reconnaissait Clarisse d'Etigues. »"},
