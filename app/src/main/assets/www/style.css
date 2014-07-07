@@ -96,6 +96,12 @@ text {
   }
 }
 
+#fin {
+    font-size: 3em;
+    text-align: center;
+    font-family: 'SuperClarendon';
+}
+
 .credits ul {
   list-style-type: none;
 }
