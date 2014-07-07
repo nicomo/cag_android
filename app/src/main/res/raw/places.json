@@ -4,7 +4,7 @@
 		"x": "0.66",
 		"y": "0.58",
 		"epid": "17",
-		"intro": "A trois lieues de Rouen, sur la pente boisée d’une colline, surgit chemin la façade imposante d’une église du XIe siècle, flanquée de sveltes campaniles. Vous êtes à l’abbaye de Saint-Georges-de-Boscherville, l’une des plus antiques de Normandie. La route 43 (Rouen-Le Havre) vous y conduit. Après avoir tourné à gauche au gros chêne, suivez une route de terre menant vers ce noble et antique édifice. Admirez la très belle vue depuis les jardins en terrasse de l'abbaye.",
+		"intro": "À trois lieues de Rouen, sur la pente boisée d’une colline, surgit chemin la façade imposante d’une église du XIe siècle, flanquée de sveltes campaniles. Vous êtes à l’abbaye de Saint-Georges-de-Boscherville, l’une des plus antiques de Normandie. La route 43 (Rouen-Le Havre) vous y conduit. Après avoir tourné à gauche au gros chêne, suivez une route de terre menant vers ce noble et antique édifice. Admirez la très belle vue depuis les jardins en terrasse de l'abbaye.",
 		"itineraire": [
 			"Jumièges - Saint-Georges de Boscherville, une heure et quart",
 			"Rouen - Saint-Georges de Boscherville,  moins d’une heure",
@@ -99,7 +99,7 @@
 			"I ya du fu dauns la qu'minèye. Il y a du feu dans la cheminée",
 			"Ichite. Ici"
 		],
-		"savoir" : "Tous les 23 juin, les habitants de Jumièges célèbrent la fête du loup vert, incarné par un habitant. Le loup de l'année porte un grand habit vert, ainsi qu'un grand chapeau conique de même couleur. Accoutré de la sorte, il se met à la tête d'un cortège salué par des salves de mousquetons. Arrivés à l'église, le curé fait chanter vêpres à tout ce beau monde... Puis tous se rendent chez le loup pour un repas maigre, mais délicieux. Une fois la nuit tombée, un bûcher est allumé par un jeune homme et une jeune fille. Tout le village court autour. Celui qui est touché par le loup sera loup l'année suivante !",
+		"savoir" : "Tous les 23 juin, les habitants de Jumièges célèbrent la fête du loup vert, incarné par un habitant. Le loup de l'année porte un grand habit vert, ainsi qu'un grand chapeau conique de même couleur. Accoutré de la sorte, il se met à la tête d'un cortège salué par des salves de mousquetons. À l'église, le curé fait chanter vêpres à tout ce beau monde... Puis tous se rendent chez le loup pour un repas maigre, mais délicieux. Une fois la nuit tombée, un bûcher est allumé par un jeune homme et une jeune fille. Tout le village court autour. Celui qui est touché par le loup sera loup l'année suivante !",
 		"events": "10 février, sainte Austreberthe, sorcière et patronne des blanchisseuses - 23 juin, fête du loup vert - 26 juillet, fête de sainte Anne, patronne des cloutiers.",
 		"numphotos": "4"
 	},
@@ -125,7 +125,7 @@
 			"Ote-tet ded'là. Ôte-toi de là.",
 			"I crait ça du' com' fé. Il croit ça dur comme fer."
 		],
-		"savoir" : "Il existe non loin de Montivilliers un mystérieux dolmen qu'on appelle 'la pierre grise', hanté par des dames blanches. - Les habitants de Montivilliers portent le surnom pittoresque de 'maqueux d'oeilles' c'est-à-dire 'mangeurs d'oreilles'. En effet, un jeune Montivillon aurait arraché l'oreille d'un Harfleurais lors d'une querelle... il y a plus de cent ans ! Quelle mémoire...",
+		"savoir" : "Il existe non loin de Montivilliers un mystérieux dolmen qu'on appelle 'la pierre grise', hanté par des dames blanches. - Les habitants de Montivilliers portent le surnom pittoresque de 'maqueux d'oeilles', c'est-à-dire 'mangeurs d'oreilles'. En effet, un jeune Montivillon aurait arraché l'oreille d'un Harfleurais lors d'une querelle... il y a plus de cent ans ! Quelle mémoire...",
 		"events": "Tournoi de cartes au café-buvette de la rue Casimir-Périer - fête des blanchisseuses, le 31 mai - marché de la place Carnot, tous les dimanches.",
 		"numphotos": "4"
 	},
@@ -160,7 +160,7 @@
 		"x": "0.36",
 		"y": "0.17",
 		"epid": "0",
-		"intro": "Au voyageur en villégiature à Fécamp, nous promettons une promenade aussi plaisante que curieuse. Qu'il se rende à Valmont par la vallée. Il pourra admirer des paysages variés : bois, plantations, fraîches prairies arrosées de rivières qui les serpentent. L'abbaye est aujourd'hui une propriété privée. Son terrain de 9 hectares a été converti en parc habilement dessiné, aux superbes pelouses. L'étang artificiel est continuellement alimenté en eau.",
+		"intro": "Au voyageur en villégiature à Fécamp, nous promettons une promenade aussi plaisante que curieuse. Qu'il se rende à Valmont par la vallée. Il pourra admirer des paysages variés : bois, plantations, fraîches prairies arrosées de rivières qui y serpentent. L'abbaye est aujourd'hui une propriété privée. Son terrain de 9 hectares a été converti en parc habilement dessiné, aux superbes pelouses. L'étang artificiel est continuellement alimenté en eau.",
 		"itineraire": [
 			"Haie d'Étigues - Abbaye de Valmont, une grande heure et demie",
 			"Haie d'Étigues - Abbaye de Valmont, une vingtaine de minutes",
@@ -192,7 +192,7 @@
 			"Caudebec-en-Caux – Fécamp, deux petites heures.",
 			"Ligne Barentin-Caudebec, une heure vingt-cinq et de nombreux arrêts."
 		],
-		"historique": "Avant l’arrivée de Guillaume le Conquérant, au début du XIe siècle, Caudebec n’est qu’un modeste bourg de pêcheurs sans marché ni foire. La ville prend alors peu à peu son essor. Avec la Guerre de Cent ans, le rôle militaire de Caudebec s’affirme. Des remparts sont construits autour de la ville. Caudebec n’en est pas moins prise par les Anglais en 1419 Plus tard, la ville souffre des Guerres de Religion. On a découvert tout récemment un oppidum (fort) celtique d’une superficie de 26 hectares sur le territoire de la commune.",
+		"historique": "Avant l’arrivée de Guillaume le Conquérant, au début du XIe siècle, Caudebec n’est qu’un modeste bourg de pêcheurs sans marché ni foire. La ville prend alors peu à peu son essor. Avec la Guerre de Cent ans, le rôle militaire de Caudebec s’affirme. Des remparts sont construits autour de la ville. Caudebec n’en est pas moins prise par les Anglais en 1419 Plus tard, la ville souffre des guerres de religion. On a découvert tout récemment un oppidum (fort) celtique d’une superficie de 26 hectares sur le territoire de la commune.",
 		"celebs": [
 			"François-Théodore Licquet, poète né à Caudebec en 1787. Conservateur de la bibliothèque publique de Rouen.",
 			"Eustache de Chandoisel de Caumont, maire actuel de Caudebec",
@@ -208,28 +208,28 @@
 		"numphotos": "4"
 	},
 	{
-		"name": "Côte des Deux Amants",
+		"name": "La Côte des Deux-Amants",
 		"x": "0.84",
 		"y": "0.7",
 		"epid": "27",
-		"intro": "La côte des deux amants tire son nom romanesque d'une légende aux nombreuses variantes. Selon l'une d'entre elles, un roi brutal de la région habitait un vaste château, dont il ne reste aucun vestige, pas même dans les mémoires. Il était défavorable à l'union de sa fille, Calixte, à la beauté sans pareille, avec un jeune paysan, nommé Raoul. Il impose alors cette condition au mariage : le jeune homme doit porter son amante sur la plus haute des collines, par le plus étroit des sentiers, sans jamais s'interrompre, prouesse impossible. Le jeune serf est déjà parti. Ses juges l'attendent, sur une plateforme bâtie au sommet. Il y parvient, mais bientôt chancelle, et finalement succombe. De désespoir, sa belle prend son aimé dans ses bras, et se précipite dans le vide avec lui, plongeant son père dans des regrets tardifs.",
+		"intro": "La Côte des Deux-Amants tire son nom romanesque d'une légende aux nombreuses variantes. Selon l'une d'entre elles, un roi brutal de la région habitait un vaste château, dont il ne reste aucun vestige, pas même dans les mémoires. Il était défavorable à l'union de sa fille, Calixte, à la beauté sans pareille, avec un jeune paysan, nommé Raoul. Il impose alors cette condition au mariage : le jeune homme doit porter son amante sur la plus haute des collines, par le plus étroit des sentiers, sans jamais s'interrompre, prouesse impossible. Le jeune serf est déjà parti. Ses juges l'attendent, sur une plateforme bâtie au sommet. Il y parvient, mais bientôt chancelle, et finalement succombe. De désespoir, sa belle prend son aimé dans ses bras, et se précipite dans le vide avec lui, plongeant son père dans des regrets tardifs.",
 		"itineraire": [
-			"Jumièges - Côte des deux amants, 3 heures et quart",
-			"Rouen - Côte des deux amants, 1 à 2 heures",
+			"Jumièges - Côte des Deux-Amants, 3 heures et quart",
+			"Rouen - Côte des Deux-Amants, 1 à 2 heures",
 			"S’arrêter en gare de Pîtres."
 		],
-		"historique": "Il existe au sommet de la Côte des deux amants un prieuré dont la fondation ancestrale se mêle avec la légende. Selon la tradition, il aurait été construit par le père de Calixte, rongé par le chagrin. Les pierres, quant à elles, nous apprennent qu'il fut fondé au XIIe siècle par M. de Malmain, dont le prieuré porte les armes : ‘trois mains gauches’.",
+		"historique": "Il existe au sommet de la Côte des Deux-Amants un prieuré dont la fondation ancestrale se mêle avec la légende. Selon la tradition, il aurait été construit par le père de Calixte, rongé par le chagrin. Les pierres, quant à elles, nous apprennent qu'il fut fondé au XIIe siècle par M. de Malmain, dont le prieuré porte les armes : ‘trois mains gauches’.",
 		"celebs": [
 			"Calixte et Raoul (parfois Mathilde et Edmond), héros tragiques de la légende.",
 			"Marie de France, ou Marie de Valois. Elle consacre à la légende un Lai des deux amants (XIIe siècle).",
-			"M. de Malmain, fondateur du prieuré des deux amants"
+			"M. de Malmain, fondateur du prieuré des deux amants."
 		],
 		"conversation": [
 			"Assiésou ! Asseyez vous !",
 			"Bé mac é té té ! Bois, mange et tais toi !",
-			"Ben châ !Hé bien çà !"
+			"Ben châ ! Hé bien çà !"
 		],
-		"savoir" : "Du XIIe siècle à nos jours, la légende de la Côte des deux amants n'a jamais cessée d'être vivante dans la mémoire normande et au-delà. Bien des écrivains et des artistes ont donné leur interprétation de l'histoire depuis le poème de Marie de France (XIIe siècle) jusqu'à la variante romancée du philosophe des Lumières, Marmontel. Celui-ci rapporte qu'elle était connue de tous les petits enfants.",
+		"savoir" : "Du XIIe siècle à nos jours, la légende de la Côte des deux amants n'a jamais cessé d'être vivante dans la mémoire normande et au-delà. Bien des écrivains et des artistes ont donné leur interprétation de l'histoire depuis le poème de Marie de France (XIIe siècle) jusqu'à la variante romancée du philosophe des Lumières, Marmontel. Celui-ci rapporte qu'elle était connue de tous les petits enfants.",
 		"events": "Visites des fouilles gallo-romaines d'Amfreville-sous-les-Monts - promenade en barque à Poses - panorama pittoresque au sommet de la côte.",
 		"numphotos": "4"
 	},
@@ -524,13 +524,13 @@
 		"x": "0.38",
 		"y": "0.44",
 		"epid": "29",
-		"intro": "Ville pittoresque de 5000 habitants, Lillebonne est située dans la jolie vallée du Bolbec à quelques kilomètres de la Seine. Le théâtre romain, envahi de pommiers et d’arbustes a été déblayé en 1840. Il mesure 110 mètres de long. Les bains antiques sont situés près de la rue Césarine. Jolies promenades sur les coteaux boisées. Hôtel du commerce, très propre.",
+		"intro": "Ville pittoresque de 5000 habitants, Lillebonne est située dans la jolie vallée du Bolbec à quelques kilomètres de la Seine. Le théâtre romain, envahi de pommiers et d’arbustes, a été déblayé en 1840. Il mesure 110 mètres de long. Les bains antiques sont situés près de la rue Césarine. Jolies promenades sur les coteaux boisées. Hôtel du commerce, très propre.",
 		"itineraire": [
 			"Tancarville - Lillebonne, en moins d'une petite heure",
 			"Fécamp - Lillebonne, moins de deux heures",
 			"Bolbec - Lillebonne, la ligne passe par un tunnel de presque 600 mètres"
 		],
-		"historique": "Selon la légende, Lillebonne, capitale des calètes (tribu du Pays de Caux) aurait été complètement détruite par César. Auguste la fit reconstruire et la nomma Juliobona en l'honneur de sa fille Julie. Quasi abandonnée pendant des siècles, la ville reprend vie sous Guillaume le Conquérant, qui y fit construire un château-fort.",
+		"historique": "Selon la légende, Lillebonne, capitale des Calètes (tribu du Pays de Caux) aurait été complètement détruite par César. Auguste la fit reconstruire et la nomma Juliobona en l'honneur de sa fille Julie. Quasi abandonnée pendant des siècles, la ville reprend vie sous Guillaume le Conquérant, qui y fit construire un château-fort.",
 		"celebs": [
 			"Guillaume le Conquérant, duc de Normandie et roi des Anglais",
 			"Comte de Caylus, fameux amateur d'antiquités. Il découvrit le théâtre romain en 1754",
