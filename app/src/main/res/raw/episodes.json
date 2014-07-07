@@ -74,25 +74,25 @@
          "title": "La barque qui coule",
          "subtitle": "Paru le 19 décembre 1923",
          "places" : [10],
-         "chars": [0,2,3,4,5,6,7,8,9,10]
+         "chars": [2,3,4,8,9,10]
     },
     {
          "title": "Une femme à la mer",
          "subtitle": "Paru le 20 décembre 1923",
          "places" : [10],
-         "chars": [2,3,4,8,9,10]
+         "chars": [0,2,3,10]
     },
     {
          "title": "La belle endormie",
          "subtitle": "Paru le 21 décembre 1923",
          "places" : [10],
-         "chars": [0,2,3,10]
+         "chars": [0,10]
     },
     {
          "title": "L'inconsolée",
          "subtitle": "Paru le 22 décembre 1923",
          "places" : [18],
-         "chars": [0,10]
+         "chars": [0,1,2,3,4,6]
     },
     {
          "title": "Une des sept branches",
@@ -101,7 +101,7 @@
             { "pid": 0.286, "cid":  11, "gender":   "Male" }
         ],
          "places" : [18],
-         "chars": [0,1,2,3,4,6]
+         "chars": [0,2,3,4,6,10,11]
     },
     {
          "title": "Policiers et gendarmes",
@@ -117,13 +117,13 @@
          "title": "Cavale et travestissement",
          "subtitle": "Paru le 25 décembre 1923",
          "places" : [17],
-         "chars": [0,10,11,12,13]
+         "chars": [0,10,11,13]
     },
     {
          "title": "La comtesse lève le voile",
          "subtitle": "Paru le 26 décembre 1923",
          "places" : [17],
-         "chars": [0,10,11,13]
+         "chars": [0,10]
     },
     {
          "title": "Les délices de Capoue",
@@ -135,7 +135,7 @@
          "chars": [0,10,14]
     },
     {
-         "title": "Monte-en-l'air et rats d'hôtels",
+         "title": "Monte-en-l'air et rats d'hôtel",
          "subtitle": "Paru le 28 décembre 1923",
          "places" : [13],
          "chars": [0,2,3,6,10,11]
@@ -223,13 +223,13 @@
             { "pid": 0.455, "cid":  18, "gender":   "Female" }
          ],
          "places" : [9],
-         "chars": [0,10,11]
+         "chars": [0,10,11,18]
     },
     {
          "title": "La main mutilée",
          "subtitle": "Paru le 10 janvier 1924",
          "places" : [9],
-         "chars": [0,10,11]
+         "chars": [0,10,11,18]
     },
     {
          "title": "Remords tardifs",
