@@ -61,7 +61,7 @@ public class EpisodeCardAdapter extends BaseAdapter {
         Boolean delayedEps = this.prefs.getBoolean("delayedEps", true);
 
         Date now = new Date();
-        final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+        final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*60.0*24.0);
 
         try {
             JSONObject character = episodes.getJSONObject(position);

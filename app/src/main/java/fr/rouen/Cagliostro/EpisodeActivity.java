@@ -185,13 +185,13 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
             Boolean delayedEps = prefs.getBoolean("delayedEps", true);
 
             Date now = new Date();
-            final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+            final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*60.0*24.0);
 
             if (epid+1 > minElapsed && delayedEps) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        nexttext.setText(String.format("Episode %d\nA praitre dans %5.2f minutes", epid + 2, epid + 1 - minElapsed));
+                        nexttext.setText(String.format("Episode %d\nA paraitre dans %d heures", epid + 2, (int)(((epid + 1 - minElapsed)*24.0)+1)));
                     }
                 });
             }

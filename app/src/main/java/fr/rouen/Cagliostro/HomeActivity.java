@@ -73,7 +73,7 @@ public class HomeActivity extends Activity {
             startActivity(help);
         }
         Date now = new Date();
-        final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+        final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*5.0);
         final Boolean delayedEps = prefs.getBoolean("delayedEps", true);
 
         setContentView(R.layout.home);
@@ -152,7 +152,7 @@ public class HomeActivity extends Activity {
         long timestamp = this.prefs.getLong("timestamp", 0);
         Boolean delayedEps = this.prefs.getBoolean("delayedEps", true);
         Date now = new Date();
-        final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+        final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*5.0);
 
         return ! delayedEps || epidforcid(cid) < minElapsed;
     }
@@ -187,7 +187,7 @@ public class HomeActivity extends Activity {
         long timestamp = this.prefs.getLong("timestamp", 0);
         Boolean delayedEps = this.prefs.getBoolean("delayedEps", true);
         Date now = new Date();
-        final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+        final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*5.0);
 
         return ! delayedEps || epidforplid(plid) < minElapsed;
     }

@@ -167,7 +167,7 @@ public class CharacterActivity extends FragmentActivity {
         long timestamp = this.prefs.getLong("timestamp", 0);
         Boolean delayedEps = this.prefs.getBoolean("delayedEps", true);
         Date now = new Date();
-        final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+        final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*60.0*24.0);
 
         return ! delayedEps || epidforcid(cid) < minElapsed;
     }

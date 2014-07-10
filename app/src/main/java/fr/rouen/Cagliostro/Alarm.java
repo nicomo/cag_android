@@ -47,7 +47,7 @@ public class Alarm extends BroadcastReceiver {
 
             // compare timestamp with now to know if we have new episodes
             Date now = new Date();
-            final double minElapsed = ( now.getTime() - timestamp ) / 60000.0;
+            final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*60.0*24.0);
             if (minElapsed > 52) {
                 epToBeNotified = 52;
             } else {
