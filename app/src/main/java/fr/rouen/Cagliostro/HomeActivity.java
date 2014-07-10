@@ -72,9 +72,6 @@ public class HomeActivity extends Activity {
             Intent help = new Intent(this, HelpModal.class);
             startActivity(help);
         }
-        Date now = new Date();
-        final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*60.0*24.0);
-        final Boolean delayedEps = prefs.getBoolean("delayedEps", true);
 
         setContentView(R.layout.home);
 
@@ -105,6 +102,10 @@ public class HomeActivity extends Activity {
         episodesgrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
+                Date now = new Date();
+                double minElapsed = ( now.getTime() - timestamp ) / (60000.0*60.0*24.0);
+                Boolean delayedEps = prefs.getBoolean("delayedEps", true);
+
                 if (position <= minElapsed || ! delayedEps) {
                     Intent intent = new Intent(context, EpisodeActivity.class);
                     intent.putExtra("epid", position);
@@ -152,7 +153,7 @@ public class HomeActivity extends Activity {
         long timestamp = this.prefs.getLong("timestamp", 0);
         Boolean delayedEps = this.prefs.getBoolean("delayedEps", true);
         Date now = new Date();
-        final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*5.0);
+        final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*60.0*24.0);
 
         return ! delayedEps || epidforcid(cid) < minElapsed;
     }
@@ -187,7 +188,7 @@ public class HomeActivity extends Activity {
         long timestamp = this.prefs.getLong("timestamp", 0);
         Boolean delayedEps = this.prefs.getBoolean("delayedEps", true);
         Date now = new Date();
-        final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*5.0);
+        final double minElapsed = ( now.getTime() - timestamp ) / (60000.0*60.0*24);
 
         return ! delayedEps || epidforplid(plid) < minElapsed;
     }
