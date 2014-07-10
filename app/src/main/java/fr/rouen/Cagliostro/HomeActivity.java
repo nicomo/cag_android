@@ -210,10 +210,14 @@ public class HomeActivity extends Activity {
     public void toggleEpisodes(View view) {
         final StaggeredGridView v = (StaggeredGridView)findViewById(R.id.episodesgrid);
         final double d = v.getContext().getResources().getDisplayMetrics().density;
+        final double wp = v.getContext().getResources().getDisplayMetrics().widthPixels;
+        final double w = wp/d;
+        final double ratio = v.getContext().getResources().getInteger(R.integer.episodes_columns) == 4 ? 3.8 : 1.75;
+        final int h = (int)(w*ratio);
 
         if (episodesExpanded == false) {
             final int initsize = 460;
-            final int targetsize = 1400;
+            final int targetsize = h;
 
             Animation a = new Animation() {
                 @Override
@@ -255,7 +259,7 @@ public class HomeActivity extends Activity {
         }
         else
         {
-            final int initsize = 1400;
+            final int initsize = h;
             final int targetsize = 460;
 
             Animation a = new Animation() {
