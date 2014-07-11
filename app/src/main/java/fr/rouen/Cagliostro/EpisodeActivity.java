@@ -62,6 +62,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
     Timer twv;
     FooterCharacterAdapter cca;
     PlaceAdapter pla;
+    VideoView vv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +102,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
         wv.getSettings().setJavaScriptEnabled(true);
         wv.loadUrl("file:///android_asset/www/"+(epid+1)+".html");
 
-        VideoView vv=(VideoView)findViewById(R.id.videoView);
+        vv=(VideoView)findViewById(R.id.videoView);
         vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + getResources().getIdentifier("header_"+this.epid, "raw", getPackageName())));
         vv.setOnPreparedListener (new MediaPlayer.OnPreparedListener() {
             @Override
@@ -176,6 +177,12 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
 
         twv = new Timer("refreshWebView");
         twv.schedule(_refreshWebView, 0, 500);
+    }
+
+    protected void onResume()
+    {
+        super.onResume();
+        vv.start();
     }
 
     private final TimerTask _refreshButton = new TimerTask() {
