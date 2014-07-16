@@ -6,9 +6,13 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.storage.OnObbStateChangeListener;
+import android.os.storage.StorageManager;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -34,13 +38,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.android.vending.expansion.zipfile.APKExpansionSupport;
+import com.android.vending.expansion.zipfile.ZipResourceFile;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Date;
+
+import fr.rouen.Cagliostro.provider.ZipFileContentProvider;
 
 public class EpisodeActivity extends Activity implements ScrollViewListener {
 
@@ -164,7 +176,16 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
         nexttext = (TextView)findViewById(R.id.nextButtonText);
         nexttext.setTypeface(clarendon);
         nexttext.setLineSpacing(0, 1.3f);
-        next.setBackgroundResource(getResources().getIdentifier("button_epid_" + (epid + 1), "drawable", getPackageName()));
+
+        try {
+            ZipResourceFile expansionFile = APKExpansionSupport
+                    .getAPKExpansionZipFile(this, 10, 0);
+            InputStream fileStream = expansionFile.getInputStream("button/button_epid_" + (epid + 1) + ".png");
+            next.setBackground(Drawable.createFromStream(fileStream, "button/button_epid_" + (epid + 1) + ".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         nexttext.setText("Episode "+(epid+1)+"\nA paraitre");
 
         if (epid == 51)

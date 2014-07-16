@@ -3,8 +3,11 @@ package fr.rouen.Cagliostro;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
@@ -17,12 +20,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.vending.expansion.zipfile.APKExpansionSupport;
+import com.android.vending.expansion.zipfile.ZipResourceFile;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
+
+import fr.rouen.Cagliostro.provider.ZipFileContentProvider;
 
 
 public class CharacterActivity extends FragmentActivity {
@@ -59,7 +69,15 @@ public class CharacterActivity extends FragmentActivity {
         messages = appState.getMessages();
 
         LinearLayout charbg = (LinearLayout)findViewById(R.id.charbg);
-        charbg.setBackgroundResource(this.getResources().getIdentifier("char_" + cid + "_bg", "drawable", this.getPackageName()));
+
+        try {
+            ZipResourceFile expansionFile = APKExpansionSupport
+                    .getAPKExpansionZipFile(this, 10, 0);
+            InputStream fileStream = expansionFile.getInputStream("char/char_" + cid + "_bg.png");
+            charbg.setBackground(Drawable.createFromStream(fileStream, "char/char_" + cid + "_bg.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         TextView name = (TextView)findViewById(R.id.name);
         ImageView avatar = (ImageView)findViewById(R.id.avatar);
@@ -75,7 +93,7 @@ public class CharacterActivity extends FragmentActivity {
 
         try {
             ViewPager photopager = (ViewPager)findViewById(R.id.photospager);
-            pha = new PhotosAdapter(super.getSupportFragmentManager(), characters.getJSONObject(cid).getInt("numphotos"), this, cid, "char");
+            pha = new PhotosAdapter(super.getSupportFragmentManager(), characters.getJSONObject(cid).getInt("numphotos"), this, cid, "char/char");
             photopager.setAdapter(pha);
 
             CirclePageIndicator ind = (CirclePageIndicator)findViewById(R.id.photospagerindicator);

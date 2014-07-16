@@ -42,7 +42,7 @@ public class PlaceActivity extends FragmentActivity {
 
         try {
             ViewPager photopager = (ViewPager)findViewById(R.id.photospager);
-            pha = new PhotosAdapter(super.getSupportFragmentManager(), places.getJSONObject(plid).getInt("numphotos"), this, plid, "place");
+            pha = new PhotosAdapter(super.getSupportFragmentManager(), places.getJSONObject(plid).getInt("numphotos"), this, plid, "place/place");
             photopager.setAdapter(pha);
 
             CirclePageIndicator ind = (CirclePageIndicator)findViewById(R.id.photospagerindicator);
