@@ -237,7 +237,7 @@ public class ZipResourceFile {
      * 
      * @param assetPath
      * @return an input stream for the named asset path, or null if not found
-     * @throws java.io.IOException
+     * @throws IOException
      */
     public InputStream getInputStream(String assetPath) throws IOException {
         ZipEntryRO entry = mHashMap.get(assetPath);
@@ -276,7 +276,7 @@ public class ZipResourceFile {
         long fileLength = f.length();
 
         if (fileLength < kEOCDLen) {
-            throw new IOException();
+            throw new java.io.IOException();
         }
 
         long readAmount = kMaxEOCDSearch;

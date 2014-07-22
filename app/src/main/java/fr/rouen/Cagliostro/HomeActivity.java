@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -60,6 +61,18 @@ public class HomeActivity extends Activity {
         characters = appState.getCharacters();
         episodes = appState.getEpisodes();
         places = appState.getPlaces();
+
+        if(!"mounted".equals(Environment.getExternalStorageState())) {
+            System.out.println("Problème d'accès à l'espace de stockage externe : " + Environment.getExternalStorageDirectory());
+        }
+        if (!DownloaderActivity.expansionFilesDelivered(this)) {
+            final Intent downloadResourceIntent = new Intent(
+                    HomeActivity.this,
+                    DownloaderActivity.class);
+            startActivity(downloadResourceIntent);
+            overridePendingTransition(android.R.anim.fade_in,
+                    android.R.anim.fade_out);
+        }
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         final long timestamp = prefs.getLong("timestamp", 0);
