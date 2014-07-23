@@ -22,10 +22,6 @@ android {
     }
 
     signingConfigs {
-        debug {
-            storeFile file("debug.keystore")
-        }
-
         release {
             storeFile file("/Users/kivutar/cagliostro.keystore")
             storePassword "Lapagedegarde1"

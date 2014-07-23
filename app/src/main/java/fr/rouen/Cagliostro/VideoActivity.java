@@ -22,13 +22,12 @@ public class VideoActivity extends Activity {
 
         mVV = (VideoView)findViewById(R.id.videoview);
 
-        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + getResources().getIdentifier("bonus_" + vid, "raw", getPackageName()));
+        Uri uri = Uri.parse("content://fr.rouen.Cagliostro.provider.ZipFileContentProvider/bonus/bonus_" + vid + ".m4v");
+        mVV.setVideoURI(uri);
 
         MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(mVV);
         mVV.setMediaController(mediaController);
-
-        mVV.setVideoURI(uri);
 
         mVV.start();
     }

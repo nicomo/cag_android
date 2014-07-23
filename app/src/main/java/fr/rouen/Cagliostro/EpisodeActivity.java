@@ -115,7 +115,8 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
         wv.loadUrl("file:///android_asset/www/"+(epid+1)+".html");
 
         vv=(VideoView)findViewById(R.id.videoView);
-        vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + getResources().getIdentifier("header_"+this.epid, "raw", getPackageName())));
+        Uri uri = Uri.parse("content://fr.rouen.Cagliostro.provider.ZipFileContentProvider/header/header_" + epid + ".m4v");
+        vv.setVideoURI(uri);
         vv.setOnPreparedListener (new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
