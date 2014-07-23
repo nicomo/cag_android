@@ -38,7 +38,7 @@ public class PhotoPage extends Fragment {
 
         try {
             ZipResourceFile expansionFile = APKExpansionSupport
-                    .getAPKExpansionZipFile(context, 10, 0);
+                    .getAPKExpansionZipFile(context, 11, 0);
             InputStream fileStream = expansionFile.getInputStream(prefix + "_" + plid + "_image_" + position + ".png");
             img.setImageDrawable(Drawable.createFromStream(fileStream, prefix + "_" + plid + "_image_" + position + ".png"));
         } catch (IOException e) {

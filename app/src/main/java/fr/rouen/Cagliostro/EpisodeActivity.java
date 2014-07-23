@@ -180,7 +180,7 @@ public class EpisodeActivity extends Activity implements ScrollViewListener {
 
         try {
             ZipResourceFile expansionFile = APKExpansionSupport
-                    .getAPKExpansionZipFile(this, 10, 0);
+                    .getAPKExpansionZipFile(this, 11, 0);
             InputStream fileStream = expansionFile.getInputStream("button/button_epid_" + (epid + 1) + ".png");
             next.setBackground(Drawable.createFromStream(fileStream, "button/button_epid_" + (epid + 1) + ".png"));
         } catch (IOException e) {

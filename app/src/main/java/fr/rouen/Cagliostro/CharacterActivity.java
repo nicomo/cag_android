@@ -72,7 +72,7 @@ public class CharacterActivity extends FragmentActivity {
 
         try {
             ZipResourceFile expansionFile = APKExpansionSupport
-                    .getAPKExpansionZipFile(this, 10, 0);
+                    .getAPKExpansionZipFile(this, 11, 0);
             InputStream fileStream = expansionFile.getInputStream("char/char_" + cid + "_bg.png");
             charbg.setBackground(Drawable.createFromStream(fileStream, "char/char_" + cid + "_bg.png"));
         } catch (IOException e) {
